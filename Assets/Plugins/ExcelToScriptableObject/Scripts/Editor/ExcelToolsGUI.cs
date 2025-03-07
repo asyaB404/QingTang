@@ -395,19 +395,21 @@ namespace Basya
                 string fileName = Path.GetFileNameWithoutExtension(file.Name + "List");
                 foreach (DataTable table in tableConllection)
                 {
-                    GenerateSObjClass1(table, sobjPath, fileName);
-                    GenerateSObjInfoClass(table, infoclassPath, fileName);
+                    GenerateSObjClass1(table, sobjPath, fileName, infoClassName);
+                    GenerateSObjInfoClass(table, infoclassPath, fileName, infoClassName);
                 }
             }
 
             AssetDatabase.Refresh();
         }
 
-        private void GenerateSObjClass1(DataTable table, string sobjPath, string namespaceName)
+        private void GenerateSObjClass1(DataTable table, string sobjPath, string namespaceName, string className = null)
         {
             if (!Directory.Exists(sobjPath))
                 Directory.CreateDirectory(sobjPath);
-            string className = table.TableName + "List";
+            if (string.IsNullOrEmpty(className))
+                className = table.TableName;
+            className += "List";
             strBuilder.Clear();
             strBuilder.AppendLine("using System.Collections.Generic;");
             strBuilder.AppendLine("using UnityEngine;");
@@ -434,12 +436,14 @@ namespace Basya
             AssetDatabase.Refresh();
         }
 
-        private void GenerateSObjInfoClass(DataTable table, string infoClassPath, string namespaceName)
+        private void GenerateSObjInfoClass(DataTable table, string infoClassPath, string namespaceName,
+            string className = null)
         {
             DataRow rowName = table.Rows[0];
             DataRow rowType = table.Rows[1];
-            string className = table.TableName + "ListInfoClass";
-
+            if (string.IsNullOrEmpty(className))
+                className = table.TableName;
+            className += "ListInfoClass";
             if (!Directory.Exists(infoClassPath))
                 Directory.CreateDirectory(infoClassPath);
 
@@ -497,18 +501,20 @@ namespace Basya
             if (!Directory.Exists(assetPath))
                 Directory.CreateDirectory(assetPath);
 
-            var listClassName = table.TableName + "List";
-            ScriptableObject obj = ScriptableObject.CreateInstance(listClassName);
+            string listClassName;
             string className;
             if (string.IsNullOrEmpty(infoClassName))
             {
+                listClassName = table.TableName + "List";
                 className = nameSpace + "." + listClassName + "InfoClass";
             }
             else
             {
-                className = infoClassName;
+                listClassName = infoClassName + "List";
+                className = nameSpace + "." + infoClassName + "ListInfoClass";
             }
 
+            ScriptableObject obj = ScriptableObject.CreateInstance(listClassName);
             Type type = Type.GetType(className + ", Assembly-CSharp");
             DataRow row;
             object infoObj;
@@ -523,9 +529,10 @@ namespace Basya
 
             ExcelableScriptableObject asset = obj as ExcelableScriptableObject;
             asset.Init(objects);
+            var assetsName = table.TableName + "List";
             AssetDatabase.CreateAsset(
                 asset,
-                "Assets/" + localAssetsPath1 + "/" + listClassName + ".asset"
+                "Assets/" + localAssetsPath1 + "/" + assetsName + ".asset"
             );
             AssetDatabase.Refresh();
         }

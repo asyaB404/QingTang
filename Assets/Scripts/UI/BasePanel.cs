@@ -174,7 +174,7 @@ namespace UI
         public virtual void CallBackWhenHeadPop(IBasePanel popPanel)
         {
             popPanel?.HideAnim();
-            if (gameObject.activeSelf == false) ShowAnim();
+            ShowAnim();
         }
 
 

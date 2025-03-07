@@ -11,5 +11,20 @@ namespace UI.Panel
 {
     public class SettingsPanel : BasePanel<SettingsPanel>
     {
+        public override void Init()
+        {
+            base.Init();
+            
+        }
+
+        public override void CallBackWhenHeadPop(IBasePanel popPanel)
+        {
+            popPanel?.HideAnim();
+        }
+
+        public override void CallBackWhenHeadPush(IBasePanel oldPanel)
+        {
+            ShowAnim();
+        }
     }
 }

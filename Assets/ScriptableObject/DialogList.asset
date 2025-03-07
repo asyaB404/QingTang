@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d36d0fe3d568cfe45809672535c92943, type: 3}
+  m_Name: DialogList
+  m_EditorClassIdentifier: 
+  list:
+  - id: 0
+    roleId: 1
+    dialog: "\u5C31\u662F\u4F60\uFF0C\u4F60\u5C31\u662F\u65B0\u6765\u7684\u8C03\u89E3\u5458\uFF1F"
+    face: 1
+    animType: 1
+  - id: 1
+    roleId: 1
+    dialog: "\u6765\u5F97\u6B63\u662F\u65F6\u5019\uFF0C\u6625\u98CE\u5C0F\u5B66\u7684\u5927\u95E8\u88AB\u649E\u4E86\uFF0C\u4F60\u6765\u5E2E\u5FD9\u6253\u8FD9\u4E2A\u7535\u8BDD\u95EE\u95EE\u60C5\u51B5\u5427\uFF01"
+    face: 0
+    animType: 0
+  - id: 2
+    roleId: 1
+    dialog: 
+    face: 0
+    animType: 2
+  - id: 2
+    roleId: 2
+    dialog: "\u201C\u5582\uFF0C\u5218\u4E3B\u4EFB\u4EC0\u4E48\u4E8B\u963F\uFF1F\u201D"
+    face: 0
+    animType: 1
+  - id: 3
+    roleId: 2
+    dialog: "\u201C\u4E0D\u662F\u5218\u4E3B\u4EFB\uFF0C\u90A3\u4F60\u662F\uFF1F\u201D"
+    face: 0
+    animType: 0
+  - id: 4
+    roleId: 2
+    dialog: "\u201C{playerName}?\u201D"
+    face: 0
+    animType: 0
+  - id: 5
+    roleId: 2
+    dialog: "\u201C\u54E6\uFF0C\u65B0\u6765\u7684\u8C03\u89E3\u5458\u963F\uFF0C\u60F3\u4E86\u89E3\u6628\u665A\u4E0A\u5C0F\u5B66\u95E8\u88AB\u649E\u7684\u4E8B\u60C5?\u201D"
+    face: 0
+    animType: 0
+  - id: 6
+    roleId: 2
+    dialog: "\u201C\u522B\u8BF4\u662F\u6211\u7ED9\u4F60\u8BB2\u7684\uFF0C\u662F\u738B\u5927\u798F\u5E72\u7684\uFF0C\u6628\u665A\u4E0A\u6211\u4EEC\u4E00\u8D77\u559D\u4E86\u9152\uFF0C\u4FDD\u51C6\u662F\u4ED6\uFF01\u201D"
+    face: 0
+    animType: 0
+  - id: 6
+    roleId: 2
+    dialog: 
+    face: 0
+    animType: 2
+  - id: 7
+    roleId: 1
+    dialog: "\u201C\u8D70\uFF0C\u53BB\u6751\u91CC\u770B\u770B\u6709\u6CA1\u6709\u5176\u4ED6\u4EBA\u77E5\u9053\u8BE6\u60C5\u5427\uFF1F\u201D"
+    face: 0
+    animType: 1
