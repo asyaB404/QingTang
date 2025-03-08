@@ -13,10 +13,11 @@ using Data;
 using QTConfig;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace GamePlay
 {
-    public class DialogManager : MonoBehaviour
+    public class DialogManager : MonoBehaviour, IPointerUpHandler
     {
         private RoleManager _roleManager = new();
         [SerializeField] private int curIndex = 0;
@@ -43,6 +44,12 @@ namespace GamePlay
             {
                 sb.Skip();
             }
+        }
+
+        [ContextMenu("test")]
+        private void Test()
+        {
+            dialogList = GlobalConfig.Instance.GetDialogList(0).list;
         }
     }
 }
