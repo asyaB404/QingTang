@@ -11,22 +11,25 @@ using System.Text;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GamePlay
 {
     public class DialogStringBuilder : MonoBehaviour
     {
-        public bool isBuilding;
+        public bool IsBuilding => isBuilding;
+        [SerializeField] private bool isBuilding;
         [SerializeField] private TextMeshProUGUI dialog;
         [SerializeField] private float charDuration = 0.05f;
         private readonly StringBuilder _stringBuilder = new();
         private string _curContent;
         private int _uniId = 0;
-        
+
         public void SetText(string content)
         {
             _curContent = content;
             _stringBuilder.Clear();
+            content = content.Replace("{playName}", "basya");
             BuildStringAsync(content).Forget();
         }
 
@@ -35,6 +38,14 @@ namespace GamePlay
             _uniId++;
             dialog.text = _curContent;
             isBuilding = false;
+        }
+
+        public void ReSet()
+        {
+            _uniId = 0;
+            _curContent = string.Empty;
+            dialog.text = string.Empty;
+            _stringBuilder.Clear();
         }
 
         private async UniTask BuildStringAsync(string content)
@@ -62,12 +73,11 @@ namespace GamePlay
                     "一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五" +
                     "一二三四五一二三四五一二三四五一二三四五一二三四五");
         }
-        
+
         [ContextMenu("test2")]
         private void Test2()
         {
             Skip();
         }
-
     }
 }

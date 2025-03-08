@@ -2342,7 +2342,7 @@ GameObject:
   - component: {fileID: 972011498}
   - component: {fileID: 972011499}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GlobalConfig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3910,8 +3910,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd4951d47b74b6aac29757187e16f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStop: 0
   curIndex: 0
-  sb: {fileID: 1211087876}
+  panel: {fileID: 805653951}
+  sbMgr: {fileID: 1211087876}
   roleName: {fileID: 981628091}
   dialogList: []
 --- !u!1 &1811181676
