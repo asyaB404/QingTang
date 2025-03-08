@@ -1,25 +1,24 @@
 // // ********************************************************************************************
-// //     /\_/\                           @file       MainPanel.cs
+// //     /\_/\                           @file       GlobalDataManager.cs
 // //    ( o.o )                          @brief     QingTang
 // //     > ^ <                           @author     Basya
 // //    /     \
-// //   (       )                         @Modified   2025030713
+// //   (       )                         @Modified   2025030810
 // //   (___)___)                         @Copyright  Copyright (c) 2025, Basya
 // // ********************************************************************************************
 
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace UI.Panel
+namespace Data
 {
-    public class MainPanel : BasePanel<MainPanel>
+    public class GlobalDataManager : MonoBehaviour
     {
-        [SerializeField] private Button[] btns;
-        [SerializeField] private Image[] icons;
+        public static GlobalDataManager Instance { get; private set; }
 
-        public override void OnPressedEsc()
+        private void Awake()
         {
-            
+            Instance = this;
         }
     }
 }

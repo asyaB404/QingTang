@@ -1,23 +1,20 @@
 // // ********************************************************************************************
-// //     /\_/\                           @file       MainPanel.cs
+// //     /\_/\                           @file       DialogPanel.cs
 // //    ( o.o )                          @brief     QingTang
 // //     > ^ <                           @author     Basya
 // //    /     \
-// //   (       )                         @Modified   2025030713
+// //   (       )                         @Modified   2025030810
 // //   (___)___)                         @Copyright  Copyright (c) 2025, Basya
 // // ********************************************************************************************
 
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace UI.Panel
+namespace UI.Dialog
 {
-    public class MainPanel : BasePanel<MainPanel>
+    public class DialogPanel : MonoBehaviour
     {
-        [SerializeField] private Button[] btns;
-        [SerializeField] private Image[] icons;
-
-        public override void OnPressedEsc()
+        private void Awake()
         {
             
         }

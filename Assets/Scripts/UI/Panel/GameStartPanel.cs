@@ -29,12 +29,11 @@ public class GameStartPanel : BasePanel<GameStartPanel>
 
     public override void CallBackWhenHeadPop(IBasePanel popPanel)
     {
+        popPanel?.HideAnim();
         if (popPanel is SettingsPanel)
         {
-            popPanel?.HideAnim();
             return;
         }
-        popPanel?.HideAnim();
         ShowAnim();
     }
 
@@ -58,5 +57,6 @@ public class GameStartPanel : BasePanel<GameStartPanel>
         Debug.Log("Video 播放结束");
 
         videoPlayer.gameObject.SetActive(false);
+        MainPanel.Instance.ShowMe();
     }
 }

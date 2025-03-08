@@ -10,6 +10,7 @@ namespace Basya
 {
     public class ExcelToolsGUI : EditorWindow
     {
+        private string nameSpace = "TQConfig";
         private string localExcelPath = "Editor/Excel";
         private string localSobjPath = "Scripts/ScriptableObject";
         private string localAssetsPath = "ScriptableObject";
@@ -50,6 +51,7 @@ namespace Basya
         private void OnGUI()
         {
             GUILayout.Label("Excel表转SOBJ(By Basya)", EditorStyles.boldLabel);
+            nameSpace = EditorGUILayout.TextField("命名空间", nameSpace);
             if (GUILayout.Button("切换页面"))
             {
                 CurrentPanel++;
@@ -154,14 +156,14 @@ namespace Basya
                 string fileName = Path.GetFileNameWithoutExtension(file.Name);
                 foreach (DataTable table in tableConllection)
                 {
-                    GenerateSObjClass(table, sobjPath, fileName);
+                    GenerateSObjClass(table, sobjPath, nameSpace);
                 }
             }
 
             AssetDatabase.Refresh();
         }
 
-        private void GenerateSObjClass(DataTable table, string sobjPath, string fileName)
+        private void GenerateSObjClass(DataTable table, string sobjPath, string @namespace)
         {
             DataRow rowName = table.Rows[0];
             DataRow rowType = table.Rows[1];
@@ -175,7 +177,7 @@ namespace Basya
             strBuilder.AppendLine("using UnityEditor;");
             strBuilder.AppendLine("#endif");
             strBuilder.AppendLine();
-            strBuilder.AppendLine($"namespace {fileName} ");
+            strBuilder.AppendLine($"namespace {@namespace} ");
             strBuilder.AppendLine("{");
             strBuilder.AppendLine(
                 $"\t[CreateAssetMenu(fileName = \"{table.TableName}\", menuName = \"ScriptableObject/{table.TableName}\")]");
@@ -365,7 +367,6 @@ namespace Basya
             GUILayout.Label("再创建SOBJ对应的资源文件", EditorStyles.boldLabel);
             GUILayout.Space(10);
             infoClassName = EditorGUILayout.TextField("自定义信息类名称（留空默认）", infoClassName);
-            GUILayout.Label("需包含命名空间例如Basya.XXXInfoClass", EditorStyles.boldLabel);
             if (GUILayout.Button("创建SOBJ对应的资源文件"))
             {
                 SpawnAsset1();
@@ -395,8 +396,8 @@ namespace Basya
                 string fileName = Path.GetFileNameWithoutExtension(file.Name + "List");
                 foreach (DataTable table in tableConllection)
                 {
-                    GenerateSObjClass1(table, sobjPath, fileName, infoClassName);
-                    GenerateSObjInfoClass(table, infoclassPath, fileName, infoClassName);
+                    GenerateSObjClass1(table, sobjPath, nameSpace, infoClassName);
+                    GenerateSObjInfoClass(table, infoclassPath, nameSpace, infoClassName);
                 }
             }
 

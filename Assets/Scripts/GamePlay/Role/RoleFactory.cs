@@ -1,23 +1,28 @@
 // // ********************************************************************************************
-// //     /\_/\                           @file       MainPanel.cs
+// //     /\_/\                           @file       RoleFactory.cs
 // //    ( o.o )                          @brief     QingTang
 // //     > ^ <                           @author     Basya
 // //    /     \
-// //   (       )                         @Modified   2025030713
+// //   (       )                         @Modified   2025030810
 // //   (___)___)                         @Copyright  Copyright (c) 2025, Basya
 // // ********************************************************************************************
 
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace UI.Panel
+namespace GamePlay.Role
 {
-    public class MainPanel : BasePanel<MainPanel>
+    public class RoleFactory
     {
-        [SerializeField] private Button[] btns;
-        [SerializeField] private Image[] icons;
+        private static RoleFactory _instance;
 
-        public override void OnPressedEsc()
+        public static RoleFactory Instance
+        {
+            get
+            {
+                _instance ??= new RoleFactory();
+                return _instance;
+            }
+        }
+
+        public void CreateRole()
         {
             
         }
