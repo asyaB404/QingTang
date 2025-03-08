@@ -22,6 +22,8 @@ namespace GamePlay
     public class DialogManager : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     {
         [SerializeField] private bool isStop;
+        [SerializeField] private float waitTimer;
+        public bool IsWaiting => waitTimer > 0;
         private readonly CommandManager _commandManager = new();
         private readonly RoleManager _roleManager = new();
         [SerializeField] private int curIndex = 0;
@@ -34,6 +36,16 @@ namespace GamePlay
         private void Awake()
         {
             Instance = this;
+            MyEventSystem.Instance.AddEventListener(CMDNAME.STOP, Stop);
+            MyEventSystem.Instance.AddEventListener<float>(CMDNAME.WAIT, SetWait);
+        }
+
+        private void Update()
+        {
+            if (waitTimer > 0)
+            {
+                waitTimer -= Time.deltaTime;
+            }
         }
 
         public void Load(int dialogId)
@@ -48,6 +60,7 @@ namespace GamePlay
         public void Stop()
         {
             isStop = true;
+            waitTimer = 0;
             panel.DOFade(0f, MyConst.DIALOG_FADE);
             panel.interactable = false;
         }
@@ -59,6 +72,18 @@ namespace GamePlay
 
         public void Next()
         {
+            if (IsWaiting)
+            {
+                SetWait(0);
+                return;
+            }
+
+            if (curIndex >= dialogList.Count)
+            {
+                Stop();
+                return;
+            }
+            
             if (isStop)
             {
                 isStop = false;
@@ -66,37 +91,12 @@ namespace GamePlay
                 panel.interactable = true;
             }
 
-            if (curIndex >= dialogList.Count)
-            {
-                Debug.LogError("ir1");
-                return;
-            }
-
             var info = dialogList[curIndex];
             string content = info.dialog;
-            CommandType commandType = _commandManager.CheckCommand(content);
+            _commandManager.CheckCommand(content);
             roleName.text = GlobalConfig.IdToRoleName(info.roleId);
-            switch (commandType)
-            {
-                case CommandType.None:
-                    break;
-                case CommandType.Stop:
-                    Stop();
-                    return;
-                case CommandType.Next:
-                    Next();
-                    break;
-                case CommandType.Event:
-                    Next();
-                    break;
-                case CommandType.Wait:
-                    Wait();
-                    break;
-                case CommandType.Clear:
-                case CommandType.Tip:
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            
+            if(content.Length <= 0 || content[0] == '#') return; 
             
             if (!sbMgr.IsBuilding)
             {
@@ -107,6 +107,11 @@ namespace GamePlay
             {
                 sbMgr.Skip();
             }
+        }
+
+        private void SetWait(float duration)
+        {
+            waitTimer = duration;
         }
 
         [ContextMenu("test")]

@@ -9,62 +9,46 @@
 
 namespace GamePlay
 {
-    public enum CommandType
+    public class CMDNAME
     {
-        None,
-        Stop,
-        Next,
-        Event,
-        Wait,
-        Clear,
-        Tip
-    }
-
-    public struct CommandInfo
-    {
-        public CommandType CommandType;
-        public string TipContent;
-        public float wait;
+        public const string STOP = "#stop";
+        public const string NEXT = "#next";
+        public const string EVENT = "#event";
+        public const string WAIT = "#wait";
+        public const string CLEAR = "#clear";
+        public const string TIP = "#tip";
     }
 
     public class CommandManager
     {
-        public CommandInfo CheckCommand(string content)
+        public void CheckCommand(string content)
         {
-            CommandInfo commandInfo = new CommandInfo
+            if (content.Contains(CMDNAME.STOP))
             {
-                CommandType = CommandType.None
-            };
-            if (content.Contains("#stop"))
-            {
-                commandInfo.CommandType = CommandType.Stop;
+                MyEventSystem.Instance.EventTrigger(CMDNAME.STOP);
             }
-            if (content.Contains("#next"))
+            if (content.Contains(CMDNAME.WAIT))
             {
-                commandInfo.CommandType = CommandType.Next;
+                float wait = float.Parse(content.Replace(CMDNAME.WAIT, ""));
+                MyEventSystem.Instance.EventTrigger<float>(CMDNAME.WAIT, wait);
             }
-            if (content.Contains("#event"))
+            if (content.Contains(CMDNAME.NEXT))
             {
-                commandInfo.CommandType = CommandType.Event;
+                MyEventSystem.Instance.EventTrigger(CMDNAME.NEXT);
+            }
+            if (content.Contains(CMDNAME.EVENT))
+            {
                 MyEventSystem.Instance.EventTrigger(content);
             }
-            if (content.Contains("#wait"))
+            if (content.Contains(CMDNAME.CLEAR))
             {
-                commandInfo.CommandType = CommandType.Wait;
-                commandInfo.wait = float.Parse(content.Replace("#wait,", ""));
+                MyEventSystem.Instance.EventTrigger(CMDNAME.CLEAR);
             }
-            if (content.Contains("#clear"))
+            if (content.Contains(CMDNAME.TIP))
             {
-                commandInfo.CommandType = CommandType.Clear;
+                string tipContent = content.Replace(CMDNAME.TIP, "").Trim();
+                MyEventSystem.Instance.EventTrigger<string>(CMDNAME.TIP, tipContent);
             }
-            if (content.Contains("#tip"))
-            {
-                commandInfo.CommandType = CommandType.Tip;
-                commandInfo.TipContent = content.Replace("#tip ", "");
-            }
-
-
-            return commandInfo;
         }
     }
 }
