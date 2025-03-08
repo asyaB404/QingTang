@@ -29,7 +29,7 @@ namespace GamePlay
         {
             _curContent = content;
             _stringBuilder.Clear();
-            content = content.Replace("{playName}", "basya");
+            content = content.Replace("{playerName}", "basya");
             BuildStringAsync(content).Forget();
         }
 

@@ -9,6 +9,7 @@
 
 using Data;
 using DG.Tweening;
+using GamePlay;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,6 +29,10 @@ namespace UI.Panel
         {
             CanvasGroupInstance.interactable = true;
             CanvasGroupInstance.DOFade(1f, MyConst.PANEL_FADE);
+            if (!DialogManager.Instance.FinishedDialog.Contains(0))
+            {
+                DialogManager.Instance.Load(0);
+            }
         }
 
         public override void HideAnim()

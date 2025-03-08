@@ -27,7 +27,8 @@ namespace GamePlay
         private int _curDialogId = -1;
         private readonly CommandManager _commandManager = new();
         private readonly RoleManager _roleManager = new();
-        private readonly HashSet<int> _finishedDialog = new HashSet<int>();
+        private readonly HashSet<int> _finishedDialog = new();
+        public HashSet<int> FinishedDialog => _finishedDialog;
         [SerializeField] private int curIndex = 0;
         [SerializeField] private CanvasGroup panel;
 
@@ -75,6 +76,7 @@ namespace GamePlay
 
         public void ReSet()
         {
+            _curDialogId = -1;
             sbMgr.ReSet();
         }
 
@@ -89,6 +91,7 @@ namespace GamePlay
             if (curIndex >= dialogList.Count)
             {
                 Finish(_curDialogId);
+                ReSet();
                 Stop();
                 return;
             }

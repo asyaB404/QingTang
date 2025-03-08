@@ -11,7 +11,7 @@ namespace Data
 {
     public static class MyConst
     {
-        public const float PANEL_FADE = 0.5f;
+        public const float PANEL_FADE = 0.25f;
         public const float DIALOG_FADE = 0.5f;
     }
 }
