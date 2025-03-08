@@ -75,6 +75,7 @@ namespace GamePlay
             var info = dialogList[curIndex];
             string content = info.dialog;
             CommandType commandType = _commandManager.CheckCommand(content);
+            roleName.text = GlobalConfig.IdToRoleName(info.roleId);
             switch (commandType)
             {
                 case CommandType.None:
@@ -82,12 +83,21 @@ namespace GamePlay
                 case CommandType.Stop:
                     Stop();
                     return;
+                case CommandType.Next:
+                    Next();
                     break;
+                case CommandType.Event:
+                    Next();
+                    break;
+                case CommandType.Wait:
+                    Wait();
+                    break;
+                case CommandType.Clear:
+                case CommandType.Tip:
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-
-            roleName.text = GlobalConfig.IdToRoleName(info.roleId);
+            
             if (!sbMgr.IsBuilding)
             {
                 sbMgr.SetText(content);

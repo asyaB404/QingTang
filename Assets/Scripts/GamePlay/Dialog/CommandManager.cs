@@ -20,29 +20,51 @@ namespace GamePlay
         Tip
     }
 
+    public struct CommandInfo
+    {
+        public CommandType CommandType;
+        public string TipContent;
+        public float wait;
+    }
+
     public class CommandManager
     {
-        public CommandType CheckCommand(string content)
+        public CommandInfo CheckCommand(string content)
         {
+            CommandInfo commandInfo = new CommandInfo
+            {
+                CommandType = CommandType.None
+            };
             if (content.Contains("#stop"))
-                return CommandType.Stop;
-            
+            {
+                commandInfo.CommandType = CommandType.Stop;
+            }
             if (content.Contains("#next"))
-                return CommandType.Next;
-            
+            {
+                commandInfo.CommandType = CommandType.Next;
+            }
             if (content.Contains("#event"))
-                return CommandType.Event;
-            
+            {
+                commandInfo.CommandType = CommandType.Event;
+                MyEventSystem.Instance.EventTrigger(content);
+            }
             if (content.Contains("#wait"))
-                return CommandType.Wait;
-
+            {
+                commandInfo.CommandType = CommandType.Wait;
+                commandInfo.wait = float.Parse(content.Replace("#wait,", ""));
+            }
             if (content.Contains("#clear"))
-                return CommandType.Clear;
-
+            {
+                commandInfo.CommandType = CommandType.Clear;
+            }
             if (content.Contains("#tip"))
-                return CommandType.Tip;
-            
-            return CommandType.None;
+            {
+                commandInfo.CommandType = CommandType.Tip;
+                commandInfo.TipContent = content.Replace("#tip ", "");
+            }
+
+
+            return commandInfo;
         }
     }
 }
