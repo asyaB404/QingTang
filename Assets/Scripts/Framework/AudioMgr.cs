@@ -19,12 +19,10 @@ public class AudioMgr
     {
         get
         {
-            if (_instance == null)
-            {
-                GameObject soundManagerObject = new GameObject("SoundManagerObject");
-                _instance = new AudioMgr(soundManagerObject);
-                Object.DontDestroyOnLoad(soundManagerObject);
-            }
+            if (_instance != null) return _instance;
+            GameObject soundManagerObject = new GameObject("SoundManagerObject");
+            _instance = new AudioMgr(soundManagerObject);
+            Object.DontDestroyOnLoad(soundManagerObject);
 
             return _instance;
         }
