@@ -1,6 +1,5 @@
-using System;
+
 using Cysharp.Threading.Tasks;
-using QTConfig;
 using UI;
 using UI.Panel;
 using UnityEngine;

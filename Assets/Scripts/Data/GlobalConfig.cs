@@ -16,11 +16,17 @@ namespace Data
     public class GlobalConfig : MonoBehaviour
     {
         public static GlobalConfig Instance { get; private set; }
+        [SerializeField] private Sprite[] backGrounds;
         [SerializeField] private DialogList[] dialogLists;
 
         private void Awake()
         {
             Instance = this;
+        }
+        
+        public Sprite GetBackGround(int id)
+        {
+            return backGrounds[id];
         }
 
         public DialogList GetDialogList(int id)

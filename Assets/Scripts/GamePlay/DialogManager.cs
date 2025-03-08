@@ -22,8 +22,8 @@ namespace GamePlay
     public class DialogManager : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     {
         [SerializeField] private bool isStop;
-        private CommandManager _commandManager = new();
-        private RoleManager _roleManager = new();
+        private readonly CommandManager _commandManager = new();
+        private readonly RoleManager _roleManager = new();
         [SerializeField] private int curIndex = 0;
         [SerializeField] private CanvasGroup panel;
         [FormerlySerializedAs("sb")] [SerializeField] private DialogStringBuilder sbMgr;
