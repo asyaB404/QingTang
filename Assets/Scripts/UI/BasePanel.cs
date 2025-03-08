@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections.Generic;
 using TMPro;
+using UI.Panel;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -163,8 +164,10 @@ namespace UI
         /// <param name="oldPanel">之前在顶部的面板（如果存在）。</param>
         public virtual void CallBackWhenHeadPush(IBasePanel oldPanel)
         {
-            oldPanel?.HideAnim();
             ShowAnim();
+            if(this is SettingsPanel) return;
+            if(this is TipPanel) return;
+            oldPanel?.HideAnim();
         }
 
         /// <summary>
@@ -174,6 +177,8 @@ namespace UI
         public virtual void CallBackWhenHeadPop(IBasePanel popPanel)
         {
             popPanel?.HideAnim();
+            if(popPanel is SettingsPanel) return;
+            if(popPanel is TipPanel) return;
             ShowAnim();
         }
 

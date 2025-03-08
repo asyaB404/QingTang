@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f7ed96-b2b7-451c-9ddd-20cc4aa407bb" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TipUI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TipUI/TipPanel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TipUI/TipPanel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/TipPanel.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Dialog/CommandManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Dialog/CommandManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/DialogPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/DialogPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/SettingsPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/SettingsPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TipUI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TipUI/TipPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/TipPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TipUI/TipPanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIConst.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +25,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../Game07/Assets/Scripts/ChatUI/ChatPanel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Framework/MyEventSystem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -100,7 +105,7 @@
       <updated>1741430695364</updated>
       <workItem from="1741430698530" duration="986000" />
       <workItem from="1741432103160" duration="34000" />
-      <workItem from="1741432194368" duration="4368000" />
+      <workItem from="1741432194368" duration="7308000" />
     </task>
     <servers />
   </component>

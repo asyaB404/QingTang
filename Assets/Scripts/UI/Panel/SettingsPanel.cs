@@ -14,7 +14,6 @@ namespace UI.Panel
         public override void Init()
         {
             base.Init();
-            
         }
 
         public override void CallBackWhenHeadPop(IBasePanel popPanel)

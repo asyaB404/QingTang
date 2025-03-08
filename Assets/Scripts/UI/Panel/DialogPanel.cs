@@ -9,6 +9,7 @@
 
 using Data;
 using DG.Tweening;
+using GamePlay;
 using UnityEngine.UI;
 
 namespace UI.Panel
@@ -18,6 +19,11 @@ namespace UI.Panel
         public void SetBackGround()
         {
             GetControl<Image>("BG");
+        }
+
+        public override void OnPressedEsc()
+        {
+            
         }
 
         public override void ShowAnim()

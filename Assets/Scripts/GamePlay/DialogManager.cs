@@ -24,8 +24,10 @@ namespace GamePlay
         [SerializeField] private bool isStop;
         [SerializeField] private float waitTimer;
         public bool IsWaiting => waitTimer > 0;
+        private int _curDialogId = -1;
         private readonly CommandManager _commandManager = new();
         private readonly RoleManager _roleManager = new();
+        private readonly HashSet<int> _finishedDialog = new HashSet<int>();
         [SerializeField] private int curIndex = 0;
         [SerializeField] private CanvasGroup panel;
         [FormerlySerializedAs("sb")] [SerializeField] private DialogStringBuilder sbMgr;
@@ -50,6 +52,7 @@ namespace GamePlay
 
         public void Load(int dialogId)
         {
+            _curDialogId = dialogId;
             panel.DOFade(1f, MyConst.DIALOG_FADE);
             panel.interactable = true;
             dialogList = GlobalConfig.Instance.GetDialogList(dialogId).list;
@@ -80,6 +83,7 @@ namespace GamePlay
 
             if (curIndex >= dialogList.Count)
             {
+                Finish(_curDialogId);
                 Stop();
                 return;
             }
@@ -109,10 +113,29 @@ namespace GamePlay
             }
         }
 
+        public void Finish(int id)
+        {
+            _finishedDialog.Add(id);
+        }
+
         private void SetWait(float duration)
         {
             waitTimer = duration;
         }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            Debug.Log("click");
+            Next();
+        }
+        
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            Debug.Log("down");
+        }
+
+
+        #region Debug
 
         [ContextMenu("test")]
         private void Test()
@@ -126,15 +149,6 @@ namespace GamePlay
             Next();
         }
 
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            Debug.Log("click");
-            Next();
-        }
-        
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            Debug.Log("down");
-        }
+        #endregion
     }
 }
