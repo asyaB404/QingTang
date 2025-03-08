@@ -30,7 +30,10 @@ namespace GamePlay
         private readonly HashSet<int> _finishedDialog = new HashSet<int>();
         [SerializeField] private int curIndex = 0;
         [SerializeField] private CanvasGroup panel;
-        [FormerlySerializedAs("sb")] [SerializeField] private DialogStringBuilder sbMgr;
+
+        [FormerlySerializedAs("sb")] [SerializeField]
+        private DialogStringBuilder sbMgr;
+
         [SerializeField] private TextMeshProUGUI roleName;
         [SerializeField] private List<DialogListInfoClass> dialogList;
         public static DialogManager Instance { get; private set; }
@@ -40,6 +43,7 @@ namespace GamePlay
             Instance = this;
             MyEventSystem.Instance.AddEventListener(CMDNAME.STOP, Stop);
             MyEventSystem.Instance.AddEventListener<float>(CMDNAME.WAIT, SetWait);
+            MyEventSystem.Instance.AddEventListener(CMDNAME.NEXT, Next);
         }
 
         private void Update()
@@ -66,6 +70,7 @@ namespace GamePlay
             waitTimer = 0;
             panel.DOFade(0f, MyConst.DIALOG_FADE);
             panel.interactable = false;
+            curIndex++;
         }
 
         public void ReSet()
@@ -87,7 +92,7 @@ namespace GamePlay
                 Stop();
                 return;
             }
-            
+
             if (isStop)
             {
                 isStop = false;
@@ -99,9 +104,9 @@ namespace GamePlay
             string content = info.dialog;
             _commandManager.CheckCommand(content);
             roleName.text = GlobalConfig.IdToRoleName(info.roleId);
-            
-            if(content.Length <= 0 || content[0] == '#') return; 
-            
+
+            if (content.Length <= 0 || content[0] == '#') return;
+
             if (!sbMgr.IsBuilding)
             {
                 sbMgr.SetText(content);
@@ -128,7 +133,7 @@ namespace GamePlay
             Debug.Log("click");
             Next();
         }
-        
+
         public void OnPointerDown(PointerEventData eventData)
         {
             Debug.Log("down");

@@ -13,7 +13,9 @@ namespace QTConfig
 		public int roleId;
 		public string dialog;
 		public int face;
-		public RoldAnimType animType;
+		public string move;
+		public int sceneId;
+		public string sound;
 
 #if UNITY_EDITOR
 		public void Init(DataRow row)
@@ -22,7 +24,9 @@ namespace QTConfig
 			roleId = int.Parse(row[1].ToString());
 			dialog = row[2].ToString();
 			face = int.Parse(row[3].ToString());
-			animType = (RoldAnimType)System.Enum.Parse(typeof(RoldAnimType), row[4].ToString());
+			move = row[4].ToString();
+			sceneId = int.Parse(row[5].ToString());
+			sound = row[6].ToString();
 		}
 #endif
 	}

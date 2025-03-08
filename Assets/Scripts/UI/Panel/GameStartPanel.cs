@@ -26,16 +26,6 @@ public class GameStartPanel : BasePanel<GameStartPanel>
         videoPlayer.Stop();
     }
 
-    public override void CallBackWhenHeadPop(IBasePanel popPanel)
-    {
-        popPanel?.HideAnim();
-        if (popPanel is SettingsPanel)
-        {
-            return;
-        }
-        ShowAnim();
-    }
-
     private async UniTask PlayVideoAsync()
     {
         Debug.Log("PlayVideoAsync 开始");

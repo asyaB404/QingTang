@@ -10,7 +10,7 @@ namespace Basya
 {
     public class ExcelToolsGUI : EditorWindow
     {
-        private string nameSpace = "TQConfig";
+        private string nameSpace = "QTConfig";
         private string localExcelPath = "Editor/Excel";
         private string localSobjPath = "Scripts/ScriptableObject";
         private string localAssetsPath = "ScriptableObject";
@@ -489,7 +489,7 @@ namespace Basya
                 excelReader.Close();
                 foreach (DataTable table in tableConllection)
                 {
-                    GenerateAsset1(table, Path.GetFileNameWithoutExtension(file.Name));
+                    GenerateAsset1(table, Path.GetFileNameWithoutExtension(nameSpace));
                 }
             }
 

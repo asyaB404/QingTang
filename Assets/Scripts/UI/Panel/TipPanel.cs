@@ -9,6 +9,7 @@
 
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using GamePlay;
 using TMPro;
 using UnityEngine;
 
@@ -22,11 +23,17 @@ namespace UI.Panel
         {
             base.Init();
             rectTransform = GetComponent<RectTransform>();
+            MyEventSystem.Instance.AddEventListener<string>(CMDNAME.TIP, ShowTip);
+        }
+
+        public void ShowTip(string content)
+        {
+            ShowMeAsync(content).Forget();
         }
 
         public async UniTask ShowMeAsync(string content)
         {
-            GetControl<TextMeshPro>("content").text = content;
+            GetControl<TextMeshProUGUI>("content").text = content;
             ShowMe();
             await UniTask.WaitForSeconds(UIConst.TipHide);
             HideMe();
@@ -41,7 +48,7 @@ namespace UI.Panel
         public override void HideAnim()
         {
             rectTransform.DOKill(true);
-            rectTransform.DOAnchorPosY(-rectTransform.sizeDelta.y, UIConst.UIDuration);
+            rectTransform.DOAnchorPosY(rectTransform.sizeDelta.y, UIConst.UIDuration);
         }
 
         [ContextMenu("test")]
