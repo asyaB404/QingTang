@@ -14,11 +14,30 @@ namespace GamePlay
 {
     public class RoleManager
     {
-        private Dictionary<int, Role> _dict = new();
+        private readonly Dictionary<int, Role> _dict = new();
+        private readonly Transform _rolesParent;
 
-
-        public Role GetRole(int id, Vector2 anchored = new Vector2())
+        public RoleManager()
         {
+        }
+
+        public RoleManager(Transform parent)
+        {
+            _rolesParent = parent;
+        }
+
+        public Role GetRole(int id, string anchoredString)
+        {
+            Vector2 anchored = new Vector2(0.5f, 0.5f);
+            if (anchoredString == "L")
+            {
+                anchored.x = 0;
+            }
+            else if (anchoredString == "R")
+            {
+                anchored.x = 1;
+            }
+
             if (_dict.TryGetValue(id, out var role))
             {
                 return role;
@@ -26,6 +45,7 @@ namespace GamePlay
             else
             {
                 var obj = Resources.Load<GameObject>("Prefabs/Role/" + id);
+                obj.transform.SetParent(_rolesParent, false);
                 role = obj.GetComponent<Role>();
                 var rectTransform = (RectTransform)role.transform;
                 rectTransform.anchorMin = anchored;

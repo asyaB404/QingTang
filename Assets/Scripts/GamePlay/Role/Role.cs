@@ -40,6 +40,9 @@ namespace GamePlay
             }
         }
 
+        /// <summary>
+        /// 眨眼
+        /// </summary>
         private async UniTask IdleFaceAnim()
         {
             int i = 0;

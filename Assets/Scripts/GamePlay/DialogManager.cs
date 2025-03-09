@@ -26,7 +26,8 @@ namespace GamePlay
         public bool IsWaiting => waitTimer > 0;
         private int _curDialogId = -1;
         private readonly CommandManager _commandManager = new();
-        private readonly RoleManager _roleManager = new();
+        [SerializeField] private Transform rolesParent;
+        private RoleManager _roleManager;
         private readonly HashSet<int> _finishedDialog = new();
         public HashSet<int> FinishedDialog => _finishedDialog;
         [SerializeField] private int curIndex = 0;
@@ -42,6 +43,7 @@ namespace GamePlay
         private void Awake()
         {
             Instance = this;
+            _roleManager = new(rolesParent);
             MyEventSystem.Instance.AddEventListener(CMDNAME.STOP, Stop);
             MyEventSystem.Instance.AddEventListener<float>(CMDNAME.WAIT, SetWait);
             MyEventSystem.Instance.AddEventListener(CMDNAME.NEXT, Next);
@@ -105,7 +107,20 @@ namespace GamePlay
 
             var info = dialogList[curIndex];
             string content = info.dialog;
-            roleName.text = _roleManager.GetRole(info.roleId).roleName;
+            var infoMove = info.move;
+            var split = infoMove.Split(',');
+            Role role;
+            if (split.Length > 0)
+            {
+                role = _roleManager.GetRole(info.roleId, split[0]);
+                role.MoveX(float.Parse(split[1]));
+            }
+            else
+            {
+                role = _roleManager.GetRole(info.roleId, "L");
+            }
+            roleName.text = role.roleName;
+            role.SetFace(info.face);
             _commandManager.CheckCommand(content);
 
             if (content.Length <= 0 || content[0] == '#') return;
