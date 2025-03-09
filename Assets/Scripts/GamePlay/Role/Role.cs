@@ -8,6 +8,8 @@
 // // ********************************************************************************************
 
 using Cysharp.Threading.Tasks;
+using Data;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +17,8 @@ namespace GamePlay
 {
     public class Role : MonoBehaviour
     {
-        [SerializeField] private Image roleImage;
+        public string roleName;
+        public Image roleImage;
         [SerializeField] private int curFace;
         [SerializeField] private Sprite[] idleSprites;
         [SerializeField] private Sprite[] faceSprites;
@@ -49,12 +52,20 @@ namespace GamePlay
             }
         }
 
-        public void SetFace(int faceId)
+        public Role SetFace(int faceId)
         {
-            roleImage.sprite = faceSprites[faceId];
             curFace = faceId;
+            faceId -= 1;
+            if (faceId >= faceSprites.Length || faceId < 0) return this;
+            roleImage.sprite = faceSprites[faceId - 1];
+            return this;
         }
-        
-        
+
+        public Role MoveX(float localX)
+        {
+            var rectTransform = (RectTransform)transform;
+            rectTransform.DOAnchorPosX(localX, MyConst.ROLE_MOVE);
+            return this;
+        }
     }
 }
