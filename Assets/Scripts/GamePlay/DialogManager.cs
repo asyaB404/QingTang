@@ -57,11 +57,18 @@ namespace GamePlay
             }
         }
 
+
+        public void SetDialogUI(bool isActive)
+        {
+            panel.DOFade(isActive ? 1f : 0f, MyConst.DIALOG_FADE);
+            panel.blocksRaycasts = isActive;
+            panel.interactable = isActive;
+        }
+
         public void Load(int dialogId)
         {
             _curDialogId = dialogId;
-            panel.DOFade(1f, MyConst.DIALOG_FADE);
-            panel.interactable = true;
+            SetDialogUI(true);
             dialogList = GlobalConfig.Instance.GetDialogList(dialogId).list;
             curIndex = 0;
             Next();
@@ -71,8 +78,7 @@ namespace GamePlay
         {
             isStop = true;
             waitTimer = 0;
-            panel.DOFade(0f, MyConst.DIALOG_FADE);
-            panel.interactable = false;
+            SetDialogUI(false);
             curIndex++;
         }
 
@@ -101,26 +107,34 @@ namespace GamePlay
             if (isStop)
             {
                 isStop = false;
-                panel.DOFade(1f, MyConst.DIALOG_FADE);
-                panel.interactable = true;
+                SetDialogUI(true);
             }
 
             var info = dialogList[curIndex];
             string content = info.dialog;
             var infoMove = info.move;
             var split = infoMove.Split(',');
-            Role role;
-            if (split.Length > 0)
+            if (info.roleId != 0)
             {
-                role = _roleManager.GetRole(info.roleId, split[0]);
-                role.MoveX(float.Parse(split[1]));
+                Role role;
+                if (split.Length >= 2)
+                {
+                    role = _roleManager.GetRole(info.roleId, split[0]);
+                    role.MoveX(float.Parse(split[1]));
+                }
+                else
+                {
+                    role = _roleManager.GetRole(info.roleId, "L");
+                }
+
+                roleName.text = role.roleName;
+                role.SetFace(info.face);
             }
             else
             {
-                role = _roleManager.GetRole(info.roleId, "L");
+                roleName.text = PrefMgr.GetPlayerName();
             }
-            roleName.text = role.roleName;
-            role.SetFace(info.face);
+
             _commandManager.CheckCommand(content);
 
             if (content.Length <= 0 || content[0] == '#') return;
@@ -139,6 +153,7 @@ namespace GamePlay
         public void Finish(int id)
         {
             _finishedDialog.Add(id);
+            MyEventSystem.Instance.EventTrigger(CMDNAME.CLEAR);
         }
 
         private void SetWait(float duration)

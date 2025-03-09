@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f7ed96-b2b7-451c-9ddd-20cc4aa407bb" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/PrefMgr.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/PrefMgr.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/Excel/DialogList.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Excel/DialogList.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/Office.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/Office.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/no.15 (2).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/no.15 (2).jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/no.15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/no.15.jpg.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Dialog/DialogStringBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Dialog/DialogStringBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/Role.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/Role.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/RoleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/RoleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/DialogPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/DialogPanel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +114,7 @@
       <workItem from="1741430698530" duration="986000" />
       <workItem from="1741432103160" duration="34000" />
       <workItem from="1741432194368" duration="11317000" />
-      <workItem from="1741496293510" duration="4622000" />
+      <workItem from="1741496293510" duration="7228000" />
     </task>
     <servers />
   </component>

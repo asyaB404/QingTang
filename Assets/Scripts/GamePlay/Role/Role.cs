@@ -67,6 +67,7 @@ namespace GamePlay
         public Role MoveX(float localX)
         {
             var rectTransform = (RectTransform)transform;
+            localX *= 108;
             rectTransform.DOAnchorPosX(localX, MyConst.ROLE_MOVE);
             return this;
         }

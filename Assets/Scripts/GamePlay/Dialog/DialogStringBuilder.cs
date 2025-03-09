@@ -9,6 +9,7 @@
 
 using System.Text;
 using Cysharp.Threading.Tasks;
+using Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -29,7 +30,7 @@ namespace GamePlay
         {
             _curContent = content;
             _stringBuilder.Clear();
-            content = content.Replace("{playerName}", "basya");
+            content = content.Replace("{playerName}", PrefMgr.GetPlayerName());
             BuildStringAsync(content).Forget();
         }
 

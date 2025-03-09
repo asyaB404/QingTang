@@ -29,13 +29,13 @@ namespace UI.Panel
         public override void ShowAnim()
         {
             CanvasGroupInstance.interactable = true;
-            CanvasGroupInstance.DOFade(1f, MyConst.PANEL_FADE);
+            gameObject.SetActive(true);
         }
 
         public override void HideAnim()
         {
             CanvasGroupInstance.interactable = false;
-            CanvasGroupInstance.DOFade(0f, MyConst.PANEL_FADE);
+            gameObject.SetActive(false);
         }
     }
 }

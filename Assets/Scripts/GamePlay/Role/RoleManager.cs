@@ -8,6 +8,7 @@
 // // ********************************************************************************************
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace GamePlay
@@ -17,13 +18,19 @@ namespace GamePlay
         private readonly Dictionary<int, Role> _dict = new();
         private readonly Transform _rolesParent;
 
-        public RoleManager()
-        {
-        }
-
         public RoleManager(Transform parent)
         {
             _rolesParent = parent;
+            MyEventSystem.Instance.AddEventListener(CMDNAME.CLEAR,Clear);
+        }
+
+        private void Clear()
+        {
+            foreach (var role in _dict.Values.ToList())
+            {
+                Object.Destroy(role.gameObject);
+            }
+            _dict.Clear();
         }
 
         public Role GetRole(int id, string anchoredString)
@@ -44,8 +51,8 @@ namespace GamePlay
             }
             else
             {
-                var obj = Resources.Load<GameObject>("Prefabs/Role/" + id);
-                obj.transform.SetParent(_rolesParent, false);
+                var objRes = Resources.Load<GameObject>("Prefabs/Roles/" + id);
+                var obj = Object.Instantiate(objRes, _rolesParent, false);
                 role = obj.GetComponent<Role>();
                 var rectTransform = (RectTransform)role.transform;
                 rectTransform.anchorMin = anchored;
