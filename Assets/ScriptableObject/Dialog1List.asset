@@ -211,7 +211,7 @@ MonoBehaviour:
     sound: 
   - id: 28
     roleId: 0
-    dialog: '#event 1'
+    dialog: '#event11'
     face: 0
     move: 
     sceneId: 1
@@ -281,7 +281,7 @@ MonoBehaviour:
     sound: 
   - id: 38
     roleId: 0
-    dialog: '#event 2'
+    dialog: '#event12'
     face: 0
     move: 
     sceneId: 1
@@ -302,7 +302,7 @@ MonoBehaviour:
     sound: 
   - id: 41
     roleId: 0
-    dialog: '#event 3'
+    dialog: '#event13'
     face: 0
     move: 
     sceneId: 1
@@ -316,7 +316,7 @@ MonoBehaviour:
     sound: 
   - id: 43
     roleId: 3
-    dialog: "\u5C11\u63BA\u548C\u6211\u7684\u4E8B\uFF01\u522B\u5728\u8FD9\u591A\u7BA1\u522B\u4EBA\u7684\u5BB6\u4E8B\uFF01\u6211\u770B\u4F60\u662F\u5355\u8EAB\u4E45\u4E86\u773C\u5DF4\u5DF4\u522B\u4EBA\u8001\u5A46\uFF01\uFF08"
+    dialog: "\u5C11\u63BA\u548C\u6211\u7684\u4E8B\uFF01\u522B\u5728\u8FD9\u591A\u7BA1\u522B\u4EBA\u7684\u5BB6\u4E8B\uFF01\u6211\u770B\u4F60\u662F\u5355\u8EAB\u4E45\u4E86\u773C\u5DF4\u5DF4\u522B\u4EBA\u8001\u5A46\uFF01"
     face: 1
     move: 
     sceneId: 1

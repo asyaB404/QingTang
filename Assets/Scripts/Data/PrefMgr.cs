@@ -17,5 +17,10 @@ namespace Data
         {
             return PlayerPrefs.GetString("PlayerName", "我");
         }
+        
+        public static void SetPlayerName(string name)
+        {
+            PlayerPrefs.SetString("PlayerName", name);
+        }
     }
 }

@@ -59,6 +59,11 @@ namespace GamePlay
                 curIndex++;
                 Next();
             });
+            MyEventSystem.Instance.AddEventListener<int>(CMDNAME.EVENT, (int id) =>
+            {
+                curIndex++;
+                Next();
+            });
         }
 
         private void Update()
@@ -80,6 +85,7 @@ namespace GamePlay
             {
                 DialogPanel.Instance.HideMe();
             }
+
             panel.DOFade(isActive ? 1f : 0f, MyConst.DIALOG_FADE);
             panel.blocksRaycasts = isActive;
             panel.interactable = isActive;
@@ -210,7 +216,7 @@ namespace GamePlay
         {
             Next();
         }
-        
+
         [ContextMenu("test2")]
         private void Test2()
         {

@@ -165,6 +165,7 @@ namespace UI
         public virtual void CallBackWhenHeadPush(IBasePanel oldPanel)
         {
             ShowAnim();
+            if(this is InputFieldPanel) return;
             if(this is SettingsPanel) return;
             if(this is TipPanel) return;
             oldPanel?.HideAnim();
@@ -177,6 +178,7 @@ namespace UI
         public virtual void CallBackWhenHeadPop(IBasePanel popPanel)
         {
             popPanel?.HideAnim();
+            if(popPanel is InputFieldPanel) return;
             if(popPanel is SettingsPanel) return;
             if(popPanel is TipPanel) return;
             ShowAnim();

@@ -5,7 +5,7 @@ namespace UI
     /// </summary>
     public static class UIConst
     {
-        public const float UIDuration = 0.25f;
+        public const float UIDuration = 0.33f;
         public const float TipHide = 5f;
 
     }

@@ -27,23 +27,29 @@ namespace GamePlay
             {
                 MyEventSystem.Instance.EventTrigger(CMDNAME.STOP);
             }
+
             if (content.Contains(CMDNAME.WAIT))
             {
                 float wait = float.Parse(content.Replace(CMDNAME.WAIT, ""));
                 MyEventSystem.Instance.EventTrigger<float>(CMDNAME.WAIT, wait);
             }
+
             if (content.Contains(CMDNAME.NEXT))
             {
                 MyEventSystem.Instance.EventTrigger(CMDNAME.NEXT);
             }
+
             if (content.Contains(CMDNAME.EVENT))
             {
-                MyEventSystem.Instance.EventTrigger(content);
+                content = content.Replace(CMDNAME.EVENT, "");
+                MyEventSystem.Instance.EventTrigger<int>(CMDNAME.EVENT, int.Parse(content));
             }
+
             if (content.Contains(CMDNAME.CLEAR))
             {
                 MyEventSystem.Instance.EventTrigger(CMDNAME.CLEAR);
             }
+
             if (content.Contains(CMDNAME.TIP))
             {
                 string tipContent = content.Replace(CMDNAME.TIP, "").Trim();

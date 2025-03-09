@@ -19,15 +19,26 @@ namespace UI.Panel
     {
         [SerializeField] private Button[] btns;
         [SerializeField] private Image[] icons;
+        [SerializeField]private bool event1 = false;
 
         public override void Init()
         {
             base.Init();
+            MyEventSystem.Instance.AddEventListener<int>(CMDNAME.EVENT, (eId) =>
+            {
+                if (eId == 1)
+                {
+                    btns[3].transform.GetChild(0).gameObject.SetActive(true);
+                    event1 = true;
+                }
+            });
             btns[3].onClick.AddListener(() =>
             {
-                if (DialogManager.Instance.CurDialogId == 0 && DialogManager.Instance.CurDialogIndex == 2)
+                if (event1)
                 {
+                    btns[3].transform.GetChild(0).gameObject.SetActive(false);
                     DialogManager.Instance.UnStop();
+                    event1 = false;
                 }
             });
         }

@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f7ed96-b2b7-451c-9ddd-20cc4aa407bb" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/InputFieldPanel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/InputFieldPanel.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/MyConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/MyConst.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Excel/DialogList.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Excel/DialogList.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/清汤调解员ui图标/UI Notebook (3).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/清汤调解员ui图标/UI Notebook (3).png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Dialog0List.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Dialog0List.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Dialog1List.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Dialog1List.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/PrefMgr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/PrefMgr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Dialog/CommandManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Dialog/CommandManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/Role.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/Role.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/RoleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/RoleManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/DialogPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/DialogPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/SettingsPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/SettingsPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIConst.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +114,7 @@
       <workItem from="1741430698530" duration="986000" />
       <workItem from="1741432103160" duration="34000" />
       <workItem from="1741432194368" duration="11317000" />
-      <workItem from="1741496293510" duration="10732000" />
+      <workItem from="1741496293510" duration="15231000" />
     </task>
     <servers />
   </component>
@@ -137,6 +146,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs</url>
+          <line>57</line>
+          <properties documentPath="D:\unity_project\Hello\QingTang\Assets\Scripts\GamePlay\DialogManager.cs" containingFunctionPresentation="lambda 表达式内 方法 'Awake'">
+            <startOffsets>
+              <option value="2339" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2340" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

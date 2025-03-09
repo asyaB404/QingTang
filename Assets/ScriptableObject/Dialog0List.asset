@@ -17,7 +17,7 @@ MonoBehaviour:
     roleId: 1
     dialog: "\u5C31\u662F\u4F60\uFF0C\u4F60\u5C31\u662F\u65B0\u6765\u7684\u8C03\u89E3\u5458\uFF1F"
     face: 3
-    move: L,5
+    move: L,0
     sceneId: 0
     sound: 
   - id: 1
@@ -28,69 +28,83 @@ MonoBehaviour:
     sceneId: 0
     sound: 
   - id: 2
+    roleId: 0
+    dialog: '#event1'
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 3
     roleId: 1
     dialog: '#stop'
     face: 0
     move: L,-5
     sceneId: 0
     sound: 
-  - id: 3
+  - id: 4
     roleId: 2
     dialog: "\u201C\u5582\uFF0C\u5218\u4E3B\u4EFB\u4EC0\u4E48\u4E8B\u963F\uFF1F\u201D"
     face: 0
-    move: L,5
+    move: L,0
     sceneId: 0
     sound: 
-  - id: 4
+  - id: 5
     roleId: 2
     dialog: "\u201C\u4E0D\u662F\u5218\u4E3B\u4EFB\uFF0C\u90A3\u4F60\u662F\uFF1F\u201D"
     face: 0
     move: 
     sceneId: 0
     sound: 
-  - id: 5
+  - id: 6
+    roleId: 0
+    dialog: '#event2'
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 7
     roleId: 0
     dialog: '#stop'
     face: 0
     move: 
     sceneId: 0
     sound: 
-  - id: 6
+  - id: 8
     roleId: 2
     dialog: "\u201C{playerName}?\u201D"
     face: 0
     move: 
     sceneId: 0
     sound: 
-  - id: 7
+  - id: 9
     roleId: 2
     dialog: "\u201C\u54E6\uFF0C\u65B0\u6765\u7684\u8C03\u89E3\u5458\u963F\uFF0C\u60F3\u4E86\u89E3\u6628\u665A\u4E0A\u5C0F\u5B66\u95E8\u88AB\u649E\u7684\u4E8B\u60C5?\u201D"
     face: 0
     move: 
     sceneId: 0
     sound: 
-  - id: 8
+  - id: 10
     roleId: 2
     dialog: "\u201C\u522B\u8BF4\u662F\u6211\u7ED9\u4F60\u8BB2\u7684\uFF0C\u662F\u738B\u5927\u798F\u5E72\u7684\uFF0C\u6628\u665A\u4E0A\u6211\u4EEC\u4E00\u8D77\u559D\u4E86\u9152\uFF0C\u4FDD\u51C6\u662F\u4ED6\uFF01\u201D"
     face: 0
     move: 
     sceneId: 0
     sound: 
-  - id: 9
+  - id: 11
     roleId: 2
     dialog: '#next '
     face: 0
     move: L,-5
     sceneId: 0
     sound: 
-  - id: 10
+  - id: 12
     roleId: 0
     dialog: "#tip \u83B7\u5F97\u7EBF\u7D22\uFF0C\u738B\u5927\u798F\uFF1F\u649E\u574F\u4E86\u5C0F\u5B66\u6821\u95E8\uFF1F"
     face: 0
     move: 
     sceneId: 0
     sound: 
-  - id: 11
+  - id: 13
     roleId: 1
     dialog: "\u201C\u8D70\uFF0C\u53BB\u6751\u91CC\u770B\u770B\u6709\u6CA1\u6709\u5176\u4ED6\u4EBA\u77E5\u9053\u8BE6\u60C5\u5427\uFF1F\u201D"
     face: 0
