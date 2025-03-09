@@ -24,7 +24,7 @@ namespace GamePlay
         [SerializeField] private Sprite[] faceSprites;
         [SerializeField] private float doAnimDuration = 5f;
         [SerializeField] private float faceDuration = 0.5f;
-        private float _animTimer;
+        private float _animTimer = 4f;
 
 
         private void Update()
@@ -61,6 +61,40 @@ namespace GamePlay
             faceId -= 1;
             if (faceId >= faceSprites.Length || faceId < 0) return this;
             roleImage.sprite = faceSprites[faceId - 1];
+            return this;
+        }
+
+        public Role SetAnchor(string anchoredString)
+        {
+            if (string.IsNullOrEmpty(anchoredString)) return this;
+            Vector2 anchored = new Vector2(0.5f, 0.5f);
+            if (anchoredString == "L")
+            {
+                anchored.x = 0;
+            }
+            else if (anchoredString == "R")
+            {
+                anchored.x = 1;
+            }
+            var rectTransform = (RectTransform)transform;
+            rectTransform.anchorMin = anchored;
+            rectTransform.anchorMax = anchored;
+            rectTransform.pivot = anchored;
+            if (anchored.x < 0.5f)
+            {
+                rectTransform.anchoredPosition =
+                    new Vector2(-rectTransform.sizeDelta.x, rectTransform.anchoredPosition.y);
+            }
+            else if (anchored.x > 0.5f)
+            {
+                rectTransform.anchoredPosition =
+                    new Vector2(rectTransform.sizeDelta.x, rectTransform.anchoredPosition.y);
+            }
+            else
+            {
+                rectTransform.anchoredPosition = Vector2.zero;
+            }
+
             return this;
         }
 

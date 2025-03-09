@@ -13,6 +13,7 @@ using Data;
 using DG.Tweening;
 using QTConfig;
 using TMPro;
+using UI.Panel;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
@@ -24,13 +25,15 @@ namespace GamePlay
         [SerializeField] private bool isStop;
         [SerializeField] private float waitTimer;
         public bool IsWaiting => waitTimer > 0;
-        private int _curDialogId = -1;
+        public int CurDialogId { get; private set; } = -1;
+
         private readonly CommandManager _commandManager = new();
         [SerializeField] private Transform rolesParent;
         private RoleManager _roleManager;
         private readonly HashSet<int> _finishedDialog = new();
         public HashSet<int> FinishedDialog => _finishedDialog;
         [SerializeField] private int curIndex = 0;
+        public int CurDialogIndex => curIndex;
         [SerializeField] private CanvasGroup panel;
 
         [FormerlySerializedAs("sb")] [SerializeField]
@@ -46,7 +49,16 @@ namespace GamePlay
             _roleManager = new(rolesParent);
             MyEventSystem.Instance.AddEventListener(CMDNAME.STOP, Stop);
             MyEventSystem.Instance.AddEventListener<float>(CMDNAME.WAIT, SetWait);
-            MyEventSystem.Instance.AddEventListener(CMDNAME.NEXT, Next);
+            MyEventSystem.Instance.AddEventListener<string>(CMDNAME.TIP, (string _) =>
+            {
+                curIndex++;
+                Next();
+            });
+            MyEventSystem.Instance.AddEventListener(CMDNAME.NEXT, () =>
+            {
+                curIndex++;
+                Next();
+            });
         }
 
         private void Update()
@@ -60,6 +72,14 @@ namespace GamePlay
 
         public void SetDialogUI(bool isActive)
         {
+            if (isActive)
+            {
+                DialogPanel.Instance.ShowMe();
+            }
+            else
+            {
+                DialogPanel.Instance.HideMe();
+            }
             panel.DOFade(isActive ? 1f : 0f, MyConst.DIALOG_FADE);
             panel.blocksRaycasts = isActive;
             panel.interactable = isActive;
@@ -67,7 +87,7 @@ namespace GamePlay
 
         public void Load(int dialogId)
         {
-            _curDialogId = dialogId;
+            CurDialogId = dialogId;
             SetDialogUI(true);
             dialogList = GlobalConfig.Instance.GetDialogList(dialogId).list;
             curIndex = 0;
@@ -79,13 +99,22 @@ namespace GamePlay
             isStop = true;
             waitTimer = 0;
             SetDialogUI(false);
-            curIndex++;
         }
 
         public void ReSet()
         {
-            _curDialogId = -1;
+            CurDialogId = -1;
+            curIndex = 0;
             sbMgr.ReSet();
+        }
+
+        public void UnStop()
+        {
+            if (!isStop) return;
+            isStop = false;
+            SetDialogUI(true);
+            curIndex++;
+            Next();
         }
 
         public void Next()
@@ -98,19 +127,14 @@ namespace GamePlay
 
             if (curIndex >= dialogList.Count)
             {
-                Finish(_curDialogId);
+                Finish(CurDialogId);
                 ReSet();
                 Stop();
                 return;
             }
 
-            if (isStop)
-            {
-                isStop = false;
-                SetDialogUI(true);
-            }
-
             var info = dialogList[curIndex];
+            DialogPanel.Instance.SetBackGround(info.sceneId);
             string content = info.dialog;
             var infoMove = info.move;
             var split = infoMove.Split(',');
@@ -124,7 +148,7 @@ namespace GamePlay
                 }
                 else
                 {
-                    role = _roleManager.GetRole(info.roleId, "L");
+                    role = _roleManager.GetRole(info.roleId);
                 }
 
                 roleName.text = role.roleName;
@@ -185,6 +209,12 @@ namespace GamePlay
         private void Test1()
         {
             Next();
+        }
+        
+        [ContextMenu("test2")]
+        private void Test2()
+        {
+            UnStop();
         }
 
         #endregion

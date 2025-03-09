@@ -9,33 +9,35 @@
 
 using Data;
 using DG.Tweening;
-using GamePlay;
 using UnityEngine.UI;
 
 namespace UI.Panel
 {
     public class DialogPanel : BasePanel<DialogPanel>
     {
-        public void SetBackGround()
+        public void SetBackGround(int sceneId)
         {
-            GetControl<Image>("BG");
+            GetControl<Image>("BG").sprite = GlobalConfig.Instance.GetBackGround(sceneId);
         }
 
         public override void OnPressedEsc()
         {
-            
         }
 
         public override void ShowAnim()
         {
-            CanvasGroupInstance.interactable = true;
             gameObject.SetActive(true);
+            CanvasGroupInstance.interactable = true;
+            CanvasGroupInstance.DOFade(1f, UIConst.UIDuration);
         }
 
         public override void HideAnim()
         {
             CanvasGroupInstance.interactable = false;
-            gameObject.SetActive(false);
+            CanvasGroupInstance.DOFade(0f, UIConst.UIDuration).OnComplete(() =>
+            {
+                gameObject.SetActive(false);
+            });
         }
     }
 }
