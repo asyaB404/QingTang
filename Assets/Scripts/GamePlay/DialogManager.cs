@@ -105,7 +105,7 @@ namespace GamePlay
 
             var info = dialogList[curIndex];
             string content = info.dialog;
-            roleName.text = _roleManager.CreateRole().roleName;
+            roleName.text = _roleManager.GetRole(info.roleId).roleName;
             _commandManager.CheckCommand(content);
 
             if (content.Length <= 0 || content[0] == '#') return;
