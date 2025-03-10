@@ -5,22 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f7ed96-b2b7-451c-9ddd-20cc4aa407bb" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/InputFieldPanel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/InputFieldPanel.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/Excel/DialogList.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Excel/DialogList.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Res/清汤调解员ui图标/UI Notebook (3).png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/清汤调解员ui图标/UI Notebook (3).png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/~$流程脚本.doc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/~$流程脚本.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Roles/2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Roles/2.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Dialog0List.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Dialog0List.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Dialog1List.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Dialog1List.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/PrefMgr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/PrefMgr.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Dialog/CommandManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Dialog/CommandManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/SettingsPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/SettingsPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIConst.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/Role.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/Role.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/RoleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/RoleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/TipPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/TipPanel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,10 +76,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="附加到 Unity 编辑器" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19384">
+    <configuration name="附加到 Unity 编辑器" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="19384" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -115,6 +109,7 @@
       <workItem from="1741432103160" duration="34000" />
       <workItem from="1741432194368" duration="11317000" />
       <workItem from="1741496293510" duration="15231000" />
+      <workItem from="1741575721665" duration="1798000" />
     </task>
     <servers />
   </component>

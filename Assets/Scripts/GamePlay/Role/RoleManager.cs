@@ -38,7 +38,7 @@ namespace GamePlay
         {
             if (_dict.TryGetValue(id, out var role))
             {
-                return role.SetAnchor(anchoredString);
+                return role.SetAnchor(anchoredString,true);
             }
 
             var objRes = Resources.Load<GameObject>("Prefabs/Roles/" + id);

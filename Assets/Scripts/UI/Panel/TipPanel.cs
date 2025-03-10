@@ -42,12 +42,14 @@ namespace UI.Panel
         public override void ShowAnim()
         {
             rectTransform.DOKill(true);
-            rectTransform.DOAnchorPosY(0, UIConst.UIDuration);
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.sizeDelta.y);
+            rectTransform.DOAnchorPosY(0, UIConst.UIDuration * 2f);
         }
 
         public override void HideAnim()
         {
             rectTransform.DOKill(true);
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, 0);
             rectTransform.DOAnchorPosY(rectTransform.sizeDelta.y, UIConst.UIDuration);
         }
 

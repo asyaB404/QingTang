@@ -47,7 +47,7 @@ namespace GamePlay
         {
             int i = 0;
             float d = faceDuration / idleSprites.Length;
-            while (curFace == 0 && i < idleSprites.Length)
+            while (curFace == 0 && i < idleSprites.Length && roleImage != null)
             {
                 roleImage.sprite = idleSprites[i];
                 i++;
@@ -64,7 +64,7 @@ namespace GamePlay
             return this;
         }
 
-        public Role SetAnchor(string anchoredString)
+        public Role SetAnchor(string anchoredString, bool isInit = false)
         {
             if (string.IsNullOrEmpty(anchoredString)) return this;
             Vector2 anchored = new Vector2(0.5f, 0.5f);
@@ -76,33 +76,45 @@ namespace GamePlay
             {
                 anchored.x = 1;
             }
+
             var rectTransform = (RectTransform)transform;
             rectTransform.anchorMin = anchored;
             rectTransform.anchorMax = anchored;
             rectTransform.pivot = anchored;
-            if (anchored.x < 0.5f)
+            if (isInit)
             {
-                rectTransform.anchoredPosition =
-                    new Vector2(-rectTransform.sizeDelta.x, rectTransform.anchoredPosition.y);
-            }
-            else if (anchored.x > 0.5f)
-            {
-                rectTransform.anchoredPosition =
-                    new Vector2(rectTransform.sizeDelta.x, rectTransform.anchoredPosition.y);
-            }
-            else
-            {
-                rectTransform.anchoredPosition = Vector2.zero;
+                if (anchored.x < 0.5f)
+                {
+                    rectTransform.anchoredPosition =
+                        new Vector2(-rectTransform.sizeDelta.x, rectTransform.anchoredPosition.y);
+                }
+                else if (anchored.x > 0.5f)
+                {
+                    rectTransform.anchoredPosition =
+                        new Vector2(rectTransform.sizeDelta.x, rectTransform.anchoredPosition.y);
+                }
+                else
+                {
+                    rectTransform.anchoredPosition = Vector2.zero;
+                }
             }
 
             return this;
         }
 
-        public Role MoveX(float localX)
+        public Role Move(string type, float amount)
         {
             var rectTransform = (RectTransform)transform;
-            localX *= 108;
-            rectTransform.DOAnchorPosX(localX, MyConst.ROLE_MOVE);
+            if (type == "L" || type == "R")
+            {
+                amount *= 108;
+                rectTransform.DOAnchorPosX(amount, MyConst.ROLE_MOVE);
+            }
+            else if (type == "S")
+            {
+                rectTransform.DOScale(amount, MyConst.ROLE_MOVE / 2f);
+            }
+
             return this;
         }
     }

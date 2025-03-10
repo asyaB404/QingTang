@@ -125,6 +125,9 @@ namespace GamePlay
 
         public void Next()
         {
+            if (isStop)
+                return;
+            
             if (IsWaiting)
             {
                 SetWait(0);
@@ -150,7 +153,7 @@ namespace GamePlay
                 if (split.Length >= 2)
                 {
                     role = _roleManager.GetRole(info.roleId, split[0]);
-                    role.MoveX(float.Parse(split[1]));
+                    role.Move(split[0],float.Parse(split[1]));
                 }
                 else
                 {

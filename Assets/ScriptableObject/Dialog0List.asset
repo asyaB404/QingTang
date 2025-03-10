@@ -106,8 +106,8 @@ MonoBehaviour:
     sound: 
   - id: 13
     roleId: 1
-    dialog: "\u201C\u8D70\uFF0C\u53BB\u6751\u91CC\u770B\u770B\u6709\u6CA1\u6709\u5176\u4ED6\u4EBA\u77E5\u9053\u8BE6\u60C5\u5427\uFF1F\u201D"
+    dialog: "\u8D70\uFF0C\u53BB\u6751\u91CC\u770B\u770B\u6709\u6CA1\u6709\u5176\u4ED6\u4EBA\u77E5\u9053\u8BE6\u60C5\u5427\uFF1F"
     face: 0
-    move: 
+    move: L,0
     sceneId: 0
     sound: 
