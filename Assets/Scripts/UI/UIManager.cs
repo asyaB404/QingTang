@@ -7,13 +7,7 @@ namespace UI
 {
     public class UIManager : MonoBehaviour
     {
-        public HashSet<Type> ExcludedPanels = new HashSet<Type>
-        {
-            typeof(InputFieldPanel),
-            typeof(SettingsPanel),
-            typeof(TipPanel),
-            typeof(MessagePanel)
-        };
+        public HashSet<Type> ExcludedPanels = new();
 
         private readonly Stack<IBasePanel> _panelStack = new();
         public IReadOnlyCollection<IBasePanel> Panels => _panelStack;
@@ -22,6 +16,7 @@ namespace UI
         private void Start()
         {
             GameStartPanel.Instance.ShowMe();
+            MainPanel.Instance.ShowMe();
         }
 
         /// <summary>
@@ -64,6 +59,7 @@ namespace UI
                 Debug.LogError(panelType.ToString() + "不是一个IBasePanel");
                 return;
             }
+
             ExcludedPanels.Add(panelType);
         }
 

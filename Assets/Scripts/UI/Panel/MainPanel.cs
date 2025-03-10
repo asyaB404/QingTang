@@ -7,7 +7,6 @@
 // //   (___)___)                         @Copyright  Copyright (c) 2025, Basya
 // // ********************************************************************************************
 
-using Data;
 using DG.Tweening;
 using GamePlay;
 using UnityEngine;
@@ -19,7 +18,7 @@ namespace UI.Panel
     {
         [SerializeField] private Button[] btns;
         [SerializeField] private Image[] icons;
-        [SerializeField]private bool event1 = false;
+        [SerializeField] private bool event1 = false;
 
         public override void Init()
         {
@@ -53,7 +52,6 @@ namespace UI.Panel
 
         public override void OnPressedEsc()
         {
-            
         }
 
         public override void ShowAnim()
@@ -66,10 +64,7 @@ namespace UI.Panel
         public override void HideAnim()
         {
             CanvasGroupInstance.interactable = false;
-            CanvasGroupInstance.DOFade(0f, UIConst.UIDuration).OnComplete(() =>
-            {
-                gameObject.SetActive(false);
-            });
+            CanvasGroupInstance.DOFade(0f, UIConst.UIDuration).OnComplete(() => { gameObject.SetActive(false); });
         }
     }
 }

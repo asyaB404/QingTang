@@ -11,7 +11,7 @@ using DG.Tweening;
 
 namespace UI.Panel
 {
-    public class MapPanel:BasePanel<MainPanel>
+    public class MapPanel:BasePanel<MapPanel>
     {
         public override void ShowAnim()
         {

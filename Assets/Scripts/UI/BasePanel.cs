@@ -95,6 +95,12 @@ namespace UI
         {
             //单例模式
             Instance = this as T1;
+            if (Instance == null)
+            {
+                Debug.LogError("单例模式失败,是不是泛型基类设置错了？");
+                return;
+            }
+
             if (!openFindControl) return;
             _controlDic = new Dictionary<string, List<UIBehaviour>>();
             FindChildrenControl<Button>();
@@ -144,13 +150,14 @@ namespace UI
                 UIManager.Instance.PopPanel();
                 IsInStack = false;
             }
+
             OnUIClose();
         }
 
         public virtual void OnUILoadFinish()
         {
         }
-        
+
         public virtual void OnUIClose()
         {
         }
