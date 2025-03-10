@@ -22,6 +22,7 @@ namespace UI.Panel
         public override void Init()
         {
             base.Init();
+            UIManager.Instance.AddExcludedPanels(GetType());
             rectTransform = GetComponent<RectTransform>();
             MyEventSystem.Instance.AddEventListener<string>(CMDNAME.TIP, ShowTip);
         }

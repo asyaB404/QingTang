@@ -22,6 +22,7 @@ namespace UI.Panel
         public override void Init()
         {
             base.Init();
+            UIManager.Instance.AddExcludedPanels(GetType());
             MyEventSystem.Instance.AddEventListener<int>(CMDNAME.EVENT, (int eId) =>
             {
                 if (eId == 2)
@@ -37,13 +38,15 @@ namespace UI.Panel
         private void Confirm(string content)
         {
             HideMe();
+            if (string.IsNullOrEmpty(content))
+                content = "王小明";
             PrefMgr.SetPlayerName(content);
             DialogManager.Instance.UnStop();
         }
 
         public override void OnPressedEsc()
         {
-            Confirm("王小明");
+            Confirm(inputField.text);
         }
 
         public override void ShowAnim()

@@ -121,6 +121,7 @@ namespace UI
             //设置为最后一个子物体，防止被其他已经打开的面板遮挡
             gameObject.transform.SetAsLastSibling();
             IsInStack = true;
+            OnUILoadFinish();
         }
 
         /// <summary>
@@ -143,6 +144,15 @@ namespace UI
                 UIManager.Instance.PopPanel();
                 IsInStack = false;
             }
+            OnUIClose();
+        }
+
+        public virtual void OnUILoadFinish()
+        {
+        }
+        
+        public virtual void OnUIClose()
+        {
         }
 
         public virtual void OnPressedEsc()
@@ -165,9 +175,8 @@ namespace UI
         public virtual void CallBackWhenHeadPush(IBasePanel oldPanel)
         {
             ShowAnim();
-            if(this is InputFieldPanel) return;
-            if(this is SettingsPanel) return;
-            if(this is TipPanel) return;
+            if (UIManager.Instance.ExcludedPanels.Contains(this.GetType()))
+                return;
             oldPanel?.HideAnim();
         }
 
@@ -178,9 +187,8 @@ namespace UI
         public virtual void CallBackWhenHeadPop(IBasePanel popPanel)
         {
             popPanel?.HideAnim();
-            if(popPanel is InputFieldPanel) return;
-            if(popPanel is SettingsPanel) return;
-            if(popPanel is TipPanel) return;
+            if (UIManager.Instance.ExcludedPanels.Contains(popPanel?.GetType()))
+                return;
             ShowAnim();
         }
 

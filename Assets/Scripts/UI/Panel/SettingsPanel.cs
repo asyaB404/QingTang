@@ -16,6 +16,7 @@ namespace UI.Panel
         public override void Init()
         {
             base.Init();
+            UIManager.Instance.AddExcludedPanels(GetType());
             GetControl<Slider>("s1").onValueChanged.AddListener((v) => { AudioMgr.Instance.SetMusicVolume(v); });
             GetControl<Slider>("s2").onValueChanged.AddListener((v) => { AudioMgr.Instance.SetSFXVolume(v); });
             GetControl<Button>("exit").onClick.AddListener(OnPressedEsc);

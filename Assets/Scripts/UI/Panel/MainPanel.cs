@@ -43,6 +43,14 @@ namespace UI.Panel
             });
         }
 
+        public override void OnUILoadFinish()
+        {
+            if (!DialogManager.Instance.FinishedDialog.Contains(0) && DialogManager.Instance.CurDialogId != 0)
+            {
+                DialogManager.Instance.Load(0);
+            }
+        }
+
         public override void OnPressedEsc()
         {
             
@@ -53,10 +61,6 @@ namespace UI.Panel
             gameObject.SetActive(true);
             CanvasGroupInstance.interactable = true;
             CanvasGroupInstance.DOFade(1f, UIConst.UIDuration);
-            if (!DialogManager.Instance.FinishedDialog.Contains(0) && DialogManager.Instance.CurDialogId != 0)
-            {
-                DialogManager.Instance.Load(0);
-            }
         }
 
         public override void HideAnim()

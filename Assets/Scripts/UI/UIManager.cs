@@ -1,10 +1,20 @@
+using System;
 using System.Collections.Generic;
+using UI.Panel;
 using UnityEngine;
 
 namespace UI
 {
     public class UIManager : MonoBehaviour
     {
+        public HashSet<Type> ExcludedPanels = new HashSet<Type>
+        {
+            typeof(InputFieldPanel),
+            typeof(SettingsPanel),
+            typeof(TipPanel),
+            typeof(MessagePanel)
+        };
+
         private readonly Stack<IBasePanel> _panelStack = new();
         public IReadOnlyCollection<IBasePanel> Panels => _panelStack;
         public static UIManager Instance { get; private set; }
@@ -47,6 +57,15 @@ namespace UI
             _panelStack.Clear();
         }
 
+        public void AddExcludedPanels(Type panelType)
+        {
+            if (!typeof(IBasePanel).IsAssignableFrom(panelType))
+            {
+                Debug.LogError(panelType.ToString() + "不是一个IBasePanel");
+                return;
+            }
+            ExcludedPanels.Add(panelType);
+        }
 
         /// <summary>
         ///     存入栈中，没有特殊情况建议不要使用。
@@ -66,7 +85,7 @@ namespace UI
             _panelStack.Push(basePanel);
             basePanel.CallBackWhenHeadPush(oldPanel);
         }
-        
+
         public IBasePanel PopPanel()
         {
             if (_panelStack.Count <= 0)
@@ -74,7 +93,7 @@ namespace UI
                 Debug.LogError("栈为空,不能弹出");
                 return null;
             }
-            
+
             var popPanel = _panelStack.Pop();
             var peek = Peek();
             peek?.CallBackWhenHeadPop(popPanel);
