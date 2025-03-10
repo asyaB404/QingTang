@@ -94,6 +94,7 @@ namespace GamePlay
         public void Load(int dialogId)
         {
             CurDialogId = dialogId;
+            isStop = false;
             SetDialogUI(true);
             dialogList = GlobalConfig.Instance.GetDialogList(dialogId).list;
             curIndex = 0;
@@ -142,6 +143,12 @@ namespace GamePlay
                 return;
             }
 
+            if (sbMgr.IsBuilding)
+            {
+                sbMgr.Skip();
+                return;
+            }
+
             var info = dialogList[curIndex];
             DialogPanel.Instance.SetBackGround(info.sceneId);
             string content = info.dialog;
@@ -171,16 +178,10 @@ namespace GamePlay
             _commandManager.CheckCommand(content);
 
             if (content.Length <= 0 || content[0] == '#') return;
-
-            if (!sbMgr.IsBuilding)
-            {
-                sbMgr.SetText(content);
-                curIndex++;
-            }
-            else
-            {
-                sbMgr.Skip();
-            }
+            sbMgr.SetText(content);
+            curIndex++;
+            
+            
         }
 
         public void Finish(int id)
