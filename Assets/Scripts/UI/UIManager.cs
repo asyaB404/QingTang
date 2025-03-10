@@ -16,7 +16,6 @@ namespace UI
         private void Start()
         {
             GameStartPanel.Instance.ShowMe();
-            MainPanel.Instance.ShowMe();
         }
 
         /// <summary>
