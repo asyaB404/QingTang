@@ -40,7 +40,24 @@ namespace UI.Panel
                     event1 = false;
                 }
             });
-            btns[4].onClick.AddListener(() => { MapPanel.Instance.ShowMe(); });
+            btns[4].onClick.AddListener(() =>
+            {
+                if (event1)
+                {
+                    MessagePanel.Instance.ShowMessage("先接一下电话吧！");
+                    return;
+                }
+                // MapPanel.Instance.ShowMe();
+            });
+            btns[5].onClick.AddListener(() =>
+            {
+                if (event1)
+                {
+                    MessagePanel.Instance.ShowMessage("先接一下电话吧！");
+                    return;
+                }
+                MapPanel.Instance.ShowMe();
+            });
         }
 
         public override void OnUILoadFinish()

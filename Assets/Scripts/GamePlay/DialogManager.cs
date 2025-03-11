@@ -25,6 +25,17 @@ namespace GamePlay
         [SerializeField] private bool isStop;
         [SerializeField] private float waitTimer;
         [SerializeField] private bool waitForNext;
+
+        private bool WaitForNext
+        {
+            get => waitForNext;
+            set
+            {
+                waitForNext = value;
+                Debug.Log("set" + value);
+            }
+        }
+
         public bool IsWaiting => waitTimer > 0;
         public int CurDialogId { get; private set; } = -1;
 
@@ -80,10 +91,10 @@ namespace GamePlay
             }
             else
             {
-                if (!waitForNext) return;
+                if (!WaitForNext) return;
+                WaitForNext = false;
                 curIndex++;
                 Next();
-                waitForNext = false;
             }
         }
 
@@ -203,7 +214,7 @@ namespace GamePlay
         private void SetWait(float duration)
         {
             waitTimer = duration;
-            waitForNext = true;
+            WaitForNext = true;
         }
 
         public bool CheckHasFinishedDialog(int id)

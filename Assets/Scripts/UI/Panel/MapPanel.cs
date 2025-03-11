@@ -28,6 +28,7 @@ namespace UI.Panel
                 {
                     MessagePanel.Instance.ShowMessage("是否再次回看关键剧情？", () =>
                     {
+                        MessagePanel.Instance.HideMe();
                         DialogManager.Instance.Load(1);
                     });
                     return;

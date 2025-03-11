@@ -27,6 +27,7 @@ namespace UI.Panel
                 GetControl<Button>("confirm").onClick.AddListener(confirm);
             else
                 GetControl<Button>("confirm").onClick.AddListener(HideMe);
+            GetControl<Button>("cancel").onClick.AddListener(HideMe);
             GetControl<Button>("exit").onClick.AddListener(HideMe);
             ShowMe();
             return this;
@@ -41,17 +42,18 @@ namespace UI.Panel
 
         public override void ShowAnim()
         {
-            rectTransform.DOKill(true);
-            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.sizeDelta.y);
-            rectTransform.DOAnchorPosY(0, UIConst.UI_PANEL_ANIM * 2f);
+            gameObject.SetActive(true);
+            CanvasGroupInstance.DOKill(true);
+            CanvasGroupInstance.interactable = true;
+            CanvasGroupInstance.DOFade(1f, UIConst.UI_PANEL_ANIM);
         }
 
         public override void HideAnim()
         {
             GetControl<Button>("confirm").onClick.RemoveAllListeners();
-            rectTransform.DOKill(true);
-            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, 0);
-            rectTransform.DOAnchorPosY(rectTransform.sizeDelta.y, UIConst.UI_PANEL_ANIM);
+            CanvasGroupInstance.DOKill(true);
+            CanvasGroupInstance.interactable = false;
+            CanvasGroupInstance.DOFade(0f, UIConst.UI_PANEL_ANIM).OnComplete(() => { gameObject.SetActive(false); });
         }
 
         [ContextMenu("test")]
