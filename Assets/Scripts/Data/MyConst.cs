@@ -13,5 +13,6 @@ namespace Data
     {
         public const float ROLE_MOVE = 0.4f;
         public const float DIALOG_FADE = 0.75f;
+        public const float TIP_PANEL_HIDE = 5f;
     }
 }

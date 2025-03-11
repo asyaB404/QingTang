@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UI.Panel;
 using UnityEngine;
 
 namespace UI

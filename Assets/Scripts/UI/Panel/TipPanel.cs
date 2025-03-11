@@ -8,6 +8,7 @@
 // // ********************************************************************************************
 
 using Cysharp.Threading.Tasks;
+using Data;
 using DG.Tweening;
 using GamePlay;
 using TMPro;
@@ -36,7 +37,7 @@ namespace UI.Panel
         {
             GetControl<TextMeshProUGUI>("content").text = content;
             ShowMe();
-            await UniTask.WaitForSeconds(UIConst.TipHide);
+            await UniTask.WaitForSeconds(MyConst.TIP_PANEL_HIDE);
             HideMe();
         }
 
@@ -44,14 +45,14 @@ namespace UI.Panel
         {
             rectTransform.DOKill(true);
             rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.sizeDelta.y);
-            rectTransform.DOAnchorPosY(0, UIConst.UIDuration * 2f);
+            rectTransform.DOAnchorPosY(0, UIConst.UI_PANEL_ANIM * 2f);
         }
 
         public override void HideAnim()
         {
             rectTransform.DOKill(true);
             rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, 0);
-            rectTransform.DOAnchorPosY(rectTransform.sizeDelta.y, UIConst.UIDuration);
+            rectTransform.DOAnchorPosY(rectTransform.sizeDelta.y, UIConst.UI_PANEL_ANIM);
         }
 
         [ContextMenu("test")]

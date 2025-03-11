@@ -33,14 +33,20 @@ namespace UI.Panel
         {
             rectTransform.DOKill(true);
             rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, rectTransform.sizeDelta.y);
-            rectTransform.DOAnchorPosY(0, UIConst.UIDuration * 2f);
+            rectTransform.DOAnchorPosY(0, UIConst.UI_PANEL_ANIM * 2f);
         }
 
         public override void HideAnim()
         {
             rectTransform.DOKill(true);
             rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, 0);
-            rectTransform.DOAnchorPosY(rectTransform.sizeDelta.y, UIConst.UIDuration);
+            rectTransform.DOAnchorPosY(rectTransform.sizeDelta.y, UIConst.UI_PANEL_ANIM);
+        }
+        
+        [ContextMenu("test")]
+        private void Test()
+        {
+            ShowMessage("消息提示消息提示消息提示消息提示消息提示消息提示消息提示消息提示消息提示消息提示消息提示消息提示");
         }
     }
 }

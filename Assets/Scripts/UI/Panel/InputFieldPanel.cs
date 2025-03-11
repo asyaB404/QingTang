@@ -53,13 +53,13 @@ namespace UI.Panel
         {
             gameObject.SetActive(true);
             CanvasGroupInstance.interactable = true;
-            CanvasGroupInstance.DOFade(1f, UIConst.UIDuration);
+            CanvasGroupInstance.DOFade(1f, UIConst.UI_PANEL_ANIM);
         }
 
         public override void HideAnim()
         {
             CanvasGroupInstance.interactable = false;
-            CanvasGroupInstance.DOFade(0f, UIConst.UIDuration).OnComplete(() => { gameObject.SetActive(false); });
+            CanvasGroupInstance.DOFade(0f, UIConst.UI_PANEL_ANIM).OnComplete(() => { gameObject.SetActive(false); });
         }
     }
 }

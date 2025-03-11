@@ -1,10 +1,9 @@
 ﻿using DG.Tweening;
 using System.Collections.Generic;
 using TMPro;
-using UI.Panel;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace UI
 {
@@ -208,7 +207,7 @@ namespace UI
             CanvasGroupInstance.interactable = true;
             gameObject.SetActive(true);
             transform.localScale = Vector3.zero;
-            transform.DOScale(1, UIConst.UIDuration);
+            transform.DOScale(1, UIConst.UI_PANEL_ANIM);
         }
 
         /// <summary>
@@ -217,7 +216,7 @@ namespace UI
         public virtual void HideAnim()
         {
             CanvasGroupInstance.interactable = false;
-            transform.DOScale(0, UIConst.UIDuration).OnComplete(() => { gameObject.SetActive(false); });
+            transform.DOScale(0, UIConst.UI_PANEL_ANIM).OnComplete(() => { gameObject.SetActive(false); });
         }
 
         /// <summary>
