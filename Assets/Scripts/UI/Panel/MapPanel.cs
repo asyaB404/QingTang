@@ -13,14 +13,25 @@ using UnityEngine.UI;
 
 namespace UI.Panel
 {
-    public class MapPanel:BasePanel<MapPanel>
+    public class MapPanel : BasePanel<MapPanel>
     {
         public override void Init()
         {
             base.Init();
+            GetControl<Button>("main").onClick.AddListener(HideMe);
             GetControl<Button>("8").onClick.AddListener(() =>
             {
-                //TODO:小游戏
+                if (DialogManager.Instance.CheckHasFinishedDialog(2))
+                {
+                    MessagePanel.Instance.ShowMessage("是否再次回看关键剧情？", () =>
+                    {
+                        MessagePanel.Instance.HideMe();
+                        Game01.MainGame01.InitGame();
+                    });
+                    return;
+                }
+
+                Game01.MainGame01.InitGame();
             });
             GetControl<Button>("15").onClick.AddListener(() =>
             {
@@ -33,16 +44,11 @@ namespace UI.Panel
                     });
                     return;
                 }
+
                 DialogManager.Instance.Load(1);
             });
-            GetControl<Button>("20").onClick.AddListener(() =>
-            {
-                DialogManager.Instance.Load(3);
-            });
-            GetControl<Button>("25").onClick.AddListener(() =>
-            {
-                DialogManager.Instance.Load(4);
-            });
+            GetControl<Button>("20").onClick.AddListener(() => { DialogManager.Instance.Load(3); });
+            GetControl<Button>("25").onClick.AddListener(() => { DialogManager.Instance.Load(4); });
             GetControl<Button>("market").onClick.AddListener(() =>
             {
                 MessagePanel.Instance.ShowMessage("这里人太多太嘈杂了，去居民区看看吧！");
@@ -73,10 +79,7 @@ namespace UI.Panel
         {
             CanvasGroupInstance.interactable = false;
             CanvasGroupInstance.DOKill(true);
-            CanvasGroupInstance.DOFade(0f, UIConst.UI_PANEL_ANIM).OnComplete(() =>
-            {
-                gameObject.SetActive(false);
-            });
+            CanvasGroupInstance.DOFade(0f, UIConst.UI_PANEL_ANIM).OnComplete(() => { gameObject.SetActive(false); });
         }
     }
 }

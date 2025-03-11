@@ -23,6 +23,9 @@ namespace UI.Panel
         public override void Init()
         {
             base.Init();
+
+            #region Event
+
             MyEventSystem.Instance.AddEventListener<int>(CMDNAME.EVENT, (eId) =>
             {
                 if (eId == 1)
@@ -31,6 +34,11 @@ namespace UI.Panel
                     event1 = true;
                 }
             });
+
+            #endregion
+
+            #region Btns
+
             btns[3].onClick.AddListener(() =>
             {
                 if (event1)
@@ -58,6 +66,8 @@ namespace UI.Panel
                 }
                 MapPanel.Instance.ShowMe();
             });
+
+            #endregion
         }
 
         public override void OnUILoadFinish()

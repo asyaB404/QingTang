@@ -20,16 +20,34 @@ namespace UI.Panel
     {
         [SerializeField] private RectTransform rectTransform;
 
-        public MessagePanel ShowMessage(string message, UnityAction confirm = null)
+        public MessagePanel ShowMessage(string message, UnityAction confirm = null, UnityAction cancel = null)
         {
+            GetControl<TextMeshProUGUI>("confirmText").text = "确认";
+            GetControl<TextMeshProUGUI>("cancelText").text = "取消";
             GetControl<TextMeshProUGUI>("content").text = message;
             if (confirm != null)
                 GetControl<Button>("confirm").onClick.AddListener(confirm);
             else
                 GetControl<Button>("confirm").onClick.AddListener(HideMe);
-            GetControl<Button>("cancel").onClick.AddListener(HideMe);
-            GetControl<Button>("exit").onClick.AddListener(HideMe);
+            if (cancel != null)
+            {
+                GetControl<Button>("cancel").onClick.AddListener(cancel);
+                GetControl<Button>("exit").onClick.AddListener(cancel);
+            }
+            else
+            {
+                GetControl<Button>("cancel").onClick.AddListener(HideMe);
+                GetControl<Button>("exit").onClick.AddListener(HideMe);
+            }
+
             ShowMe();
+            return this;
+        }
+
+        public MessagePanel SetBtnName(string confirmBtnName = "确认", string cancelBtnName = "取消")
+        {
+            GetControl<TextMeshProUGUI>("confirmText").text = confirmBtnName;
+            GetControl<TextMeshProUGUI>("cancelText").text = cancelBtnName;
             return this;
         }
 

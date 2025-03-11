@@ -5,13 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f7ed96-b2b7-451c-9ddd-20cc4aa407bb" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Games.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game01.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game01/Game01.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game01/Game01.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game01/Player.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game01/Player.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game01/Target.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game01/Target.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/Game01UIPanel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/Game01UIPanel.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/小游戏素材/no.8 游戏背景.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/小游戏素材/no.8 游戏背景.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/小游戏素材/小游戏跑酷.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/小游戏素材/小游戏跑酷.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/小游戏素材/小游戏跑酷背景单簇草堆.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/小游戏素材/小游戏跑酷背景单簇草堆.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/小游戏素材/老太太跑酷.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/小游戏素材/老太太跑酷.gif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/小游戏素材/调解员跑酷.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/小游戏素材/调解员跑酷.gif.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MapPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MapPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MessagePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MessagePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +39,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../CUSGA/Assets/Scripts/Entity/Base/Entity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../CUSGA/Assets/Scripts/Entity/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../CUSGA/Assets/Scripts/Entity/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Game07/Assets/Scripts/ChatUI/ChatPanel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Framework/MyEventSystem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -108,7 +128,7 @@
       <workItem from="1741496293510" duration="15231000" />
       <workItem from="1741575721665" duration="7831000" />
       <workItem from="1741610898948" duration="4435000" />
-      <workItem from="1741660053592" duration="14719000" />
+      <workItem from="1741660053592" duration="21716000" />
     </task>
     <servers />
   </component>
