@@ -40,15 +40,12 @@ namespace UI.Panel
                     event1 = false;
                 }
             });
-            btns[4].onClick.AddListener(() =>
-            {
-                MapPanel.Instance.ShowMe();
-            });
+            btns[4].onClick.AddListener(() => { MapPanel.Instance.ShowMe(); });
         }
 
         public override void OnUILoadFinish()
         {
-            if (!DialogManager.Instance.FinishedDialog.Contains(0) && DialogManager.Instance.CurDialogId != 0)
+            if (!DialogManager.Instance.CheckHasFinishedDialog(0) && DialogManager.Instance.CurDialogId != 0)
             {
                 DialogManager.Instance.Load(0);
             }
@@ -61,12 +58,14 @@ namespace UI.Panel
         public override void ShowAnim()
         {
             gameObject.SetActive(true);
+            CanvasGroupInstance.DOKill(true);
             CanvasGroupInstance.interactable = true;
             CanvasGroupInstance.DOFade(1f, UIConst.UI_PANEL_ANIM);
         }
 
         public override void HideAnim()
         {
+            CanvasGroupInstance.DOKill(true);
             CanvasGroupInstance.interactable = false;
             CanvasGroupInstance.DOFade(0f, UIConst.UI_PANEL_ANIM).OnComplete(() => { gameObject.SetActive(false); });
         }

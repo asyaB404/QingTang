@@ -32,7 +32,6 @@ namespace GamePlay
         [SerializeField] private Transform rolesParent;
         private RoleManager _roleManager;
         private readonly HashSet<int> _finishedDialog = new();
-        public HashSet<int> FinishedDialog => _finishedDialog;
         [SerializeField] private int curIndex = 0;
         public int CurDialogIndex => curIndex;
         [SerializeField] private CanvasGroup panel;
@@ -87,7 +86,7 @@ namespace GamePlay
                 waitForNext = false;
             }
         }
-        
+
         public void SetDialogUI(bool isActive)
         {
             if (isActive)
@@ -142,7 +141,7 @@ namespace GamePlay
         {
             if (isStop)
                 return;
-            
+
             if (IsWaiting)
             {
                 SetWait(0);
@@ -173,7 +172,7 @@ namespace GamePlay
                 if (split.Length >= 2)
                 {
                     role = _roleManager.GetRole(info.roleId, split[0]);
-                    role.Move(split[0],float.Parse(split[1]));
+                    role.Move(split[0], float.Parse(split[1]));
                 }
                 else
                 {
@@ -193,8 +192,6 @@ namespace GamePlay
             if (content.Length <= 0 || content[0] == '#') return;
             sbMgr.SetText(content);
             curIndex++;
-            
-            
         }
 
         public void Finish(int id)
@@ -207,6 +204,11 @@ namespace GamePlay
         {
             waitTimer = duration;
             waitForNext = true;
+        }
+
+        public bool CheckHasFinishedDialog(int id)
+        {
+            return _finishedDialog.Contains(id);
         }
 
         public void OnPointerUp(PointerEventData eventData)
