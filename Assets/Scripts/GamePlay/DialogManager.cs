@@ -24,6 +24,7 @@ namespace GamePlay
     {
         [SerializeField] private bool isStop;
         [SerializeField] private float waitTimer;
+        [SerializeField] private bool waitForNext;
         public bool IsWaiting => waitTimer > 0;
         public int CurDialogId { get; private set; } = -1;
 
@@ -72,9 +73,14 @@ namespace GamePlay
             {
                 waitTimer -= Time.deltaTime;
             }
+            else
+            {
+                if (!waitForNext) return;
+                Next();
+                waitForNext = false;
+            }
         }
-
-
+        
         public void SetDialogUI(bool isActive)
         {
             if (isActive)
@@ -193,6 +199,7 @@ namespace GamePlay
         private void SetWait(float duration)
         {
             waitTimer = duration;
+            waitForNext = true;
         }
 
         public void OnPointerUp(PointerEventData eventData)
@@ -206,13 +213,14 @@ namespace GamePlay
             Debug.Log("down");
         }
 
+        [Space(50)] public int debugId = 0;
 
         #region Debug
 
         [ContextMenu("test")]
         private void Test()
         {
-            Load(0);
+            Load(debugId);
         }
 
         [ContextMenu("test1")]

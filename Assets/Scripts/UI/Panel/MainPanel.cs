@@ -40,6 +40,10 @@ namespace UI.Panel
                     event1 = false;
                 }
             });
+            btns[4].onClick.AddListener(() =>
+            {
+                MapPanel.Instance.ShowMe();
+            });
         }
 
         public override void OnUILoadFinish()

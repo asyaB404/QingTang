@@ -5,24 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f7ed96-b2b7-451c-9ddd-20cc4aa407bb" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BxUIBehaviour.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BxUIBehaviour/BxButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BxUIBehaviour/BxButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BxUIBehaviour/BxUIBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BxUIBehaviour/BxUIBehaviour.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Excel/DialogList.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Excel/DialogList.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Res/~$流程脚本.doc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/~$流程脚本.doc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/MyConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/MyConst.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/DialogPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/DialogPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/InputFieldPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/InputFieldPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/更新场景/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/2.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Res/更新场景/2.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/75ba6afdeba7cc61983c2616b086867.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/75ba6afdeba7cc61983c2616b086867.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/no.8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/no.8.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/other.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/更新场景/other.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MapPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MapPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MessagePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MessagePanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/TipPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/TipPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIConst.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +115,7 @@
       <workItem from="1741496293510" duration="15231000" />
       <workItem from="1741575721665" duration="7831000" />
       <workItem from="1741610898948" duration="4435000" />
-      <workItem from="1741660053592" duration="1764000" />
+      <workItem from="1741660053592" duration="5476000" />
     </task>
     <servers />
   </component>
@@ -135,37 +131,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs</url>
-          <line>52</line>
-          <properties documentPath="D:\unity_project\Hello\QingTang\Assets\Scripts\GamePlay\DialogManager.cs" containingFunctionPresentation="lambda 表达式内 方法 'Awake'">
-            <startOffsets>
-              <option value="2185" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2186" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs</url>
-          <line>57</line>
-          <properties documentPath="D:\unity_project\Hello\QingTang\Assets\Scripts\GamePlay\DialogManager.cs" containingFunctionPresentation="lambda 表达式内 方法 'Awake'">
-            <startOffsets>
-              <option value="2339" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2340" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

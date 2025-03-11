@@ -8,11 +8,26 @@
 // // ********************************************************************************************
 
 using DG.Tweening;
+using GamePlay;
+using UnityEngine.UI;
 
 namespace UI.Panel
 {
     public class MapPanel:BasePanel<MapPanel>
     {
+        public override void Init()
+        {
+            base.Init();
+            GetControl<Button>("8").onClick.AddListener(() =>
+            {
+                //TODO:小游戏
+            });
+            GetControl<Button>("20").onClick.AddListener(() =>
+            {
+                // DialogManager.Instance.
+            });
+        }
+
         public override void ShowAnim()
         {
             gameObject.SetActive(true);
