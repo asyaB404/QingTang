@@ -125,6 +125,7 @@ namespace GamePlay
         {
             CurDialogId = -1;
             curIndex = 0;
+            _roleManager.Clear();
             sbMgr.ReSet();
         }
 
@@ -151,7 +152,6 @@ namespace GamePlay
             if (curIndex >= dialogList.Count)
             {
                 Finish(CurDialogId);
-                ReSet();
                 Stop();
                 return;
             }
@@ -200,7 +200,7 @@ namespace GamePlay
         public void Finish(int id)
         {
             _finishedDialog.Add(id);
-            MyEventSystem.Instance.EventTrigger(CMDNAME.CLEAR);
+            ReSet();
         }
 
         private void SetWait(float duration)

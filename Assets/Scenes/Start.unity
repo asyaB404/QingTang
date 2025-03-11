@@ -4027,6 +4027,9 @@ MonoBehaviour:
   dialogLists:
   - {fileID: 11400000, guid: c071c868ecd269d408c3c3a2145735ec, type: 2}
   - {fileID: 11400000, guid: ace4f7254eb3b6340a8264cc1010de65, type: 2}
+  - {fileID: 11400000, guid: 749188490d5a3504fa0bec81b6dbf770, type: 2}
+  - {fileID: 11400000, guid: d4792beb5de3a9e4b8d5a30b214faf37, type: 2}
+  - {fileID: 11400000, guid: b0fba93a650a3d041a2b69f347f79754, type: 2}
 --- !u!1 &981628089
 GameObject:
   m_ObjectHideFlags: 0

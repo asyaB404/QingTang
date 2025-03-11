@@ -8,7 +8,6 @@
 // // ********************************************************************************************
 
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace GamePlay
@@ -25,7 +24,7 @@ namespace GamePlay
 
         public void Clear()
         {
-            foreach (var role in _dict.Values.ToList())
+            foreach (var role in _dict.Values)
             {
                 Object.Destroy(role.gameObject);
             }

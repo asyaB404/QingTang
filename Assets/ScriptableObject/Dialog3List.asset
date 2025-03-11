@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d36d0fe3d568cfe45809672535c92943, type: 3}
+  m_Name: Dialog3List
+  m_EditorClassIdentifier: 
+  list:
+  - id: 0
+    roleId: 0
+    dialog: "\u597D\u5E73\u9759\uFF0C\u4F3C\u4E4E\u6CA1\u6709\u4EBA\u5728\u5BB6"
+    face: 0
+    move: 
+    sceneId: 3
+    sound: 
+  - id: 1
+    roleId: 0
+    dialog: "\u53BB\u522B\u7684\u5730\u65B9\u770B\u770B\u5427"
+    face: 0
+    move: 
+    sceneId: 3
+    sound: 
