@@ -21,7 +21,6 @@ namespace GamePlay
         public RoleManager(Transform parent)
         {
             _rolesParent = parent;
-            MyEventSystem.Instance.AddEventListener(CMDNAME.CLEAR, Clear);
         }
 
         public void Clear()
@@ -38,13 +37,13 @@ namespace GamePlay
         {
             if (_dict.TryGetValue(id, out var role))
             {
-                return role.SetAnchor(anchoredString,true);
+                return role.SetAnchor(anchoredString);
             }
 
             var objRes = Resources.Load<GameObject>("Prefabs/Roles/" + id);
             var obj = Object.Instantiate(objRes, _rolesParent, false);
             role = obj.GetComponent<Role>();
-            role.SetAnchor(anchoredString);
+            role.SetAnchor(anchoredString,true);
             _dict.Add(id, role);
             return role;
         }

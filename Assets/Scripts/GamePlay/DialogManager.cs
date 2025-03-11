@@ -65,6 +65,12 @@ namespace GamePlay
                 curIndex++;
                 Next();
             });
+            MyEventSystem.Instance.AddEventListener(CMDNAME.CLEAR, () =>
+            {
+                _roleManager.Clear();
+                curIndex++;
+                Next();
+            });
         }
 
         private void Update()
@@ -76,6 +82,7 @@ namespace GamePlay
             else
             {
                 if (!waitForNext) return;
+                curIndex++;
                 Next();
                 waitForNext = false;
             }

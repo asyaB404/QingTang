@@ -60,7 +60,7 @@ namespace GamePlay
             curFace = faceId;
             faceId -= 1;
             if (faceId >= faceSprites.Length || faceId < 0) return this;
-            roleImage.sprite = faceSprites[faceId - 1];
+            roleImage.sprite = faceSprites[faceId];
             return this;
         }
 
@@ -75,6 +75,10 @@ namespace GamePlay
             else if (anchoredString == "R")
             {
                 anchored.x = 1;
+            }
+            else
+            {
+                return this;
             }
 
             var rectTransform = (RectTransform)transform;
