@@ -66,13 +66,20 @@ namespace UI.Panel
                 }
                 MapPanel.Instance.ShowMe();
             });
-
+            btns[6].onClick.AddListener(() =>
+            {
+                SettingsPanel.Instance.ChangeMe();
+            });
+            btns[7].onClick.AddListener(() =>
+            {
+                MessagePanel.Instance.ShowMessage("返回主界面？", HideMe);
+            });
             #endregion
         }
 
         public override void OnUILoadFinish()
         {
-            if (!DialogManager.Instance.CheckHasFinishedDialog(0) && DialogManager.Instance.CurDialogId != 0)
+            if (!SaveManager.Instance.CheckHasFinishedDialog(0) && DialogManager.Instance.CurDialogId != 0)
             {
                 DialogManager.Instance.Load(0);
             }

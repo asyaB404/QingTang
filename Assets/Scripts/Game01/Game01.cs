@@ -37,10 +37,10 @@ namespace Game01
             {
                 MessagePanel.Instance.HideMe();
                 GameInstance().StartGame();
-            }, () =>
+            },  () =>
             {
                 MessagePanel.Instance.HideMe();
-                GameInstance().StartGame();
+                GameInstance().Clear();
             });
         }
 

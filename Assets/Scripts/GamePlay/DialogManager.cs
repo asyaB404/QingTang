@@ -207,7 +207,7 @@ namespace GamePlay
 
         public void Finish(int id)
         {
-            _finishedDialog.Add(id);
+            SaveManager.Instance.FinishDialog(id);
             ReSet();
         }
 
@@ -215,11 +215,6 @@ namespace GamePlay
         {
             waitTimer = duration;
             WaitForNext = true;
-        }
-
-        public bool CheckHasFinishedDialog(int id)
-        {
-            return _finishedDialog.Contains(id);
         }
 
         public void OnPointerUp(PointerEventData eventData)

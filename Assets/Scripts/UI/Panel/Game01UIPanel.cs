@@ -12,5 +12,10 @@ namespace UI.Panel
 {
     public class Game01UIPanel:BasePanel<Game01UIPanel>
     {
+        public override void OnPressedEsc()
+        {
+            HideMe();
+            Game01.MainGame01.Instance.Clear();
+        }
     }
 }

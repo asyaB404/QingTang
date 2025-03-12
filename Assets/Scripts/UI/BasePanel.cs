@@ -204,6 +204,7 @@ namespace UI
         /// </summary>
         public virtual void ShowAnim()
         {
+            transform.DOKill(true);
             CanvasGroupInstance.interactable = true;
             gameObject.SetActive(true);
             transform.localScale = Vector3.zero;
@@ -215,6 +216,7 @@ namespace UI
         /// </summary>
         public virtual void HideAnim()
         {
+            transform.DOKill(true);
             CanvasGroupInstance.interactable = false;
             transform.DOScale(0, UIConst.UI_PANEL_ANIM).OnComplete(() => { gameObject.SetActive(false); });
         }

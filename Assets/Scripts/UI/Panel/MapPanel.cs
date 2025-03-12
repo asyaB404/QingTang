@@ -21,7 +21,7 @@ namespace UI.Panel
             GetControl<Button>("main").onClick.AddListener(HideMe);
             GetControl<Button>("8").onClick.AddListener(() =>
             {
-                if (DialogManager.Instance.CheckHasFinishedDialog(2))
+                if (SaveManager.Instance.CheckHasFinishedDialog(2))
                 {
                     MessagePanel.Instance.ShowMessage("是否再次回看关键剧情？", () =>
                     {
@@ -35,7 +35,7 @@ namespace UI.Panel
             });
             GetControl<Button>("15").onClick.AddListener(() =>
             {
-                if (DialogManager.Instance.CheckHasFinishedDialog(1))
+                if (SaveManager.Instance.CheckHasFinishedDialog(1))
                 {
                     MessagePanel.Instance.ShowMessage("是否再次回看关键剧情？", () =>
                     {
