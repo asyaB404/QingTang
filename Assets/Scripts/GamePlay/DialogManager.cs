@@ -193,7 +193,7 @@ namespace GamePlay
                 roleName.text = role.roleName;
                 role.SetFace(info.face);
             }
-            else
+            else if (info.roleId == 0)
             {
                 roleName.text = PrefMgr.GetPlayerName();
             }

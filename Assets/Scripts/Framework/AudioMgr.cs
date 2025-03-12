@@ -38,6 +38,7 @@ public class AudioMgr
 
 
     private AudioSource musicSource;
+    private string musicName;
     private List<AudioSource> sfxPool = new List<AudioSource>();
 
     private const int MaxSFXSources = 10;
@@ -52,9 +53,15 @@ public class AudioMgr
 
     public void PlayMusic(string path)
     {
+        if (musicSource.clip != null && musicName == path && musicSource.isPlaying)
+        {
+            return; // 如果正在播放相同的音乐，直接返回
+        }
+
         AudioClip musicClip = Resources.Load<AudioClip>(path);
         if (musicClip != null)
         {
+            musicName = path;
             musicSource.clip = musicClip;
             musicSource.loop = true;
             musicSource.volume = MusicVolume;

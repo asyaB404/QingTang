@@ -27,7 +27,7 @@ namespace Basya
 
         private Panel CurrentPanel
         {
-            get { return currentPanel; }
+            get => currentPanel;
             set
             {
                 currentPanel = value;
@@ -153,7 +153,6 @@ namespace Basya
                 tableConllection = excelReader.AsDataSet().Tables;
                 fs.Close();
                 excelReader.Close();
-                string fileName = Path.GetFileNameWithoutExtension(file.Name);
                 foreach (DataTable table in tableConllection)
                 {
                     GenerateSObjClass(table, sobjPath, nameSpace);
