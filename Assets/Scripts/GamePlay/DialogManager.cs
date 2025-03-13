@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using Data;
 using DG.Tweening;
+using GamePlay.Tips;
 using QTConfig;
 using TMPro;
 using UI.Panel;
@@ -39,6 +40,7 @@ namespace GamePlay
         public bool IsWaiting => waitTimer > 0;
         public int CurDialogId { get; private set; } = -1;
 
+        private readonly TipsManager _tipsManager = new();
         private readonly CommandManager _commandManager = new();
         [SerializeField] private Transform rolesParent;
         private RoleManager _roleManager;
@@ -64,6 +66,7 @@ namespace GamePlay
             {
                 if (SaveManager.Instance.FinishTip(id))
                 {
+                    _tipsManager.ShowTipUI();
                 }
 
                 curIndex++;

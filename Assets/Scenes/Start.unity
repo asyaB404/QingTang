@@ -6269,7 +6269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openFindControl: 1
-  dialogManager: {fileID: 0}
+  dialogManager: {fileID: 1807339928}
 --- !u!1 &1343829872
 GameObject:
   m_ObjectHideFlags: 0
