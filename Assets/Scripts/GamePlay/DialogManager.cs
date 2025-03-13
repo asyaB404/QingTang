@@ -64,7 +64,8 @@ namespace GamePlay
             MyEventSystem.Instance.AddEventListener<float>(CMDNAME.WAIT, SetWait);
             MyEventSystem.Instance.AddEventListener<int, string>(CMDNAME.GET_TIP, (id, tipName) =>
             {
-                if (SaveManager.Instance.FinishTip(id))
+                Tip tip = new Tip(id, tipName);
+                if (SaveManager.Instance.FinishTip(tip))
                 {
                     _tipsManager.OnGetTip(id, tipName);
                 }

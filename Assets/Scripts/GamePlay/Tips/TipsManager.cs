@@ -11,7 +11,7 @@ namespace GamePlay.Tips
 {
     public class TipsManager
     {
-        public void OnGetTip(int id,string name)
+        public void OnGetTip(Tip tip)
         {
             
         }

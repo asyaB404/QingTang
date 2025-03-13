@@ -8,15 +8,16 @@
 // // ********************************************************************************************
 
 using System.Collections.Generic;
+using GamePlay.Tips;
 
 namespace GamePlay
 {
     public class SaveManager
     {
         private readonly HashSet<int> _finishedDialog;
-        private readonly List<int> _finishedTips;
+        private readonly List<Tip> _finishedTips;
         public HashSet<int> FinishedDialogs => _finishedDialog;
-        public IReadOnlyList<int> FinishedTips => _finishedTips;
+        public IReadOnlyList<Tip> FinishedTips => _finishedTips;
 
         private static SaveManager instance { get; set; }
 
@@ -45,16 +46,21 @@ namespace GamePlay
         }
 
 
-        public bool FinishTip(int id)
+        public bool FinishTip(Tip tip)
         {
-            if (CheckHasFinishedTip(id)) return false;
-            _finishedTips.Add(id);
+            if (CheckHasFinishedTip(tip.Id)) return false;
+            _finishedTips.Add(tip);
             return true;
         }
 
         public bool CheckHasFinishedTip(int id)
         {
-            return _finishedTips.Contains(id);
+            foreach (var tip in _finishedTips)
+            {
+                if (tip.Id == id) return true;
+            }
+
+            return false;
         }
     }
 }

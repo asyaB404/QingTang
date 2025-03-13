@@ -10,7 +10,7 @@
 
 namespace GamePlay.Tips
 {
-    public class Tip
+    public struct Tip
     {
         public string Name { get; set; }
         public int Id { get; set; }
@@ -19,6 +19,11 @@ namespace GamePlay.Tips
         {
             Id = id;
             Name = name;
+        }
+        
+        public override string ToString()
+        {
+            return $"{Id} {Name}";
         }
     }
 }
