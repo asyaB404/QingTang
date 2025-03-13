@@ -9,12 +9,21 @@
 
 using Data;
 using DG.Tweening;
+using GamePlay;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI.Panel
 {
     public class DialogPanel : BasePanel<DialogPanel>
     {
+        [SerializeField]private DialogManager dialogManager;
+        public override void Init()
+        {
+            base.Init();
+            dialogManager.Init();
+        }
+
         public void SetBackGround(int sceneId)
         {
             GetControl<Image>("BG").sprite = GlobalConfig.Instance.GetBackGround(sceneId);

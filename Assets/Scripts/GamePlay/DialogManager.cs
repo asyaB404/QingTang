@@ -54,12 +54,21 @@ namespace GamePlay
         [SerializeField] private List<DialogListInfoClass> dialogList;
         public static DialogManager Instance { get; private set; }
 
-        private void Awake()
+        public void Init()
         {
             Instance = this;
             _roleManager = new(rolesParent);
             MyEventSystem.Instance.AddEventListener(CMDNAME.STOP, Stop);
             MyEventSystem.Instance.AddEventListener<float>(CMDNAME.WAIT, SetWait);
+            MyEventSystem.Instance.AddEventListener<int>(CMDNAME.GET_TIP, (id) =>
+            {
+                if (SaveManager.Instance.FinishTip(id))
+                {
+                }
+
+                curIndex++;
+                Next();
+            });
             MyEventSystem.Instance.AddEventListener<string>(CMDNAME.TIP, (string _) =>
             {
                 curIndex++;

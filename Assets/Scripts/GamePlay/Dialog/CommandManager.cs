@@ -11,6 +11,7 @@ namespace GamePlay
 {
     public class CMDNAME
     {
+        public const string GET_TIP = "#getTip";
         public const string STOP = "#stop";
         public const string NEXT = "#next";
         public const string EVENT = "#event";
@@ -23,6 +24,12 @@ namespace GamePlay
     {
         public void CheckCommand(string content)
         {
+            if (content.Contains(CMDNAME.GET_TIP))
+            {
+                string tipId = content.Replace(CMDNAME.GET_TIP, "").Trim();
+                MyEventSystem.Instance.EventTrigger<int>(CMDNAME.GET_TIP, int.Parse(tipId));
+            }
+
             if (content.Contains(CMDNAME.STOP))
             {
                 MyEventSystem.Instance.EventTrigger(CMDNAME.STOP);
