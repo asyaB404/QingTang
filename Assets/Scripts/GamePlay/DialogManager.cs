@@ -62,11 +62,11 @@ namespace GamePlay
             _roleManager = new(rolesParent);
             MyEventSystem.Instance.AddEventListener(CMDNAME.STOP, Stop);
             MyEventSystem.Instance.AddEventListener<float>(CMDNAME.WAIT, SetWait);
-            MyEventSystem.Instance.AddEventListener<int>(CMDNAME.GET_TIP, (id) =>
+            MyEventSystem.Instance.AddEventListener<int, string>(CMDNAME.GET_TIP, (id, tipName) =>
             {
                 if (SaveManager.Instance.FinishTip(id))
                 {
-                    _tipsManager.ShowTipUI();
+                    _tipsManager.OnGetTip(id, tipName);
                 }
 
                 curIndex++;
