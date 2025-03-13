@@ -67,7 +67,7 @@ namespace GamePlay
                 Tip tip = new Tip(id, tipName);
                 if (SaveManager.Instance.FinishTip(tip))
                 {
-                    _tipsManager.OnGetTip(id, tipName);
+                    _tipsManager.OnGetTip(tip);
                 }
 
                 curIndex++;
