@@ -6004,7 +6004,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 38902692fd89b6840b950796f2a26c91, type: 3}
   - {fileID: 21300000, guid: fac760f21d94e8c4db590f96d5406cfa, type: 3}
   - {fileID: 21300000, guid: 57c1c683ff28e874592e01065834539e, type: 3}
-  - {fileID: 21300000, guid: d00d2126b968878468e1a0824aad97e2, type: 3}
+  - {fileID: 21300000, guid: 25d3f85c254f7184789a11563dd98b0e, type: 3}
   dialogLists:
   - {fileID: 11400000, guid: c071c868ecd269d408c3c3a2145735ec, type: 2}
   - {fileID: 11400000, guid: ace4f7254eb3b6340a8264cc1010de65, type: 2}
@@ -8651,6 +8651,7 @@ GameObject:
   - component: {fileID: 1421124124}
   - component: {fileID: 1421124126}
   - component: {fileID: 1421124125}
+  - component: {fileID: 1421124127}
   m_Layer: 5
   m_Name: TryBattlePanel
   m_TagString: Untagged
@@ -8717,6 +8718,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421124123}
   m_CullTransparentMesh: 1
+--- !u!114 &1421124127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421124123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ab3c7098b3423882cadfb2f8e4253b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openFindControl: 1
+  tipBtnsParent: {fileID: 330452249}
+  tipButtons: []
 --- !u!1 &1538790665
 GameObject:
   m_ObjectHideFlags: 0

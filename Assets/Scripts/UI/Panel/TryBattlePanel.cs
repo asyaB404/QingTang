@@ -51,6 +51,7 @@ namespace UI.Panel
         
         public override void ShowAnim()
         {
+            OnUpdateTip();
             CanvasGroupInstance.DOKill(true);
             gameObject.SetActive(true);
             CanvasGroupInstance.interactable = true;

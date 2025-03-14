@@ -142,6 +142,7 @@ namespace UI.Panel
 
         public override void ShowAnim()
         {
+            OnUpdateTip();
             gameObject.SetActive(true);
             CanvasGroupInstance.interactable = true;
             CanvasGroupInstance.DOFade(1f, UIConst.UI_PANEL_ANIM);
