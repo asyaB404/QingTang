@@ -33,6 +33,7 @@ namespace GamePlay
         private SaveManager()
         {
             _finishedDialog = new HashSet<int>();
+            _finishedTips = new List<Tip>();
         }
 
         public bool FinishDialog(int id)

@@ -189,7 +189,7 @@ namespace GamePlay
             string content = info.dialog;
             var infoMove = info.move;
             var split = infoMove.Split(',');
-            if (info.roleId != 0)
+            if (info.roleId > 0)
             {
                 Role role;
                 if (split.Length >= 2)

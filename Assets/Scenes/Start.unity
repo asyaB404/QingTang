@@ -4991,6 +4991,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 749188490d5a3504fa0bec81b6dbf770, type: 2}
   - {fileID: 11400000, guid: d4792beb5de3a9e4b8d5a30b214faf37, type: 2}
   - {fileID: 11400000, guid: b0fba93a650a3d041a2b69f347f79754, type: 2}
+  - {fileID: 11400000, guid: d94182405b75cef4a875292ac70b2445, type: 2}
+  - {fileID: 11400000, guid: bdcc46fb22dcd7747bb323dde94abb9e, type: 2}
+  - {fileID: 11400000, guid: b7bd58016808cf148a4f4159f6a968bb, type: 2}
 --- !u!1 &981628089
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,6 +7013,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openFindControl: 1
   dialogManager: {fileID: 1807339928}
+  tipPanelTransform: {fileID: 1599413179}
+  tipBtnsParent: {fileID: 894332775}
+  tipButtons: []
 --- !u!1 &1343829872
 GameObject:
   m_ObjectHideFlags: 0
