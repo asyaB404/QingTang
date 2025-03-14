@@ -1,0 +1,219 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d36d0fe3d568cfe45809672535c92943, type: 3}
+  m_Name: Dialog6List
+  m_EditorClassIdentifier: 
+  list:
+  - id: 0
+    roleId: 2
+    dialog: "\u6628\u665A\u4E0A\u738B\u5927\u798F\u548C\u6211\u559D\u5B8C\u9152\uFF0C\u521A\u5F00\u59CB\uFF0C\u6211\u8BB0\u7740\u662F\u79E6\u6653\u96EF\u9A91\u8F66\u8981\u5E26\u4ED6\u3002"
+    face: 0
+    move: L,0
+    sceneId: 5
+    sound: 
+  - id: 1
+    roleId: 2
+    dialog: "\u4F46\u738B\u5927\u798F\u4E00\u5F00\u59CB\u5C31\u4E0D\u4ECE\uFF0C\u975E\u8BF4\u4EC0\u4E48\u5B81\u613F\u8D70\u8DEF\u4E5F\u4E0D\u8981\u6653\u96EF\u5E26\u3002"
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 2
+    roleId: -1
+    dialog: "#getTip 61,\u738B\u5927\u798F\u975E\u8981\u81EA\u5DF1\u6765\u5F00\u8F66,2"
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 3
+    roleId: -1
+    dialog: "#tip \u738B\u5927\u798F\u975E\u8981\u81EA\u5DF1\u6765\u5F00\u8F66"
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 4
+    roleId: 2
+    dialog: "\u540E\u9762\u80AF\u5B9A\u662F\u5ACC\u5F03\u79E6\u6653\u96EF\u5F00\u7684\u4E0D\u597D\u975E\u8981\u81EA\u5DF1\u6765\u5F00\uFF0C\u4E5F\u4E0D\u770B\u770B\u81EA\u5DF1\u51E0\u5206\u9152\u91CF\uFF01\u559D\u4E86\u90A3\u4E48\u591A\u8FD8\u6307\u671B\u80FD\u5F00\u7684\u7A33\u8F66\uFF1F"
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 5
+    roleId: 3
+    dialog: "\u600E\u4E48\u53EF\u80FD\u662F\u6211(\u5FC3\u865A)"
+    face: 3
+    move: R,0
+    sceneId: 5
+    sound: 
+  - id: 6
+    roleId: 3
+    dialog: "\u5C31\u662F\u79E6\u6653\u96EF\uFF01\u5C31\u662F\u5979\u665A\u4E0A\u9A91\u8F66\u770B\u4E0D\u89C1\u778E\u9A91
+      \u3002"
+    face: 0
+    move: R,-1
+    sceneId: 5
+    sound: 
+  - id: 7
+    roleId: -1
+    dialog: "#getTip 62,\u79E6\u6653\u96EF\u4E0D\u5C0F\u5FC3\u649E\u5230\u4E86\u94C1\u95E8,2"
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 8
+    roleId: -1
+    dialog: "#tip \u79E6\u6653\u96EF\u665A\u4E0A\u9A91\u8F66\u770B\u4E0D\u6E05\u8DEF\u51B5\uFF0C\u624D\u4E0D\u5C0F\u5FC3\u649E\u5230\u4E86\u94C1\u95E8\u3002"
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 9
+    roleId: 3
+    dialog: "\u4F60\u8FD9\u4E2A\u65B0\u6765\u7684\u8C03\u89E3\u5458\u4E0D\u8981\u88AB\u674E\u4EF2\u9633\u9A97\u4E86\u53BB\uFF01"
+    face: 1
+    move: R,-2
+    sceneId: 5
+    sound: 
+  - id: 10
+    roleId: 3
+    dialog: "\u5206\u660E\u5C31\u662F\u674E\u4EF2\u9633\u6545\u610F\u9677\u5BB3\u6211\uFF01"
+    face: 1
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 11
+    roleId: 3
+    dialog: "\u4ED6\u81EA\u5DF1\u80C6\u5C0F\u6454\u4E86\u4E2A\u5C41\u80A1\u8E72\u8FD8\u6709\u8138\u5411\u6211\u8981\u8D54\u793C\u9053\u6B49\uFF0C\u54EA\u6709\u8FD9\u79CD\u4EBA\uFF01"
+    face: 1
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 12
+    roleId: 3
+    dialog: "\u6211\u4E4B\u524D\u771F\u662F\u778E\u4E86\u773C\u8BF7\u4ED6\u559D\u9152\uFF01"
+    face: 1
+    move: R,-2.5
+    sceneId: 5
+    sound: 
+  - id: 13
+    roleId: 2
+    dialog: "\u80E1\u8BF4\uFF01\u660E\u660E\u9152\u94B1\u4E5F\u662F\u6211\u4ED8\u7684\uFF01\u4E0D\u4EC5\u9152\u559D\u4E0D\u4E86\u51E0\u4E24\uFF0C\u8111\u5B50\u90FD\u4E0D\u6E05\u9192\u4E86\uFF01"
+    face: 0
+    move: L,1
+    sceneId: 5
+    sound: 
+  - id: 14
+    roleId: 3
+    dialog: "\u8C01\u4E0D\u6E05\u9192\uFF0C\u5927\u767D\u5929\u7684\u6775\u90A3\u7AD9\u7740\u90FD\u80FD\u7ED9\u81EA\u5DF1\u6454\u6B8B\u4E86\uFF01"
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 15
+    roleId: 2
+    dialog: "\u4F60\uFF01\u4F60\u5F97\u7ED9\u6211\u9053\u6B49\uFF01"
+    face: 3
+    move: L,2
+    sceneId: 5
+    sound: 
+  - id: 16
+    roleId: 3
+    dialog: "\u6211\u5C31\u4E0D\u9053\u6B49\u600E\u4E48\u4E86\uFF1F"
+    face: 2
+    move: R,-1.5
+    sceneId: 5
+    sound: 
+  - id: 17
+    roleId: -1
+    dialog: "#getTip 63,\u738B\u5927\u798F\u81EA\u79F0\u80FD\u591F\u9152\u540E\u9A7E\u8F66,2"
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 18
+    roleId: -1
+    dialog: "#tip \u738B\u5927\u798F\u81EA\u79F0\u80FD\u591F\u9152\u540E\u9A7E\u8F66"
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 19
+    roleId: 3
+    dialog: "\u6211\u8EAB\u4F53\u597D\u5F97\u5F88\uFF01\u8001\u5B50\u5C31\u662F\u559D\u9152\u90FD\u80FD\u5F00\u8F66\u2026\u2026"
+    face: 2
+    move: S,1.1
+    sceneId: 5
+    sound: 
+  - id: 20
+    roleId: 2
+    dialog: "\uFF1F"
+    face: 0
+    move: L,3
+    sceneId: 5
+    sound: 
+  - id: 21
+    roleId: 3
+    dialog: "\u2026\u2026"
+    face: 0
+    move: S,1.0
+    sceneId: 5
+    sound: 
+  - id: 22
+    roleId: 3
+    dialog: "\uFF01"
+    face: 3
+    move: S,0.9
+    sceneId: 5
+    sound: 
+  - id: 23
+    roleId: 0
+    dialog: "\u738B\u53D4\u53D4\uFF0C\u4F60\u559D\u9152\u4E5F\u80FD\u5F00\u8F66?"
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 24
+    roleId: 3
+    dialog: "\u6211\uFF0C\u5C31\u662F\u8BF4\u8BF4\u2026\u2026"
+    face: 0
+    move: S,1
+    sceneId: 5
+    sound: 
+  - id: 25
+    roleId: 0
+    dialog: "\u5C31\u662F\u8BF4\u8BF4?\u53EF\u6211\u624B\u91CC\u6709\u76D1\u63A7\u8BC1\u660E\u4F60\u6628\u665A\u786E\u5B9E\u5F00\u4E86\u8F66\u3002"
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 
+  - id: 26
+    roleId: 3
+    dialog: "\u4EC0\u4E48\uFF1F\u4F60\u4EEC\u800D\u6211\u5462\uFF1F\uFF01\u65B0\u6765\u7684\u4F60\u8840\u53E3\u55B7\u4EBA\uFF0C\u6751\u5934\u76D1\u63A7\u574F\u4E86\u591A\u4E45\u4E86\uFF01"
+    face: 0
+    move: R,-2
+    sceneId: 5
+    sound: 
+  - id: 27
+    roleId: 3
+    dialog: "\u4F60\u8BA4\u4E3A\u662F\u6211\u5C31\u662F\u6211\uFF1F\u6211\u4E0D\u670D\uFF01"
+    face: 0
+    move: R,-2.5
+    sceneId: 5
+    sound: 
+  - id: 28
+    roleId: -1
+    dialog: '#event61'
+    face: 0
+    move: 
+    sceneId: 5
+    sound: 

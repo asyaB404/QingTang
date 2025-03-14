@@ -69,7 +69,6 @@ namespace GamePlay
                 {
                     _tipsManager.OnGetTip(tip);
                 }
-
                 curIndex++;
                 Next();
             });

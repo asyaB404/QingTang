@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d36d0fe3d568cfe45809672535c92943, type: 3}
+  m_Name: Dialog5List
+  m_EditorClassIdentifier: 
+  list:
+  - id: 0
+    roleId: 6
+    dialog: "\u201C\u4F60\u53BB\u6751\u91CC\u4E86\u89E3\u4E86\u591A\u5C11\uFF1F\u201D"
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 1
+    roleId: 6
+    dialog: "\u201C\u521A\u5230\u6751\u5B50\u5C31\u9EBB\u70E6\u4F60\u505A\u4E8B\uFF0C\u8F9B\u82E6\u4E86\u3002\u201D"
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 2
+    roleId: 6
+    dialog: "\u201C\u6211\u6253\u7535\u8BDD\u662F\u4E3A\u4E86\u544A\u8BC9\u4F60\u6211\u4EEC\u67E5\u5230\u4E86\u6821\u5185\u76D1\u63A7\u201D"
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 3
+    roleId: 6
+    dialog: "\u201C\u6A21\u7CCA\u7684\u62CD\u5230\u662F\u738B\u5927\u798F\u7684\u7535\u74F6\u8F66\u649E\u574F\u4E86\u5927\u95E8\u3002\u201D"
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 4
+    roleId: -1
+    dialog: "#tip \u6628\u665A\u5F00\u8F66\u7684\u4EBA\u662F\u4E2A\u7537\u4EBA\uFF01"
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 5
+    roleId: 6
+    dialog: "\u201C\u5F00\u8F66\u7684\u662F\u4E2A\u7537\u4EBA\uFF0C\u540E\u9762\u662F\u4E00\u4E2A\u5973\u4EBA\u628A\u574F\u6389\u7684\u7535\u52A8\u8F66\u63A8\u56DE\u4E86\u5BB6\u3002\u201D"
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 6
+    roleId: 0
+    dialog: "\u201C\u597D\u7684\uFF0C\u8C22\u8C22\uFF01\u6211\u4E86\u89E3\u4E86\u3002\u201D"
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 7
+    roleId: 0
+    dialog: "\uFF08\u6302\u65AD\u7535\u8BDD\uFF09"
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 8
+    roleId: -1
+    dialog: '#wait 2'
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 9
+    roleId: 7
+    dialog: "\u5FD8\u8BB0\u63A5\u4F60\u4E86\uFF0C\u971C\u971C\u8BF4\u4F60\u4EEC\u4ECE\u6751\u91CC\u4E86\u89E3\u6E05\u695A\u4E86\u3002"
+    face: 0
+    move: L,1
+    sceneId: 0
+    sound: 
+  - id: 10
+    roleId: -1
+    dialog: "#tip \u51C6\u5907\u597D\u4E86\u5417\uFF1F\u70B9\u51FB\u8C03\u89E3\u4E66\u5F00\u59CB\u8C03\u89E3\u5427\uFF01"
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 11
+    roleId: 7
+    dialog: "\u4F60\u8981\u51C6\u5907\u5F00\u59CB\u8C03\u89E3\u4E86\u5417?"
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 
+  - id: 12
+    roleId: -1
+    dialog: '#event51'
+    face: 0
+    move: 
+    sceneId: 0
+    sound: 

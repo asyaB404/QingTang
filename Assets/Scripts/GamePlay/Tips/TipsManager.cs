@@ -7,13 +7,16 @@
 // //   (___)___)                         @Copyright  Copyright (c) 2025, Basya
 // // ********************************************************************************************
 
+using UI.Panel;
+
 namespace GamePlay.Tips
 {
     public class TipsManager
     {
         public void OnGetTip(Tip tip)
         {
-            
+            DialogPanel.Instance.ShowRedPoint(tip.Id);
+            DialogPanel.Instance.OnUpdateTip();
         }
     }
 }
