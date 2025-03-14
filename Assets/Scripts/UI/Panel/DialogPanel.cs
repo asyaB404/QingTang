@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using Data;
 using DG.Tweening;
 using GamePlay;
+using GamePlay.Tips;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +21,7 @@ namespace UI.Panel
     [System.Serializable]
     public class TipButton
     {
-        public int tipId = -1;
+        public Tip tip;
         public GameObject redPoint;
         public Button btn;
         public Image img;
@@ -35,7 +36,7 @@ namespace UI.Panel
 
             if (id == 0)
             {
-                img.color = Color.blue;
+                img.color = Color.cyan;
             }
 
             if (id == 1)
@@ -79,7 +80,12 @@ namespace UI.Panel
                     img = child.GetComponent<Image>(),
                     text = child.GetComponentInChildren<TextMeshProUGUI>()
                 };
-                tipButton.btn.onClick.AddListener(() => { tipButton.redPoint.SetActive(false); });
+                tipButton.btn.onClick.AddListener(() =>
+                {
+                    if(tipButton.tip == null) return;
+                    tipButton.tip.HasRedPoint = false;
+                    tipButton.redPoint.SetActive(false);
+                });
                 tipButtons.Add(tipButton);
             }
         }
@@ -113,26 +119,26 @@ namespace UI.Panel
             int i = 0;
             foreach (var tip in finishedTips)
             {
-                tipButtons[i].tipId = tip.Id;
-                tipButtons[i].text.name = tip.Name;
+                tipButtons[i].tip = tip;
+                tipButtons[i].text.text = tip.Name;
                 tipButtons[i].SetColor(tip.ColorId);
+                tipButtons[i].redPoint.SetActive(tip.HasRedPoint);
                 i++;
             }
         }
 
-        public void ShowRedPoint(int id)
+        public void ShowRedPoint()
         {
             if (tipPanelTransform.anchoredPosition.x > 0)
             {
                 GetControl<Button>("tipBtn").transform.GetChild(0).gameObject.SetActive(true);
             }
+        }
 
-            foreach (var tipButton in tipButtons)
-            {
-                if (tipButton.tipId != id) continue;
-                tipButton.redPoint.SetActive(true);
-                return;
-            }
+        public override void OnUILoadFinish()
+        {
+            base.OnUILoadFinish();
+            OnUpdateTip();
         }
 
         public override void OnPressedEsc()

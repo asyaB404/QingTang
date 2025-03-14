@@ -13,6 +13,7 @@ using DG.Tweening;
 using GamePlay;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI.Panel
 {
@@ -26,6 +27,7 @@ namespace UI.Panel
             UIManager.Instance.AddExcludedPanels(GetType());
             rectTransform = GetComponent<RectTransform>();
             MyEventSystem.Instance.AddEventListener<string>(CMDNAME.TIP, ShowTip);
+            GetControl<Button>("exit").onClick.AddListener(HideMe);
         }
 
         public void ShowTip(string content)

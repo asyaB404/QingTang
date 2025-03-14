@@ -10,7 +10,7 @@
 
 namespace UI.Panel
 {
-    public class Game01UIPanel:BasePanel<Game01UIPanel>
+    public class Game01UIPanel : BasePanel<Game01UIPanel>
     {
         public override void OnPressedEsc()
         {

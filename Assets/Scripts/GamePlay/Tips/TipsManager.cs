@@ -15,7 +15,7 @@ namespace GamePlay.Tips
     {
         public void OnGetTip(Tip tip)
         {
-            DialogPanel.Instance.ShowRedPoint(tip.Id);
+            DialogPanel.Instance.ShowRedPoint();
             DialogPanel.Instance.OnUpdateTip();
         }
     }
