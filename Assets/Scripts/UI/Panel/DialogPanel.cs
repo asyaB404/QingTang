@@ -134,12 +134,7 @@ namespace UI.Panel
                 GetControl<Button>("tipBtn").transform.GetChild(0).gameObject.SetActive(true);
             }
         }
-
-        public override void OnUILoadFinish()
-        {
-            base.OnUILoadFinish();
-            OnUpdateTip();
-        }
+        
 
         public override void OnPressedEsc()
         {

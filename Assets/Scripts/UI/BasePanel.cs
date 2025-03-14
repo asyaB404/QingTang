@@ -126,7 +126,6 @@ namespace UI
             //设置为最后一个子物体，防止被其他已经打开的面板遮挡
             gameObject.transform.SetAsLastSibling();
             IsInStack = true;
-            OnUILoadFinish();
         }
 
         /// <summary>
@@ -149,18 +148,8 @@ namespace UI
                 UIManager.Instance.PopPanel();
                 IsInStack = false;
             }
-
-            OnUIClose();
         }
-
-        public virtual void OnUILoadFinish()
-        {
-        }
-
-        public virtual void OnUIClose()
-        {
-        }
-
+        
         public virtual void OnPressedEsc()
         {
             HideMe();

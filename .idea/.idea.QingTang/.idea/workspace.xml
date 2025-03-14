@@ -5,13 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f7ed96-b2b7-451c-9ddd-20cc4aa407bb" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/TryBattlePanel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/TryBattlePanel.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/TipsBtn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/TipsBtn.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Excel/DialogList.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Excel/DialogList.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/刘主任.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/刘主任/刘主任表情1 惊讶.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/刘主任/刘主任表情1 惊讶.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/刘主任/刘主任表情2 不悦.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/刘主任/刘主任表情2 不悦.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/刘主任/刘主任表情3 喜悦.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/刘主任/刘主任表情3 喜悦.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/陈警官.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/陈警官/警察表情1疑惑.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/陈警官/警察表情1疑惑.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/陈警官/警察表情2流汗.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/陈警官/警察表情2流汗.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/陈警官/警察表情3生气.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Res/人物合集/清汤调解员人物表情/陈警官/警察表情3生气.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Tips/Tips.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Tips/Tips.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Tips/TipsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Tips/TipsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Dialog5List.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Dialog5List.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/DialogPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/DialogPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/Game01UIPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/Game01UIPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/TipPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/TipPanel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,10 +94,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="附加到 Unity 编辑器" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="附加到 Unity 编辑器" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="20728">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="20728" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -113,7 +130,7 @@
       <workItem from="1741575721665" duration="7831000" />
       <workItem from="1741610898948" duration="4435000" />
       <workItem from="1741660053592" duration="28891000" />
-      <workItem from="1741868484464" duration="14991000" />
+      <workItem from="1741868484464" duration="19239000" />
     </task>
     <servers />
   </component>

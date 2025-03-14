@@ -17,7 +17,7 @@ MonoBehaviour:
     roleId: 6
     dialog: "\u201C\u4F60\u53BB\u6751\u91CC\u4E86\u89E3\u4E86\u591A\u5C11\uFF1F\u201D"
     face: 0
-    move: 
+    move: L,5
     sceneId: 0
     sound: 
   - id: 1
@@ -70,10 +70,10 @@ MonoBehaviour:
     sceneId: 0
     sound: 
   - id: 8
-    roleId: -1
+    roleId: 6
     dialog: '#wait 2'
     face: 0
-    move: 
+    move: 'L,-5 '
     sceneId: 0
     sound: 
   - id: 9

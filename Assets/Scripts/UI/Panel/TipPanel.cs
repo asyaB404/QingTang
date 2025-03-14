@@ -26,20 +26,20 @@ namespace UI.Panel
             base.Init();
             UIManager.Instance.AddExcludedPanels(GetType());
             rectTransform = GetComponent<RectTransform>();
-            MyEventSystem.Instance.AddEventListener<string>(CMDNAME.TIP, ShowTip);
+            MyEventSystem.Instance.AddEventListener<string>(CMDNAME.TIP, (str) => { ShowTip(str); });
             GetControl<Button>("exit").onClick.AddListener(HideMe);
         }
 
-        public void ShowTip(string content)
+        public void ShowTip(string content, float delay = MyConst.TIP_PANEL_HIDE)
         {
-            ShowMeAsync(content).Forget();
+            ShowMeAsync(content, delay).Forget();
         }
 
-        public async UniTask ShowMeAsync(string content)
+        public async UniTask ShowMeAsync(string content, float delay)
         {
             GetControl<TextMeshProUGUI>("content").text = content;
             ShowMe();
-            await UniTask.WaitForSeconds(MyConst.TIP_PANEL_HIDE);
+            await UniTask.WaitForSeconds(delay);
             HideMe();
         }
 
@@ -55,12 +55,6 @@ namespace UI.Panel
             rectTransform.DOKill(true);
             rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, 0);
             rectTransform.DOAnchorPosY(rectTransform.sizeDelta.y, UIConst.UI_PANEL_ANIM);
-        }
-
-        [ContextMenu("test")]
-        private void Test()
-        {
-            ShowMeAsync("获得了线索！！获得了线索！！获得了线索！！").Forget();
         }
     }
 }

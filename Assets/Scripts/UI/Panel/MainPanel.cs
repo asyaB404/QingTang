@@ -33,6 +33,12 @@ namespace UI.Panel
                     btns[3].transform.GetChild(0).gameObject.SetActive(true);
                     event1 = true;
                 }
+
+                if (eId == 51)
+                {
+                    TipPanel.Instance.ShowTip("准备好了吗？");
+                    btns[4].transform.GetChild(0).gameObject.SetActive(true);
+                }
             });
 
             #endregion
@@ -41,21 +47,22 @@ namespace UI.Panel
 
             btns[3].onClick.AddListener(() =>
             {
+                btns[3].transform.GetChild(0).gameObject.SetActive(false);
                 if (event1)
                 {
-                    btns[3].transform.GetChild(0).gameObject.SetActive(false);
                     DialogManager.Instance.UnStop();
                     event1 = false;
                 }
             });
             btns[4].onClick.AddListener(() =>
             {
+                btns[4].transform.GetChild(0).gameObject.SetActive(false);
                 if (event1)
                 {
                     MessagePanel.Instance.ShowMessage("先接一下电话吧！");
                     return;
                 }
-                // MapPanel.Instance.ShowMe();
+                TryBattlePanel.Instance.ShowMe();
             });
             btns[5].onClick.AddListener(() =>
             {
@@ -77,12 +84,23 @@ namespace UI.Panel
             #endregion
         }
 
-        public override void OnUILoadFinish()
+        private void OnUILoadFinish()
         {
             if (!SaveManager.Instance.CheckHasFinishedDialog(0) && DialogManager.Instance.CurDialogId != 0)
             {
                 DialogManager.Instance.Load(0);
             }
+            if (SaveManager.Instance.CheckHasFinishedDialog(1) && !SaveManager.Instance.CheckHasFinishedDialog(5))
+            {
+                btns[3].transform.GetChild(0).gameObject.SetActive(true);
+                btns[3].onClick.AddListener(OnEvent51);
+            }
+        }
+
+        private void OnEvent51()
+        {
+            btns[3].onClick.RemoveListener(OnEvent51);
+            DialogManager.Instance.Load(5);
         }
 
         public override void OnPressedEsc()
@@ -91,10 +109,11 @@ namespace UI.Panel
 
         public override void ShowAnim()
         {
-            gameObject.SetActive(true);
             CanvasGroupInstance.DOKill(true);
+            gameObject.SetActive(true);
             CanvasGroupInstance.interactable = true;
             CanvasGroupInstance.DOFade(1f, UIConst.UI_PANEL_ANIM);
+            OnUILoadFinish();
         }
 
         public override void HideAnim()
