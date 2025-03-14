@@ -29,7 +29,9 @@ namespace GamePlay
                 string[] split = content.Replace(CMDNAME.GET_TIP, "").Trim().Split(',');
                 int tipId = int.Parse(split[0]);
                 string tipName = split[1];
-                MyEventSystem.Instance.EventTrigger<int,string>(CMDNAME.GET_TIP, tipId, tipName);
+                int tipColorId = int.Parse(split[2]);
+                MyEventSystem.Instance.EventTrigger<int[], string>(CMDNAME.GET_TIP, new[] { tipId, tipColorId },
+                    tipName);
             }
 
             if (content.Contains(CMDNAME.STOP))

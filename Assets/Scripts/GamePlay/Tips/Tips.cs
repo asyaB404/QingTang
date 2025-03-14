@@ -14,11 +14,13 @@ namespace GamePlay.Tips
     {
         public string Name { get; set; }
         public int Id { get; set; }
+        public int ColorId { get; set; }
 
-        public Tip(int id, string name)
+        public Tip(int id, string name, int colorId)
         {
             Id = id;
             Name = name;
+            ColorId = colorId;
         }
         
         public override string ToString()

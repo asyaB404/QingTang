@@ -118,6 +118,10 @@ namespace GamePlay
             {
                 rectTransform.DOScale(amount, MyConst.ROLE_MOVE / 2f);
             }
+            else if (type == "F")
+            {
+                roleImage.DOFade(amount, MyConst.ROLE_MOVE / 2f);
+            }
 
             return this;
         }
