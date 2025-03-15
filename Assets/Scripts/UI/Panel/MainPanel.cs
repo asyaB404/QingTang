@@ -45,6 +45,12 @@ namespace UI.Panel
 
             #region Btns
 
+            GetControl<Button>("Mail").onClick.AddListener(() =>
+            {
+                GetControl<Button>("Mail").gameObject.SetActive(false);
+                GetControl<Image>("Front").rectTransform.DOAnchorPosY(0, UIConst.UI_PANEL_ANIM);
+                DialogManager.Instance.Load(0);
+            });
             btns[3].onClick.AddListener(() =>
             {
                 btns[3].transform.GetChild(0).gameObject.SetActive(false);
@@ -96,13 +102,19 @@ namespace UI.Panel
         {
             if (!SaveManager.Instance.CheckHasFinishedDialog(0) && DialogManager.Instance.CurDialogId != 0)
             {
-                DialogManager.Instance.Load(0);
+                OnFirst();
             }
             if (SaveManager.Instance.CheckHasFinishedDialog(1) && !SaveManager.Instance.CheckHasFinishedDialog(5))
             {
                 btns[3].transform.GetChild(0).gameObject.SetActive(true);
                 btns[3].onClick.AddListener(OnEvent51);
             }
+        }
+
+        private void OnFirst()
+        {
+            GetControl<Image>("Front").rectTransform.localPosition = new Vector3(0, -350, 0);
+            GetControl<Button>("Mail").gameObject.SetActive(true);
         }
 
         private void OnEvent51()

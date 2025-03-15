@@ -69,6 +69,10 @@ namespace UI.Panel
         {
             base.Init();
             dialogManager.Init();
+            MyEventSystem.Instance.AddEventListener<bool>("phone", (active) =>
+            {
+                GetControl<Image>("Phone").gameObject.SetActive(active);
+            });
             GetControl<Button>("tipBtn").onClick.AddListener(ChangeTipPanel);
             GetControl<Button>("exit").onClick.AddListener(ChangeTipPanel);
             foreach (Transform child in tipBtnsParent)

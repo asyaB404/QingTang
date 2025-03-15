@@ -86,6 +86,10 @@ namespace GamePlay
             else if (anchoredString == "C")
             {
                 anchored.x = 0.5f;
+                if (isInit)
+                {
+                    MyEventSystem.Instance.EventTrigger<bool>("phone",true);
+                }
             }
             else
             {
@@ -134,6 +138,8 @@ namespace GamePlay
             else if (type == "F")
             {
                 roleImage.DOFade(amount, MyConst.ROLE_MOVE * 1.5f);
+                if(Mathf.Approximately(roleImage.rectTransform.anchoredPosition.x, 0.5f))
+                    MyEventSystem.Instance.EventTrigger<bool>("phone",false);
             }
 
             return this;
