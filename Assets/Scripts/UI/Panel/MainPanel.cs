@@ -81,6 +81,14 @@ namespace UI.Panel
             {
                 MessagePanel.Instance.ShowMessage("返回主界面？", HideMe);
             });
+            btns[8].onClick.AddListener(() =>
+            {
+                MessagePanel.Instance.ShowMessage("返回主界面？", HideMe);
+            });
+            btns[9].onClick.AddListener(() =>
+            {
+                MessagePanel.Instance.ShowMessage("返回主界面？", HideMe);
+            });
             #endregion
         }
 

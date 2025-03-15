@@ -58,16 +58,23 @@ namespace GamePlay
         public Role SetFace(int faceId)
         {
             curFace = faceId;
+            if (curFace == 0)
+            {
+                roleImage.sprite = idleSprites[0];
+                roleImage.SetNativeSize();
+            }
+
             faceId -= 1;
             if (faceId >= faceSprites.Length || faceId < 0) return this;
             roleImage.sprite = faceSprites[faceId];
+            roleImage.SetNativeSize();
             return this;
         }
 
         public Role SetAnchor(string anchoredString, bool isInit = false)
         {
             if (string.IsNullOrEmpty(anchoredString)) return this;
-            Vector2 anchored = new Vector2(0.5f, 0.5f);
+            Vector2 anchored = new Vector2(0.5f, 0f);
             if (anchoredString == "L")
             {
                 anchored.x = 0;
@@ -75,6 +82,10 @@ namespace GamePlay
             else if (anchoredString == "R")
             {
                 anchored.x = 1;
+            }
+            else if (anchoredString == "C")
+            {
+                anchored.x = 0.5f;
             }
             else
             {
@@ -87,6 +98,8 @@ namespace GamePlay
             rectTransform.pivot = anchored;
             if (isInit)
             {
+                roleImage.color = new Color(1, 1, 1, 0);
+                roleImage.DOFade(1, MyConst.ROLE_MOVE * 1.5f);
                 if (anchored.x < 0.5f)
                 {
                     rectTransform.anchoredPosition =
@@ -99,7 +112,7 @@ namespace GamePlay
                 }
                 else
                 {
-                    rectTransform.anchoredPosition = Vector2.zero;
+                    rectTransform.anchoredPosition = new Vector2(0, rectTransform.anchoredPosition.y);
                 }
             }
 
@@ -120,7 +133,7 @@ namespace GamePlay
             }
             else if (type == "F")
             {
-                roleImage.DOFade(amount, MyConst.ROLE_MOVE / 2f);
+                roleImage.DOFade(amount, MyConst.ROLE_MOVE * 1.5f);
             }
 
             return this;
