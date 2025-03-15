@@ -68,7 +68,20 @@ namespace UI.Panel
                     MessagePanel.Instance.ShowMessage("先接一下电话吧！");
                     return;
                 }
-                TryBattlePanel.Instance.ShowMe();
+                // TryBattlePanel.Instance.ShowMe();
+                MessagePanel.Instance.ShowMessage("信息是否收集全？", () =>
+                {
+                    MessagePanel.Instance.HideMe();
+                    if (SaveManager.Instance.CheckHasFinishedDialog(1) && SaveManager.Instance.CheckHasFinishedDialog(5))
+                    {
+                        HideMe();
+                        DialogManager.Instance.Load(6);
+                    }
+                    else
+                    {
+                        TipPanel.Instance.ShowTip("线索收集不足");
+                    }
+                });
             });
             btns[5].onClick.AddListener(() =>
             {

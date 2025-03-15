@@ -35,6 +35,7 @@ namespace UI.Panel
                 TipButton tipButton = new TipButton()
                 {
                     redPoint = child.GetChild(0).gameObject,
+                    color = child.GetChild(1).GetComponent<Image>(),
                     btn = child.GetComponent<Button>(),
                     img = child.GetComponent<Image>(),
                     text = child.GetComponentInChildren<TextMeshProUGUI>()

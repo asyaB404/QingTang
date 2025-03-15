@@ -15,17 +15,19 @@ namespace GamePlay.Tips
     {
         public void OnGetTip(Tip tip)
         {
-            if (tip.Id == 2)
+            if (tip.ColorId == 2)
             {
                 MessagePanel.Instance.ShowMessage("针对这条发言：" + tip.Name, () =>
                 {
+                    MessagePanel.Instance.HideMe();
                     if (!SaveManager.Instance.FinishTip(tip)) return;
                     DialogPanel.Instance.ShowRedPoint();
                     DialogPanel.Instance.OnUpdateTip();
                 }, () =>
                 {
+                    MessagePanel.Instance.HideMe();
                     DialogManager.Instance.Stop();
-                    //TODO:
+                    BattlePanel.Instance.ShowMe();
                 }).SetBtnName("采纳", "驳回");
                 return;
             }

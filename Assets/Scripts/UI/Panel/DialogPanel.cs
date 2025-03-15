@@ -22,6 +22,7 @@ namespace UI.Panel
     public class TipButton
     {
         public Tip tip;
+        public Image color;
         public GameObject redPoint;
         public Button btn;
         public Image img;
@@ -31,22 +32,22 @@ namespace UI.Panel
         {
             if (id == -1)
             {
-                img.color = Color.white;
+                color.color = Color.clear;
             }
 
             if (id == 0)
             {
-                img.color = Color.cyan;
+                color.color = Color.cyan;
             }
 
             if (id == 1)
             {
-                img.color = Color.yellow;
+                color.color = Color.yellow;
             }
 
             if (id == 2)
             {
-                img.color = Color.red;
+                color.color = Color.red;
             }
         }
 
@@ -80,6 +81,7 @@ namespace UI.Panel
                 TipButton tipButton = new TipButton()
                 {
                     redPoint = child.GetChild(0).gameObject,
+                    color = child.GetChild(1).GetComponent<Image>(),
                     btn = child.GetComponent<Button>(),
                     img = child.GetComponent<Image>(),
                     text = child.GetComponentInChildren<TextMeshProUGUI>()
