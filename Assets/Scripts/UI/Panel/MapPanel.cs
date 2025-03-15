@@ -18,6 +18,10 @@ namespace UI.Panel
         public override void Init()
         {
             base.Init();
+            GetControl<Button>("home").onClick.AddListener(() => { MessagePanel.Instance.ShowMessage("返回主界面？", MainPanel.Instance.HideMe);});
+            GetControl<Button>("save").onClick.AddListener(HideMe);
+            GetControl<Button>("back").onClick.AddListener(HideMe);
+            GetControl<Button>("setting").onClick.AddListener(SettingsPanel.Instance.ShowMe);
             GetControl<Button>("main").onClick.AddListener(HideMe);
             GetControl<Button>("8").onClick.AddListener(() =>
             {

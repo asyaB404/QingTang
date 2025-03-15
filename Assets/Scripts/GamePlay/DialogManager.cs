@@ -65,10 +65,7 @@ namespace GamePlay
             MyEventSystem.Instance.AddEventListener<int[], string>(CMDNAME.GET_TIP, (id, tipName) =>
             {
                 Tip tip = new Tip(id[0], tipName, id[1]);
-                if (SaveManager.Instance.FinishTip(tip))
-                {
-                    _tipsManager.OnGetTip(tip);
-                }
+                _tipsManager.OnGetTip(tip);
                 curIndex++;
                 Next();
             });

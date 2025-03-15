@@ -15,8 +15,26 @@ namespace GamePlay.Tips
     {
         public void OnGetTip(Tip tip)
         {
-            DialogPanel.Instance.ShowRedPoint();
-            DialogPanel.Instance.OnUpdateTip();
+            if (tip.Id == 2)
+            {
+                MessagePanel.Instance.ShowMessage("针对这条发言：" + tip.Name, () =>
+                {
+                    if (!SaveManager.Instance.FinishTip(tip)) return;
+                    DialogPanel.Instance.ShowRedPoint();
+                    DialogPanel.Instance.OnUpdateTip();
+                }, () =>
+                {
+                    DialogManager.Instance.Stop();
+                    //TODO:
+                }).SetBtnName("采纳", "驳回");
+                return;
+            }
+
+            if (SaveManager.Instance.FinishTip(tip))
+            {
+                DialogPanel.Instance.ShowRedPoint();
+                DialogPanel.Instance.OnUpdateTip();
+            }
         }
     }
 }
