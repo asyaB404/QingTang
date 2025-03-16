@@ -66,6 +66,11 @@ namespace UI.Panel
         [SerializeField] private RectTransform tipBtnsParent;
         [SerializeField] private List<TipButton> tipButtons;
 
+        public new void ShowMe()
+        {
+            TipPanel.Instance.HideMe();
+            base.ShowMe();
+        }
         public override void Init()
         {
             base.Init();

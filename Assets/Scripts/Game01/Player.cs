@@ -17,33 +17,54 @@ namespace Game01
         [SerializeField] private Vector2 moveDir;
         [SerializeField] private Rigidbody2D rb;
         private bool _isStart;
-        private float lastInputTime = -1f;
-        private float doubleClickTimeThreshold = 0.3f; // 双击时间阈值，单位为秒
-        private Vector2 lastMoveDir;
-        private void Update()
+        private float lastTapTime = 0f;
+        private KeyCode lastKey;
+        private bool isDoubleTapped = false;
+        public float normalSpeed = 2f;
+        public float sprintSpeed = 4f;
+        public float doubleTapTime = 0.3f; // 双击的时间间隔
+        void Update()
         {
-            if (!_isStart) return;
+            if(!_isStart) return;
+            HandleInput();
+        }
 
-            moveDir.x = Input.GetAxisRaw("Horizontal");
-            moveDir.y = Input.GetAxisRaw("Vertical");
+        void FixedUpdate()
+        {
+            float speed = isDoubleTapped ? sprintSpeed : normalSpeed;
+            rb.velocity = moveDir * speed;
+        }
 
-            if (moveDir != Vector2.zero)
+        void HandleInput()
+        {
+            Vector2 inputDir = Vector2.zero;
+            KeyCode currentKey = KeyCode.None;
+
+            if (Input.GetKey(KeyCode.A)) { inputDir = Vector2.left; currentKey = KeyCode.A; }
+            if (Input.GetKey(KeyCode.D)) { inputDir = Vector2.right; currentKey = KeyCode.D; }
+            if (Input.GetKey(KeyCode.W)) { inputDir = Vector2.up; currentKey = KeyCode.W; }
+            if (Input.GetKey(KeyCode.S)) { inputDir = Vector2.down; currentKey = KeyCode.S; }
+
+            moveDir = inputDir;
+            if (inputDir != Vector2.zero)
             {
-                if (lastMoveDir == moveDir && Time.time - lastInputTime < doubleClickTimeThreshold)
-                {
-                    rb.velocity = moveDir * 4f; // 双击方向键时加速
-                }
-                else
-                {
-                    rb.velocity = moveDir * 2f; // 单击方向键时正常速度
-                }
 
-                lastMoveDir = moveDir;
-                lastInputTime = Time.time;
+                // 处理双击逻辑
+                if (Input.GetKeyDown(currentKey))
+                {
+                    if (lastKey == currentKey && Time.time - lastTapTime <= doubleTapTime)
+                    {
+                        isDoubleTapped = true;
+                    }
+                    lastTapTime = Time.time;
+                    lastKey = currentKey;
+                }
             }
-            else
+
+            // 如果方向键松开，则重置双击状态
+            if (Input.GetKeyUp(currentKey))
             {
-                rb.velocity = Vector2.zero; // 没有输入时停止移动
+                isDoubleTapped = false;
             }
         }
 

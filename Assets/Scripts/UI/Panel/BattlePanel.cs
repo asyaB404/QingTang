@@ -19,6 +19,7 @@ namespace UI.Panel
 {
     public class BattlePanel : BasePanel<BattlePanel>
     {
+        [SerializeField] private Sprite[] result;
         [SerializeField] private RectTransform tipBtnsParent;
         [SerializeField] private List<TipButton> tipButtons;
         [SerializeField] private List<Tip> choices = new() { null, null, null };
@@ -27,10 +28,18 @@ namespace UI.Panel
         public override void Init()
         {
             base.Init();
+            MyEventSystem.Instance.AddEventListener<int>(CMDNAME.EVENT, (id) =>
+            {
+                if (id == 61)
+                {
+                    ShowMe();
+                }
+            });
             UIManager.Instance.AddExcludedPanels(GetType());
             GetControl<Button>("confirm").onClick.AddListener(() =>
             {
                 HideMe();
+                MyEventSystem.Instance.EventTrigger<List<Tip>>("BattlePanel_Confirm", choices);
                 //TODO:判断
             });
             GetControl<Button>("cancel").onClick.AddListener(() =>
@@ -115,6 +124,11 @@ namespace UI.Panel
                 tipButtons[i].redPoint.SetActive(tip.HasRedPoint);
                 i++;
             }
+        }
+
+        public void ShowResult(bool isWin)
+        {
+            GetControl<Image>("Result").gameObject.SetActive(true);
         }
     }
 }

@@ -7,12 +7,15 @@
 // //   (___)___)                         @Copyright  Copyright (c) 2025, Basya
 // // ********************************************************************************************
 
+using System.Collections.Generic;
 using UI.Panel;
+using UnityEngine;
 
 namespace GamePlay.Tips
 {
     public class TipsManager
     {
+        private int target = 1 ^ 21 ^ 63;
         public void OnGetTip(Tip tip)
         {
             if (tip.ColorId == 2)
@@ -37,6 +40,33 @@ namespace GamePlay.Tips
                 DialogPanel.Instance.ShowRedPoint();
                 DialogPanel.Instance.OnUpdateTip();
             }
+        }
+
+        public TipsManager()
+        {
+            MyEventSystem.Instance.AddEventListener<List<Tip>>("BattlePanel_Confirm", (tips) =>
+            {
+                int sum = 0;
+                for (int i = 0; i < tips.Count; i++)
+                {
+                    var tip = tips[i];
+                    if (tip == null)
+                    {
+                        MessagePanel.Instance.ShowMessage("请选择完3条关键线索！");
+                        return;
+                    }
+                    sum ^= tip.Id;
+                }
+
+                if (sum == target)
+                {
+                    Debug.Log("正确！");
+                }
+                else
+                {
+                    Debug.Log("错误！");
+                }
+            });
         }
     }
 }

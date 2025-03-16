@@ -74,7 +74,6 @@ namespace UI.Panel
                     MessagePanel.Instance.HideMe();
                     if (SaveManager.Instance.CheckHasFinishedDialog(1) && SaveManager.Instance.CheckHasFinishedDialog(5))
                     {
-                        HideMe();
                         DialogManager.Instance.Load(6);
                     }
                     else
