@@ -45,7 +45,7 @@ MonoBehaviour:
     roleId: 2
     dialog: "\u201C\u5582\uFF0C\u5218\u4E3B\u4EFB\u4EC0\u4E48\u4E8B\u963F\uFF1F\u201D"
     face: 0
-    move: 'C,0 '
+    move: C,0
     sceneId: 0
     sound: 
   - id: 5

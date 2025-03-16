@@ -23,8 +23,8 @@ namespace UI.Panel
         public override void Init()
         {
             base.Init();
-            UIManager.Instance.ExcludedPanels.Add(GetType());
-            GetControl<Button>("Result").onClick.AddListener(() =>
+            UIManager.Instance.AddExcludedPanels(GetType());
+            GetControl<Button>("ResultPanel").onClick.AddListener(() =>
             {
                 HideMe();
                 if (isWin)
@@ -49,16 +49,13 @@ namespace UI.Panel
             });
         }
 
-        private void CloseResult()
-        {
-        }
-
         public void ShowResult(bool isWin)
         {
             this.isWin = isWin;
-            GetControl<Image>("Result").gameObject.SetActive(true);
-            GetControl<Image>("Result").transform.localScale = Vector3.zero;
-            GetControl<Image>("Result").transform.DOScale(1, UIConst.UI_PANEL_ANIM);
+            ShowMe();
+            GetControl<Image>("resImg").gameObject.SetActive(true);
+            GetControl<Image>("resImg").transform.localScale = Vector3.zero;
+            GetControl<Image>("resImg").transform.DOScale(1, UIConst.UI_PANEL_ANIM);
             GetControl<Image>("resImg").sprite = isWin ? result[0] : result[1];
         }
     }

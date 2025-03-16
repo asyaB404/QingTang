@@ -143,13 +143,17 @@ namespace UI
             }
             else
             {
-                Debug.LogWarning("注意，你关闭了栈顶以外的面板");
-                while (!ReferenceEquals(UIManager.Instance.Peek(), this)) UIManager.Instance.Peek().HideMe();
+                while (!ReferenceEquals(UIManager.Instance.Peek(), this))
+                {
+                    Debug.LogWarning("注意，你关闭了栈顶以外的面板" + UIManager.Instance.Peek());
+                    UIManager.Instance.Peek().HideMe();
+                }
+
                 UIManager.Instance.PopPanel();
                 IsInStack = false;
             }
         }
-        
+
         public virtual void OnPressedEsc()
         {
             HideMe();

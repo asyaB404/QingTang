@@ -27,6 +27,7 @@ namespace UI.Panel
         public override void Init()
         {
             base.Init();
+            UIManager.Instance.AddExcludedPanels(GetType());
             MyEventSystem.Instance.AddEventListener<int>(CMDNAME.EVENT, (id) =>
             {
                 if (id == 61)
@@ -34,10 +35,8 @@ namespace UI.Panel
                     ShowMe();
                 }
             });
-            UIManager.Instance.AddExcludedPanels(GetType());
             GetControl<Button>("confirm").onClick.AddListener(() =>
             {
-                HideMe();
                 MyEventSystem.Instance.EventTrigger<List<Tip>>("BattlePanel_Confirm", choices);
             });
             GetControl<Button>("cancel").onClick.AddListener(() =>
@@ -49,6 +48,7 @@ namespace UI.Panel
 
                 UpdateChoices();
             });
+            GetControl<Button>("exit").onClick.AddListener(Exit);
             foreach (Transform child in tipBtnsParent)
             {
                 TipButton tipButton = new TipButton()
@@ -72,6 +72,13 @@ namespace UI.Panel
 
         public override void OnPressedEsc()
         {
+            Exit();
+        }
+
+        private void Exit()
+        {
+            HideMe();
+            ResultPanel.Instance.ShowResult(false);
         }
 
         private void SetChoice(int colorId, Tip tip)
@@ -82,10 +89,17 @@ namespace UI.Panel
 
         private void UpdateChoices()
         {
-            foreach (var tip in choices)
+            for (int i = 0; i < choices.Count; i++)
             {
-                if (tip == null) continue;
-                choicesText[tip.ColorId].text = tip.Name;
+                var tip = choices[i];
+                if (tip == null)
+                {
+                    choicesText[i].text = string.Empty;
+                }
+                else
+                {
+                    choicesText[tip.ColorId].text = tip.Name;
+                }
             }
         }
 
