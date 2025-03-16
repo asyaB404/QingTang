@@ -60,11 +60,20 @@ namespace GamePlay.Tips
 
                 if (sum == target)
                 {
-                    Debug.Log("正确！");
+                    BattlePanel.Instance.HideMe();
+                    DialogManager.Instance.Load(7);
                 }
                 else
                 {
-                    Debug.Log("错误！");
+                    BattlePanel.Instance.HideMe();
+                    ResultPanel.Instance.ShowResult(false);
+                }
+            });
+            MyEventSystem.Instance.AddEventListener<int>(CMDNAME.EVENT, (id) =>
+            {
+                if (id == 71)
+                {
+                    ResultPanel.Instance.ShowResult(true);
                 }
             });
         }

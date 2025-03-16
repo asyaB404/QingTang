@@ -19,7 +19,6 @@ namespace UI.Panel
 {
     public class BattlePanel : BasePanel<BattlePanel>
     {
-        [SerializeField] private Sprite[] result;
         [SerializeField] private RectTransform tipBtnsParent;
         [SerializeField] private List<TipButton> tipButtons;
         [SerializeField] private List<Tip> choices = new() { null, null, null };
@@ -40,7 +39,6 @@ namespace UI.Panel
             {
                 HideMe();
                 MyEventSystem.Instance.EventTrigger<List<Tip>>("BattlePanel_Confirm", choices);
-                //TODO:判断
             });
             GetControl<Button>("cancel").onClick.AddListener(() =>
             {
@@ -48,6 +46,7 @@ namespace UI.Panel
                 {
                     choices[i] = null;
                 }
+
                 UpdateChoices();
             });
             foreach (Transform child in tipBtnsParent)
@@ -85,7 +84,7 @@ namespace UI.Panel
         {
             foreach (var tip in choices)
             {
-                if(tip == null) continue;
+                if (tip == null) continue;
                 choicesText[tip.ColorId].text = tip.Name;
             }
         }
@@ -125,10 +124,11 @@ namespace UI.Panel
                 i++;
             }
         }
+        
 
-        public void ShowResult(bool isWin)
+        public void CloseResult()
         {
-            GetControl<Image>("Result").gameObject.SetActive(true);
+            GetControl<Image>("Result").gameObject.SetActive(false);
         }
     }
 }
