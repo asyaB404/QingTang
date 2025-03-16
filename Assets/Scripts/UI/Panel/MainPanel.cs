@@ -57,13 +57,17 @@ namespace UI.Panel
                 GetControl<Image>("Front").rectTransform.DOAnchorPosY(0, UIConst.UI_PANEL_ANIM);
                 DialogManager.Instance.Load(0);
             });
-            btns[1].onClick.AddListener(() =>
+            btns[0].onClick.AddListener(() =>
             {
                 MessagePanel.Instance.ShowMessage("无法连接至互联网!");
             });
+            btns[1].onClick.AddListener(() =>
+            {
+                RolesPanel.Instance.ShowMe();
+            });
             btns[2].onClick.AddListener(() =>
             {
-                
+                AchievePanel.Instance.ShowMe();
             });
             btns[3].onClick.AddListener(() =>
             {

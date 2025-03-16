@@ -19,6 +19,7 @@ namespace GamePlay
     {
         public string roleName;
         public Image roleImage;
+        public Image win;
         [SerializeField] private int curFace;
         [SerializeField] private Sprite[] idleSprites;
         [SerializeField] private Sprite[] faceSprites;
@@ -57,6 +58,12 @@ namespace GamePlay
 
         public Role SetFace(int faceId)
         {
+            if (faceId == 1 && roleName[0] == '李')
+            {
+                win.gameObject.SetActive(true);
+                win.transform.SetParent(transform.parent);
+            }
+
             curFace = faceId;
             if (curFace == 0)
             {
