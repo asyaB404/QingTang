@@ -39,6 +39,12 @@ namespace UI.Panel
                     TipPanel.Instance.ShowTip("准备好了吗？");
                     btns[4].transform.GetChild(0).gameObject.SetActive(true);
                 }
+
+                if (eId == 71)
+                {
+                    icons[0].DOFillAmount(0.8f, UIConst.UI_PANEL_ANIM);
+                    btns[2].transform.GetChild(0).gameObject.SetActive(true);
+                }
             });
 
             #endregion
@@ -50,6 +56,14 @@ namespace UI.Panel
                 GetControl<Button>("Mail").gameObject.SetActive(false);
                 GetControl<Image>("Front").rectTransform.DOAnchorPosY(0, UIConst.UI_PANEL_ANIM);
                 DialogManager.Instance.Load(0);
+            });
+            btns[1].onClick.AddListener(() =>
+            {
+                MessagePanel.Instance.ShowMessage("无法连接至互联网!");
+            });
+            btns[2].onClick.AddListener(() =>
+            {
+                
             });
             btns[3].onClick.AddListener(() =>
             {

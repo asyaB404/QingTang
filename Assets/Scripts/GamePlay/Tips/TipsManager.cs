@@ -29,7 +29,6 @@ namespace GamePlay.Tips
                 }, () =>
                 {
                     MessagePanel.Instance.HideMe();
-                    DialogManager.Instance.Stop();
                     BattlePanel.Instance.ShowMe();
                 }).SetBtnName("采纳", "驳回");
                 return;

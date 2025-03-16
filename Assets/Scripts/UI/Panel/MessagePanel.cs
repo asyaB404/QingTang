@@ -44,6 +44,11 @@ namespace UI.Panel
             return this;
         }
 
+        public override void OnPressedEsc()
+        {
+            
+        }
+
         public MessagePanel SetBtnName(string confirmBtnName = "确认", string cancelBtnName = "取消")
         {
             GetControl<TextMeshProUGUI>("confirmText").text = confirmBtnName;
@@ -68,7 +73,9 @@ namespace UI.Panel
 
         public override void HideAnim()
         {
+            GetControl<Button>("exit").onClick.RemoveAllListeners();
             GetControl<Button>("confirm").onClick.RemoveAllListeners();
+            GetControl<Button>("cancel").onClick.RemoveAllListeners();
             CanvasGroupInstance.DOKill(true);
             CanvasGroupInstance.interactable = false;
             CanvasGroupInstance.DOFade(0f, UIConst.UI_PANEL_ANIM).OnComplete(() => { gameObject.SetActive(false); });

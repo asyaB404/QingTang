@@ -219,7 +219,7 @@ MonoBehaviour:
     sound: 
   - id: 29
     roleId: 0
-    dialog: "\u2026..."
+    dialog: ......
     face: 0
     move: 
     sceneId: 5

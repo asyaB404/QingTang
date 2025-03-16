@@ -30,6 +30,8 @@ namespace UI.Panel
                 if (isWin)
                 {
                     BattlePanel.Instance.HideMe();
+                    DialogManager.Instance.Stop();
+                    DialogManager.Instance.ReSet();
                 }
                 else
                 {
@@ -38,12 +40,18 @@ namespace UI.Panel
                             () =>
                             {
                                 MessagePanel.Instance.HideMe();
+                                ResultPanel.Instance.HideMe();
+                                BattlePanel.Instance.HideMe();
+                                DialogManager.Instance.ReSet();
                                 DialogManager.Instance.Load(6);
                             },
                             () =>
                             {
                                 MessagePanel.Instance.HideMe();
+                                ResultPanel.Instance.HideMe();
+                                BattlePanel.Instance.HideMe();
                                 DialogPanel.Instance.HideMe();
+                                DialogManager.Instance.ReSet();
                             }).SetBtnName("重新调解", "重新收集线索");
                 }
             });
