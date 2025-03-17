@@ -7,6 +7,7 @@
 // //   (___)___)                         @Copyright  Copyright (c) 2025, Basya
 // // ********************************************************************************************
 
+using System;
 using Cysharp.Threading.Tasks;
 using Data;
 using DG.Tweening;
@@ -54,6 +55,12 @@ namespace GamePlay
                 i++;
                 await UniTask.WaitForSeconds(d);
             }
+        }
+
+        private void OnDestroy()
+        {
+            if (win != null)
+                Destroy(win.gameObject);
         }
 
         public Role SetFace(int faceId)

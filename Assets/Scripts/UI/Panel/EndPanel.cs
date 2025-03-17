@@ -8,6 +8,7 @@
 // // ********************************************************************************************
 
 using DG.Tweening;
+using GamePlay;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +21,14 @@ namespace UI.Panel
             base.Init();
             UIManager.Instance.AddExcludedPanels(GetType());
             GetControl<Button>("Main").onClick.AddListener(End);
-            
+            MyEventSystem.Instance.AddEventListener<int>(CMDNAME.EVENT, (eId) =>
+            {
+                if (eId == 81)
+                {
+                    DialogPanel.Instance.HideMe();
+                    ShowMe();
+                }
+            });
         }
 
         private void End()

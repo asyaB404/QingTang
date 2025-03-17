@@ -67,6 +67,7 @@ namespace UI.Panel
             });
             btns[2].onClick.AddListener(() =>
             {
+                btns[2].transform.GetChild(0).gameObject.SetActive(false);
                 AchievePanel.Instance.ShowMe();
             });
             btns[3].onClick.AddListener(() =>

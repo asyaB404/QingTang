@@ -103,6 +103,12 @@ namespace UI.Panel
 
         public void SetBackGround(int sceneId)
         {
+            if (sceneId == 6)
+            {
+                GetControl<Image>("BG").color = Color.clear;
+                return;
+            }
+
             GetControl<Image>("BG").sprite = GlobalConfig.Instance.GetBackGround(sceneId);
         }
 
