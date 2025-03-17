@@ -62,6 +62,8 @@ namespace GamePlay
             {
                 win.gameObject.SetActive(true);
                 win.transform.SetParent(transform.parent);
+                win.transform.SetAsFirstSibling();
+                win.rectTransform.DOAnchorPosX(284, MyConst.ROLE_MOVE);
             }
 
             curFace = faceId;
