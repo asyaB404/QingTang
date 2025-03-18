@@ -131,6 +131,7 @@ namespace UI.Panel
 
         private void OnUILoadFinish()
         {
+            AudioMgr.Instance.PlayMusic("main");
             if (!SaveManager.Instance.CheckHasFinishedDialog(0) && DialogManager.Instance.CurDialogId != 0)
             {
                 OnFirst();

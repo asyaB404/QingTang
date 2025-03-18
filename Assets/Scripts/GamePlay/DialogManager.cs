@@ -125,6 +125,11 @@ namespace GamePlay
 
         public void Load(int dialogId)
         {
+            if (dialogId == 6)
+            {
+                AudioMgr.Instance.PlayMusic("battle");
+            }
+
             CurDialogId = dialogId;
             isStop = false;
             SetDialogUI(true);
@@ -180,12 +185,30 @@ namespace GamePlay
                 sbMgr.Skip();
                 return;
             }
-
+            
+            
             var info = dialogList[curIndex];
             DialogPanel.Instance.SetBackGround(info.sceneId);
             string content = info.dialog;
             var infoMove = info.move;
             var split = infoMove.Split(',');
+            if (string.IsNullOrEmpty(info.sound))
+            {
+                if (info.sound == "xibu")
+                {
+                    AudioMgr.Instance.PlayMusic("west");
+                    return;
+                }
+
+                if (info.sound == "xibuend")
+                {
+                    AudioMgr.Instance.PlayMusic("map");
+                    return;
+                }
+
+                AudioMgr.Instance.PlaySFX(info.sound);
+            }
+
             if (info.roleId > 0)
             {
                 Role role;

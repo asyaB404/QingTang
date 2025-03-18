@@ -74,6 +74,7 @@ namespace UI.Panel
         public override void ShowAnim()
         {
             gameObject.SetActive(true);
+            AudioMgr.Instance.PlayMusic("map");
             CanvasGroupInstance.DOKill(true);
             CanvasGroupInstance.interactable = true;
             CanvasGroupInstance.DOFade(1f, UIConst.UI_PANEL_ANIM);

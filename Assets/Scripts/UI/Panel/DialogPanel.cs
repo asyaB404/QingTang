@@ -71,14 +71,13 @@ namespace UI.Panel
             TipPanel.Instance.HideMe();
             base.ShowMe();
         }
+
         public override void Init()
         {
             base.Init();
             dialogManager.Init();
-            MyEventSystem.Instance.AddEventListener<bool>("phone", (active) =>
-            {
-                GetControl<Image>("Phone").gameObject.SetActive(active);
-            });
+            MyEventSystem.Instance.AddEventListener<bool>("phone",
+                (active) => { GetControl<Image>("Phone").gameObject.SetActive(active); });
             GetControl<Button>("tipBtn").onClick.AddListener(ChangeTipPanel);
             GetControl<Button>("exit").onClick.AddListener(ChangeTipPanel);
             foreach (Transform child in tipBtnsParent)
@@ -93,7 +92,7 @@ namespace UI.Panel
                 };
                 tipButton.btn.onClick.AddListener(() =>
                 {
-                    if(tipButton.tip == null) return;
+                    if (tipButton.tip == null) return;
                     tipButton.tip.HasRedPoint = false;
                     tipButton.redPoint.SetActive(false);
                 });
@@ -151,7 +150,7 @@ namespace UI.Panel
                 GetControl<Button>("tipBtn").transform.GetChild(0).gameObject.SetActive(true);
             }
         }
-        
+
 
         public override void OnPressedEsc()
         {

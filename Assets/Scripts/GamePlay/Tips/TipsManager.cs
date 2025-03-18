@@ -70,6 +70,11 @@ namespace GamePlay.Tips
             });
             MyEventSystem.Instance.AddEventListener<int>(CMDNAME.EVENT, (id) =>
             {
+                if (id == 11)
+                {
+                    
+                }
+
                 if (id == 71)
                 {
                     ResultPanel.Instance.ShowResult(true);

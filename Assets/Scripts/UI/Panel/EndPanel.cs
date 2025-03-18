@@ -33,6 +33,7 @@ namespace UI.Panel
 
         private void End()
         {
+            GetControl<Button>("Main").enabled = false;
             GetControl<Image>("End").DOFade(1f, UIConst.UI_PANEL_ANIM * 10f).OnComplete(() =>
             {
                 GetControl<Image>("End").color = Color.clear;
@@ -43,6 +44,7 @@ namespace UI.Panel
 
         public override void ShowAnim()
         {
+            GetControl<Button>("Main").enabled = true;
             CanvasGroupInstance.DOKill(true);
             gameObject.SetActive(true);
             CanvasGroupInstance.interactable = true;
