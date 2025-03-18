@@ -138,6 +138,7 @@ namespace UI.Panel
             }
             if (SaveManager.Instance.CheckHasFinishedDialog(1) && !SaveManager.Instance.CheckHasFinishedDialog(5))
             {
+                AudioMgr.Instance.PlaySFX("SFX/"+"phone");
                 btns[3].transform.GetChild(0).gameObject.SetActive(true);
                 btns[3].onClick.AddListener(OnEvent51);
             }

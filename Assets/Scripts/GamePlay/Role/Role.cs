@@ -90,7 +90,7 @@ namespace GamePlay
         public Role SetAnchor(string anchoredString, bool isInit = false)
         {
             if (string.IsNullOrEmpty(anchoredString)) return this;
-            Vector2 anchored = new Vector2(0.5f, 0f);
+            Vector2 anchored = new Vector2(0.5f, 0.5f);
             if (anchoredString == "L")
             {
                 anchored.x = 0;

@@ -192,7 +192,7 @@ namespace GamePlay
             string content = info.dialog;
             var infoMove = info.move;
             var split = infoMove.Split(',');
-            if (string.IsNullOrEmpty(info.sound))
+            if (!string.IsNullOrEmpty(info.sound))
             {
                 if (info.sound == "xibu")
                 {
