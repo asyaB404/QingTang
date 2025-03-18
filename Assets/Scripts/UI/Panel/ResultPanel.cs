@@ -61,6 +61,15 @@ namespace UI.Panel
         {
             this.isWin = isWin;
             ShowMe();
+            if (this.isWin)
+            {
+                AudioMgr.Instance.PlaySFX("SFX/win");
+            }
+            else
+            {
+                AudioMgr.Instance.PlaySFX("SFX/lost");
+            }
+
             GetControl<Image>("resImg").gameObject.SetActive(true);
             GetControl<Image>("resImg").transform.localScale = Vector3.zero;
             GetControl<Image>("resImg").transform.DOScale(1, UIConst.UI_PANEL_ANIM);

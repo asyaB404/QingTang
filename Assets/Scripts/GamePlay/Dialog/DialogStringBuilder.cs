@@ -57,7 +57,7 @@ namespace GamePlay
             isBuilding = true;
             while (uuid == _uniId && i < content.Length)
             {
-                AudioMgr.Instance.PlaySFX("str");
+                AudioMgr.Instance.PlaySFX("SFX/str");
                 _stringBuilder.Append(content[i]);
                 dialog.text = _stringBuilder.ToString();
                 i++;

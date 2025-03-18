@@ -220,7 +220,7 @@ namespace UI
         /// <param name="btnName">这个按钮的GameObject的名称</param>
         protected virtual void OnClick(string btnName)
         {
-            AudioMgr.Instance.PlaySFX("click");
+            AudioMgr.Instance.PlaySFX("SFX/click");
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace UI
         /// <param name="value">多选框回调返回值</param>
         protected virtual void OnValueChanged(string toggleName, bool value)
         {
-            AudioMgr.Instance.PlaySFX("click");
+            AudioMgr.Instance.PlaySFX("SFX/click");
         }
 
         /// <summary>

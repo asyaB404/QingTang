@@ -127,7 +127,7 @@ namespace GamePlay
         {
             if (dialogId == 6)
             {
-                AudioMgr.Instance.PlayMusic("battle");
+                AudioMgr.Instance.PlayMusic("Music/"+"battle");
             }
 
             CurDialogId = dialogId;
@@ -196,17 +196,17 @@ namespace GamePlay
             {
                 if (info.sound == "xibu")
                 {
-                    AudioMgr.Instance.PlayMusic("west");
+                    AudioMgr.Instance.PlayMusic("Music/"+"west");
                     return;
                 }
 
                 if (info.sound == "xibuend")
                 {
-                    AudioMgr.Instance.PlayMusic("map");
+                    AudioMgr.Instance.PlayMusic("Music/"+"map");
                     return;
                 }
 
-                AudioMgr.Instance.PlaySFX(info.sound);
+                AudioMgr.Instance.PlaySFX("SFX/"+info.sound);
             }
 
             if (info.roleId > 0)
