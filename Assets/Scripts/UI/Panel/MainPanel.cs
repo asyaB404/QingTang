@@ -34,6 +34,13 @@ namespace UI.Panel
                     event1 = true;
                 }
 
+                if (eId == -1)
+                {
+                    PhonePanel.Instance.HideMe();
+                    DialogManager.Instance.UnStop();
+                    event1 = false;
+                }
+
                 if (eId == 51)
                 {
                     TipPanel.Instance.ShowTip("准备好了吗？");
@@ -73,11 +80,7 @@ namespace UI.Panel
             btns[3].onClick.AddListener(() =>
             {
                 btns[3].transform.GetChild(0).gameObject.SetActive(false);
-                if (event1)
-                {
-                    DialogManager.Instance.UnStop();
-                    event1 = false;
-                }
+                PhonePanel.Instance.ShowMe();
             });
             btns[4].onClick.AddListener(() =>
             {
