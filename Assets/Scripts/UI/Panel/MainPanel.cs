@@ -158,6 +158,8 @@ namespace UI.Panel
             CanvasGroupInstance.interactable = true;
             CanvasGroupInstance.DOFade(1f, UIConst.UI_PANEL_ANIM);
             OnUILoadFinish();
+            GetControl<Image>("Role").gameObject.SetActive(SaveManager.Instance.CheckHasFinishedDialog(5) &&
+                                                           !SaveManager.Instance.CheckHasFinishedDialog(7));
         }
 
         public override void HideAnim()

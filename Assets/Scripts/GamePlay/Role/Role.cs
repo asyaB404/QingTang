@@ -11,6 +11,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using Data;
 using DG.Tweening;
+using UI.Panel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,6 +29,7 @@ namespace GamePlay
         [SerializeField] private float faceDuration = 0.5f;
         private float _animTimer = 4f;
 
+        [SerializeField] private Image fire;
 
         private void Update()
         {
@@ -65,6 +67,15 @@ namespace GamePlay
 
         public Role SetFace(int faceId)
         {
+            if (faceId == 99)
+            {
+                transform.DOLocalMoveY(-100f, 0.1f) 
+                    .SetLoops(8, LoopType.Yoyo) 
+                    .SetEase(Ease.OutQuad);
+                DialogPanel.Instance.CupAnim();
+                faceId = 0;
+            }
+
             if (faceId == 1 && roleName[0] == '李')
             {
                 win.gameObject.SetActive(true);
@@ -150,6 +161,10 @@ namespace GamePlay
             else if (type == "S")
             {
                 rectTransform.DOScale(amount, MyConst.ROLE_MOVE / 2f);
+                if (amount >= 1.5f)
+                {
+                    fire.gameObject.SetActive(true);
+                }
             }
             else if (type == "F")
             {
@@ -158,6 +173,12 @@ namespace GamePlay
             }
 
             return this;
+        }
+
+        [ContextMenu("12")]
+        private void Test()
+        {
+            SetFace(99);
         }
     }
 }

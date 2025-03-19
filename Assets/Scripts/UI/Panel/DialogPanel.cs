@@ -100,6 +100,12 @@ namespace UI.Panel
             }
         }
 
+        public void CupAnim()
+        {
+            Animator animator = GetControl<Image>("Anim").GetComponent<Animator>();
+            animator.enabled = true;
+        }
+
         public void SetBackGround(int sceneId)
         {
             if (sceneId == 6)
@@ -166,6 +172,8 @@ namespace UI.Panel
 
         public override void HideAnim()
         {
+            Animator animator = GetControl<Image>("Anim").GetComponent<Animator>();
+            animator.enabled = false;
             CanvasGroupInstance.interactable = false;
             CanvasGroupInstance.DOFade(0f, UIConst.UI_PANEL_ANIM).OnComplete(() => { gameObject.SetActive(false); });
         }

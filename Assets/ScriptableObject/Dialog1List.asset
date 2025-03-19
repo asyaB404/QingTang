@@ -171,7 +171,7 @@ MonoBehaviour:
     roleId: 3
     dialog: "\uFF01\uFF01"
     face: 3
-    move: L,-2
+    move: L,0
     sceneId: 1
     sound: 
   - id: 23
@@ -199,14 +199,14 @@ MonoBehaviour:
     roleId: 3
     dialog: '#next'
     face: 1
-    move: L,3
+    move: L,1.8
     sceneId: 1
     sound: 
   - id: 27
     roleId: 2
     dialog: '#next'
     face: 3
-    move: R,-3
+    move: R,-1.8
     sceneId: 1
     sound: 
   - id: 28

@@ -52,7 +52,7 @@ MonoBehaviour:
     roleId: 2
     dialog: "\u54C8\u54C8\uFF01\u6211\u5C31\u8BF4\u561B\uFF01"
     face: 1
-    move: L,4
+    move: L,3
     sceneId: 5
     sound: 
   - id: 6

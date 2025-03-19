@@ -40,7 +40,8 @@ namespace UI.Panel
             GetControl<TextMeshProUGUI>("content").text = content;
             ShowMe();
             await UniTask.WaitForSeconds(delay);
-            HideMe();
+            if (ReferenceEquals(UIManager.Instance.Peek(), this))
+                HideMe();
         }
 
         public override void ShowAnim()

@@ -123,7 +123,7 @@ MonoBehaviour:
     roleId: 2
     dialog: "\u4F60\uFF01\u4F60\u5F97\u7ED9\u6211\u9053\u6B49\uFF01"
     face: 3
-    move: L,2
+    move: L,1.5
     sceneId: 5
     sound: 
   - id: 16
@@ -158,7 +158,7 @@ MonoBehaviour:
     roleId: 2
     dialog: "\uFF1F"
     face: 0
-    move: L,3
+    move: L,2
     sceneId: 5
     sound: 
   - id: 21
@@ -200,14 +200,14 @@ MonoBehaviour:
     roleId: 3
     dialog: "\u4EC0\u4E48\uFF1F\u4F60\u4EEC\u800D\u6211\u5462\uFF1F\uFF01\u65B0\u6765\u7684\u4F60\u8840\u53E3\u55B7\u4EBA\uFF0C\u6751\u5934\u76D1\u63A7\u574F\u4E86\u591A\u4E45\u4E86\uFF01"
     face: 0
-    move: R,-2
+    move: R,-1
     sceneId: 5
     sound: 
   - id: 27
     roleId: 3
     dialog: "\u4F60\u8BA4\u4E3A\u662F\u6211\u5C31\u662F\u6211\uFF1F\u6211\u4E0D\u670D\uFF01"
     face: 0
-    move: R,-2.5
+    move: R,-1.5
     sceneId: 5
     sound: 
   - id: 28
