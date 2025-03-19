@@ -32,6 +32,28 @@ namespace GamePlay
             _dict.Clear();
         }
 
+        public void SetHighLight(int id)
+        {
+            foreach (var item in _dict)
+            {
+                int curId = item.Key;
+                Role role = item.Value;
+                if (curId == 6)
+                {
+                    continue;
+                }
+
+                if (curId == id)
+                {
+                    role.roleImage.color = Color.white;
+                }
+                else
+                {
+                    role.roleImage.color = Color.gray;
+                }
+            }
+        }
+
         public Role GetRole(int id, string anchoredString = "")
         {
             if (_dict.TryGetValue(id, out var role))

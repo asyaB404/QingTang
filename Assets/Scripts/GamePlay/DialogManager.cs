@@ -232,6 +232,7 @@ namespace GamePlay
             _commandManager.CheckCommand(content);
 
             if (content.Length <= 0 || content[0] == '#') return;
+            _roleManager.SetHighLight(info.roleId);
             sbMgr.SetText(content);
             curIndex++;
         }

@@ -51,6 +51,7 @@ namespace UI.Panel
                 {
                     icons[0].DOFillAmount(0.8f, UIConst.UI_PANEL_ANIM);
                     btns[2].transform.GetChild(0).gameObject.SetActive(true);
+                    SaveManager.Instance.FinishDialog(7);
                 }
             });
 
