@@ -72,3 +72,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/Editor/Excel/~$DialogList.xlsx
 Assets/Editor/Excel/~$DialogList.xlsx.meta
+WebGL Builds/233.zip
+WebGL Builds/
+WebGLBuild/
