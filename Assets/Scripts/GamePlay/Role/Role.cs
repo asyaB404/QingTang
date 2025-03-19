@@ -144,7 +144,7 @@ namespace GamePlay
             var rectTransform = (RectTransform)transform;
             if (type == "L" || type == "R")
             {
-                amount *= 108;
+                amount *= 150;
                 rectTransform.DOAnchorPosX(amount, MyConst.ROLE_MOVE);
             }
             else if (type == "S")

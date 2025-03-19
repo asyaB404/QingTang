@@ -127,7 +127,7 @@ namespace GamePlay
         {
             if (dialogId == 6)
             {
-                AudioMgr.Instance.PlayMusic("Music/"+"battle");
+                AudioMgr.Instance.PlayMusic("Music/" + "battle");
             }
 
             CurDialogId = dialogId;
@@ -185,8 +185,8 @@ namespace GamePlay
                 sbMgr.Skip();
                 return;
             }
-            
-            
+
+
             var info = dialogList[curIndex];
             DialogPanel.Instance.SetBackGround(info.sceneId);
             string content = info.dialog;
@@ -196,17 +196,16 @@ namespace GamePlay
             {
                 if (info.sound == "xibu")
                 {
-                    AudioMgr.Instance.PlayMusic("Music/"+"west");
-                    return;
+                    AudioMgr.Instance.PlayMusic("Music/" + "west");
                 }
-
-                if (info.sound == "xibuend")
+                else if (info.sound == "xibuend")
                 {
-                    AudioMgr.Instance.PlayMusic("Music/"+"map");
-                    return;
+                    AudioMgr.Instance.PlayMusic("Music/" + "map");
                 }
-
-                AudioMgr.Instance.PlaySFX("SFX/"+info.sound);
+                else
+                {
+                    AudioMgr.Instance.PlaySFX("SFX/" + info.sound);
+                }
             }
 
             if (info.roleId > 0)

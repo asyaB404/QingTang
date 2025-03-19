@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f7ed96-b2b7-451c-9ddd-20cc4aa407bb" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/InternetPanel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/InternetPanel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/PhonePanel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/PhonePanel.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QingTang/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/STXINWEI SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Tips/TipsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Tips/TipsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/DialogManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/Role.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Role/Role.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/InternetPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/InternetPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/MainPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/PhonePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panel/PhonePanel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +126,7 @@
       <workItem from="1742118147079" duration="7665000" />
       <workItem from="1742216552219" duration="4355000" />
       <workItem from="1742288942572" duration="6787000" />
-      <workItem from="1742351698173" duration="9156000" />
+      <workItem from="1742351698173" duration="11058000" />
     </task>
     <servers />
   </component>

@@ -64,14 +64,8 @@ namespace UI.Panel
                 GetControl<Image>("Front").rectTransform.DOAnchorPosY(0, UIConst.UI_PANEL_ANIM);
                 DialogManager.Instance.Load(0);
             });
-            btns[0].onClick.AddListener(() =>
-            {
-                MessagePanel.Instance.ShowMessage("无法连接至互联网!");
-            });
-            btns[1].onClick.AddListener(() =>
-            {
-                RolesPanel.Instance.ShowMe();
-            });
+            btns[0].onClick.AddListener(() => { InternetPanel.Instance.ShowMe(); });
+            btns[1].onClick.AddListener(() => { RolesPanel.Instance.ShowMe(); });
             btns[2].onClick.AddListener(() =>
             {
                 btns[2].transform.GetChild(0).gameObject.SetActive(false);
@@ -80,21 +74,24 @@ namespace UI.Panel
             btns[3].onClick.AddListener(() =>
             {
                 btns[3].transform.GetChild(0).gameObject.SetActive(false);
-                PhonePanel.Instance.ShowMe();
+                if (event1)
+                    PhonePanel.Instance.ShowMe();
             });
             btns[4].onClick.AddListener(() =>
             {
                 btns[4].transform.GetChild(0).gameObject.SetActive(false);
                 if (event1)
                 {
-                    MessagePanel.Instance.ShowMessage("先接一下电话吧！");
+                    MessagePanel.Instance.ShowMessage("先打一下电话吧！");
                     return;
                 }
+
                 // TryBattlePanel.Instance.ShowMe();
                 MessagePanel.Instance.ShowMessage("信息是否收集全？", () =>
                 {
                     MessagePanel.Instance.HideMe();
-                    if (SaveManager.Instance.CheckHasFinishedDialog(1) && SaveManager.Instance.CheckHasFinishedDialog(5))
+                    if (SaveManager.Instance.CheckHasFinishedDialog(1) &&
+                        SaveManager.Instance.CheckHasFinishedDialog(5))
                     {
                         DialogManager.Instance.Load(6);
                     }
@@ -108,40 +105,31 @@ namespace UI.Panel
             {
                 if (event1)
                 {
-                    MessagePanel.Instance.ShowMessage("先接一下电话吧！");
+                    MessagePanel.Instance.ShowMessage("先打一下电话吧！");
                     return;
                 }
+
                 MapPanel.Instance.ShowMe();
             });
-            btns[6].onClick.AddListener(() =>
-            {
-                SettingsPanel.Instance.ChangeMe();
-            });
-            btns[7].onClick.AddListener(() =>
-            {
-                MessagePanel.Instance.ShowMessage("返回主界面？", HideMe);
-            });
-            btns[8].onClick.AddListener(() =>
-            {
-                MessagePanel.Instance.ShowMessage("返回主界面？", HideMe);
-            });
-            btns[9].onClick.AddListener(() =>
-            {
-                MessagePanel.Instance.ShowMessage("返回主界面？", HideMe);
-            });
+            btns[6].onClick.AddListener(() => { SettingsPanel.Instance.ChangeMe(); });
+            btns[7].onClick.AddListener(() => { MessagePanel.Instance.ShowMessage("返回主界面？", HideMe); });
+            btns[8].onClick.AddListener(() => { MessagePanel.Instance.ShowMessage("返回主界面？", HideMe); });
+            btns[9].onClick.AddListener(() => { MessagePanel.Instance.ShowMessage("返回主界面？", HideMe); });
+
             #endregion
         }
 
         private void OnUILoadFinish()
         {
-            AudioMgr.Instance.PlayMusic("Music/"+"main");
+            AudioMgr.Instance.PlayMusic("Music/" + "main");
             if (!SaveManager.Instance.CheckHasFinishedDialog(0) && DialogManager.Instance.CurDialogId != 0)
             {
                 OnFirst();
             }
+
             if (SaveManager.Instance.CheckHasFinishedDialog(1) && !SaveManager.Instance.CheckHasFinishedDialog(5))
             {
-                AudioMgr.Instance.PlaySFX("SFX/"+"phone");
+                AudioMgr.Instance.PlaySFX("SFX/" + "phone");
                 btns[3].transform.GetChild(0).gameObject.SetActive(true);
                 btns[3].onClick.AddListener(OnEvent51);
             }
