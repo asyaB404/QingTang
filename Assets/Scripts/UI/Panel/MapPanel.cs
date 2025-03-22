@@ -9,6 +9,7 @@
 
 using DG.Tweening;
 using GamePlay;
+using TMPro;
 using UnityEngine.UI;
 
 namespace UI.Panel
@@ -78,6 +79,11 @@ namespace UI.Panel
             CanvasGroupInstance.DOKill(true);
             CanvasGroupInstance.interactable = true;
             CanvasGroupInstance.DOFade(1f, UIConst.UI_PANEL_ANIM);
+        }
+
+        public void SetMapName(string mapName)
+        {
+            GetControl<TextMeshProUGUI>("MapText").text = mapName;
         }
 
         public override void HideAnim()

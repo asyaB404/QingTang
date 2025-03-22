@@ -51,6 +51,10 @@ public class AudioMgr
         musicSource = audioGameObject.AddComponent<AudioSource>();
     }
 
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
     public void PlayMusic(string path)
     {
         if (musicSource.clip != null && musicName == path && musicSource.isPlaying)

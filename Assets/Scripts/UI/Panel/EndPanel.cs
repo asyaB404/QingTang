@@ -7,15 +7,18 @@
 // //   (___)___)                         @Copyright  Copyright (c) 2025, Basya
 // // ********************************************************************************************
 
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using GamePlay;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 namespace UI.Panel
 {
     public class EndPanel:BasePanel<EndPanel>
     {
+        [SerializeField] private VideoPlayer videoPlayer;
         public override void Init()
         {
             base.Init();
@@ -37,8 +40,7 @@ namespace UI.Panel
             GetControl<Image>("End").DOFade(1f, UIConst.UI_PANEL_ANIM * 10f).OnComplete(() =>
             {
                 GetControl<Image>("End").color = Color.clear;
-                UIManager.Instance.ClearPanels();
-                GameStartPanel.Instance.ShowMe();
+                PlayVideoAsync().Forget();
             });
         }
 
@@ -60,7 +62,32 @@ namespace UI.Panel
 
         public override void OnPressedEsc()
         {
-            
+            if (!videoPlayer.isPlaying) return;
+            videoPlayer.gameObject.SetActive(false);
+            videoPlayer.Stop();
+        }
+        
+        private async UniTask PlayVideoAsync()
+        {
+            Debug.Log("PlayVideoAsync 开始");
+            AudioMgr.Instance.StopMusic();
+            videoPlayer.gameObject.SetActive(true);
+            videoPlayer.Prepare();
+            await UniTask.WaitUntil(() => videoPlayer.isPrepared);
+
+            Debug.Log("Video 已准备，开始播放");
+
+            videoPlayer.Play();
+            await UniTask.WaitUntil(() => videoPlayer.isPlaying);
+
+            Debug.Log("Video 正在播放");
+
+            await UniTask.WaitUntil(() => !videoPlayer.isPlaying);
+
+            Debug.Log("Video 播放结束");
+            UIManager.Instance.ClearPanels();
+            videoPlayer.gameObject.SetActive(false);
+            GameStartPanel.Instance.ShowMe();
         }
     }
 }

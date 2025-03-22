@@ -224,17 +224,17 @@ MonoBehaviour:
     sceneId: 1
     sound: dog
   - id: 30
-    roleId: -1
+    roleId: 3
     dialog: '#wait 1'
     face: 0
-    move: 
+    move: L,0
     sceneId: 1
     sound: 
   - id: 31
     roleId: 2
     dialog: "\u4F60\u505A\u4E2A\u4EBA\u5427\uFF0C\u5E73\u5E38\u5929\u5929\u9A82\u79E6\u6653\u96EF\u5C31\u7B97\u4E86\uFF0C\u8FD8\u60F3\u8981\u52A8\u624B\u6253\u4EBA\uFF1F"
     face: 3
-    move: 
+    move: R,0
     sceneId: 1
     sound: 
   - id: 32
